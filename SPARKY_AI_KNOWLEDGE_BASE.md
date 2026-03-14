@@ -1,7 +1,7 @@
-# Sparky AI Knowledge Base - ElectraPro
+# TGE Assistant — AI Knowledge Base
 
 ## Overview
-Sparky is the AI business coach for T.G.E. Billing (Texas Master Electrician License #750779). This document details Sparky's knowledge base for expanding and customizing AI capabilities.
+The TGE Assistant is the AI operations coach for TGE Operations. This document details the assistant's knowledge base for expanding and customizing AI capabilities.
 
 ---
 

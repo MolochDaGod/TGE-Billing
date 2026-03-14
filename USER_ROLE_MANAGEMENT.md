@@ -1,11 +1,15 @@
-# User Role Management - ElectraPro
+# User Role Management — TGE Operations
 
-## ✅ How User Roles Work
+## How User Roles Work
 
-### **Three User Roles:**
-1. **Admin** - Full system access (manage users, settings, all features)
-2. **Employee** - Field technicians (invoices, jobs, clients, but no user management)
-3. **Client** - Customers (view own invoices, make payments, book services)
+### **Roles:**
+1. **Owner (pirate_king)** — Full system access, top-level control
+2. **Admin** — Full system access (manage users, settings, all features)
+3. **Partner** — Co-manages business, access to users and settings
+4. **Team Lead (staff_captain)** — Department management, operations access
+5. **Staff** — Operations access (invoices, estimates, jobs, clients)
+6. **Vendor** — Service provider view (own clients, invoices, estimates, jobs)
+7. **Client** — Customer portal (view own invoices, make payments, book services)
 
 ---
 

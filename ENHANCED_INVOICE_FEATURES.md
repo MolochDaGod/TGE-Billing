@@ -1,7 +1,7 @@
-# Enhanced Invoice Features - ElectraPro
+# Enhanced Invoice Features — TGE Operations
 
 ## Overview
-Your invoice system now has powerful new capabilities including auto-save, parts catalog integration, file uploads, and Google Drive integration.
+The invoice system includes auto-save, parts catalog integration, file uploads, and Google Drive integration.
 
 ## New Features
 
@@ -118,22 +118,20 @@ Your invoice system now has powerful new capabilities including auto-save, parts
 
 ---
 
-### 5. Sparky AI Quick Assist ✅
+### 5. AI Assistant Quick Assist ✅
 **Get help while creating invoices:**
-1. Click "Ask Sparky" button on invoice form
-2. Sparky AI assistant opens in bottom-right corner
+1. Click the AI assistant button in the header
+2. The TGE Assistant panel opens
 3. Ask questions like:
-   - "What's the standard markup on circuit breakers?"
-   - "Help me describe this electrical work"
+   - "What's the standard markup for this service?"
+   - "Help me describe this line item"
    - "What tax rate should I use?"
-   - "How do I price a panel upgrade?"
-4. Sparky provides instant answers and suggestions
+4. The assistant provides instant answers and suggestions
 
-**Sparky can help with:**
+**The assistant can help with:**
 - Pricing guidance
 - Description writing
-- NEC compliance questions
-- Electrical component recommendations
+- Compliance questions
 - Business best practices
 
 ---
@@ -190,7 +188,7 @@ import { EnhancedInvoiceForm } from "@/components/enhanced-invoice-form";
 - ✅ Parts catalog selector
 - ✅ File upload (logo & images)
 - ✅ Google Drive PDF upload
-- ✅ Sparky AI quick assist
+- ✅ AI assistant quick assist
 - ✅ Real-time calculations
 - ✅ Client selection from database
 - ✅ Tax rate configuration
