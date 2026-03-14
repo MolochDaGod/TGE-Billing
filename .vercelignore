@@ -1,7 +1,6 @@
-# Exclude the TypeScript source for the API handler.
-# Vercel must use the pre-bundled api/index.mjs (created by vercel-build)
-# instead of trying to compile this file with @vercel/node.
-api/index.ts
+# api/_lambda.ts is the esbuild entry — underscore prefix prevents Vercel
+# from auto-detecting it as a serverless function endpoint.
+# api/index.mjs is the pre-bundled output configured in vercel.json functions.
 
 # Exclude local dev server files — not needed on Vercel
 server/vite.ts
