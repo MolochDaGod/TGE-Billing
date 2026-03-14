@@ -1,10 +1,11 @@
 /**
  * Vercel Serverless Function — wraps the Express app.
- * All /api/* and /attached_assets/* requests are routed here via vercel.json rewrites.
+ * Imports ONLY from server/app.ts to avoid pulling in Vite at module-parse time.
+ * All /api/* requests are routed here via vercel.json rewrites.
  */
-import { app, initApp } from "../server/index";
+import { app, initApp } from "../server/app";
 
-// Ensure routes are registered before handling the first request
+// Kick off route registration once (warm start caches the promise)
 const ready = initApp();
 
 export default async function handler(req: any, res: any) {
