@@ -1,7 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 import { isPuterReady, getPuter, waitForPuter, type PuterUser } from "@/lib/puter";
-import { apiRequest } from "@/lib/queryClient";
-import { queryClient } from "@/lib/queryClient";
+import { apiRequest, queryClient } from "@/lib/queryClient";
 
 interface PuterAuthState {
   puterUser: PuterUser | null;
@@ -11,8 +10,31 @@ interface PuterAuthState {
 }
 
 /**
+ * POST the authenticated Puter user to our backend to create/restore a session.
+ * Returns true on success, false on failure (non-throwing).
+ */
+async function syncPuterSession(user: PuterUser): Promise<boolean> {
+  try {
+    const res = await apiRequest("POST", "/api/auth/puter", {
+      username: user.username,
+      email: user.email || `${user.username}@puter.user`,
+      name: user.username,
+    });
+    if (res.ok) {
+      queryClient.invalidateQueries({ queryKey: ["/api/auth/user"] });
+      return true;
+    }
+    return false;
+  } catch {
+    return false;
+  }
+}
+
+/**
  * React hook for Puter.js authentication.
- * Handles Puter sign-in and links the Puter account to a server-side session.
+ * On mount: if user is already signed in to Puter, automatically syncs with the
+ * backend session so they don't need to click the button again.
+ * signIn(): opens the Puter popup only when NOT already authenticated.
  */
 export function usePuterAuth() {
   const [state, setState] = useState<PuterAuthState>({
@@ -22,7 +44,7 @@ export function usePuterAuth() {
     error: null,
   });
 
-  // Check initial auth state once Puter SDK is ready
+  // On mount: check Puter auth state; if already signed in, auto-create backend session
   useEffect(() => {
     let cancelled = false;
 
@@ -33,6 +55,9 @@ export function usePuterAuth() {
 
         if (p.auth.isSignedIn()) {
           const user = await p.auth.getUser();
+          if (cancelled) return;
+          // Silently create/restore the backend session
+          await syncPuterSession(user);
           if (cancelled) return;
           setState({
             puterUser: user,
@@ -55,26 +80,25 @@ export function usePuterAuth() {
   }, []);
 
   /**
-   * Sign in with Puter (opens popup), then link with the backend session.
+   * Sign in with Puter.
+   * If the user is already authenticated with Puter (e.g. returned from a previous
+   * session), skips the popup and just syncs with the backend.
+   * Otherwise opens the Puter sign-in popup (must be called from a user action).
    */
   const signIn = useCallback(async () => {
     setState((s) => ({ ...s, isLoading: true, error: null }));
     try {
       const p = getPuter();
-      await p.auth.signIn();
+
+      // Only open the Puter popup if not already signed in
+      if (!p.auth.isSignedIn()) {
+        await p.auth.signIn(); // Opens popup; resolves when user authenticates
+      }
+
       const user = await p.auth.getUser();
 
-      // Link Puter user to backend session
-      const res = await apiRequest("POST", "/api/auth/puter", {
-        username: user.username,
-        email: user.email || `${user.username}@puter.user`,
-        name: user.username,
-      });
-
-      if (res.ok) {
-        // Invalidate the auth query so useAuth() picks up the server user
-        queryClient.invalidateQueries({ queryKey: ["/api/auth/user"] });
-      }
+      // Create/restore backend session
+      await syncPuterSession(user);
 
       setState({
         puterUser: user,
@@ -88,7 +112,7 @@ export function usePuterAuth() {
         isLoading: false,
         error: err.message || "Sign in failed",
       }));
-      throw err; // Re-throw so callers (e.g. auth page) can show error toasts
+      throw err; // Re-throw so the auth page can show an error toast
     }
   }, []);
 
