@@ -38,7 +38,7 @@ export function useImprovedVoiceActivation({
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const activationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const isEligibleRole = user?.role === "admin" || user?.role === "employee" || user?.role === "pirate_king" || user?.role === "partner";
+  const isEligibleRole = ["pirate_king", "admin", "partner", "staff_captain", "staff"].includes(user?.role || "");
   const isSupported = isSpeechRecognitionSupported();
 
   const {

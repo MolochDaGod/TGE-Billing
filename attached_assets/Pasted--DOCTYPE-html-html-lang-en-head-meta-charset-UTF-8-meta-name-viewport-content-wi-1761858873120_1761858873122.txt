@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to tge.puter.site</title>
+<style>
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f0f4f8, #d9e2ec); min-height: 100vh; display: flex; justify-content: center; align-items: center; color: #1f2a44; }
+.container { text-align: center; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); animation: fadeIn 0.5s ease; max-width: 700px; width: 90%; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+h1 { font-size: 36px; font-weight: 700; margin-bottom: 20px; }
+p { font-size: 18px; color: #6b7280; margin-bottom: 30px; }
+.button { display: inline-block; padding: 12px 24px; background: #3b82f6; color: white; text-decoration: none; border-radius: 10px; font-size: 16px; transition: background 0.3s ease, transform 0.2s; }
+.button:hover { background: #2563eb; transform: scale(1.05); }
+.attribution { margin-top: 40px; padding: 15px; font-size: 16px; font-weight: 500; background-color: #f0f9ff; border: 2px solid #bae6fd; border-radius: 8px; color: #0369a1; }
+.attribution a { color: #0284c7; text-decoration: none; font-weight: 600; }
+.attribution a:hover { text-decoration: underline; }
+.instructions { margin-top: 30px; padding: 20px; background-color: #fffbeb; border: 2px solid #fcd34d; border-radius: 8px; text-align: left; }
+.instructions h3 { margin-top: 0; margin-bottom: 15px; color: #92400e; font-weight: 600; }
+.instructions p { font-size: 15px; color: #78350f; margin-bottom: 15px; }
+.instructions ul { margin: 0; padding-left: 20px; }
+.instructions li { color: #78350f; margin-bottom: 8px; font-size: 15px; }
+.instructions code { background-color: #fef3c7; padding: 2px 5px; border-radius: 4px; font-family: monospace; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Welcome to tge.puter.site</h1>
+<p>Your new subdomain is live! Start building your amazing project here.</p>
+<a href="https://puter.com" class="button">Learn More About Puter</a>
+<div class="instructions">
+    <h3>How to Edit Your Site</h3>
+    <p>Your site files are located in the folder you selected during registration:</p>
+    <ul>
+        <li>Navigate to your selected folder in the Puter file manager.</li>
+        <li>Find the <code>tge</code> subfolder created by this app.</li>
+        <li>Edit the <code>index.html</code> file to customize your site.</li>
+        <li>Add more files as needed—they'll automatically appear on your site.</li>
+    </ul>
+    <p>All changes save automatically and will be immediately visible on your live site!</p>
+</div>
+<div class="attribution">
+    Register yours at <a href="https://puter.com/app/subdomain-registrar" target="_blank">Puter Subdomain Registrar</a>
+</div>
+</div>
+</body>
+</html>

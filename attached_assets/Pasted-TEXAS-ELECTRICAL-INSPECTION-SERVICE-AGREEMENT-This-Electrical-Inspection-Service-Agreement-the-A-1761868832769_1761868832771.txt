@@ -1,0 +1,1976 @@
+TEXAS ELECTRICAL INSPECTION
+SERVICE AGREEMENT
+This Electrical Inspection Service Agreement (the "Agreement") is entered into on this _____
+day of __________, 20 (the "Effective Date"), by and between:
+THE CLIENT:
+[Legal Name of Building Owner/Property Manager/HOA]
+Address: [Client Address]
+Email: [Client Email]
+Phone: [Client Phone]
+(Hereinafter referred to as the "Client")
+AND
+THE SERVICE PROVIDER:
+[Your Company Legal Name]
+Texas Electrical Contractor License No.: [License Number]
+Address: [Your Company Address]
+Email: [Your Company Email]
+Phone: [Your Company Phone]
+(Hereinafter referred to as the "Contractor")
+RECITALS
+WHEREAS, the Client owns or manages a multi-unit residential building located at [Property
+Address] (the "Property"); and
+WHEREAS, the Contractor is a licensed electrical contractor in the State of Texas, qualified to
+perform electrical inspections in accordance with Texas Occupations Code Chapter 1305 and
+16 TAC Chapter 73; and
+WHEREAS, the Client desires to engage the Contractor to perform comprehensive electrical
+safety inspections of the Property's residential units and common areas;
+NOW, THEREFORE, in consideration of the mutual covenants and agreements contained
+herein, and for other good and valuable consideration, the receipt and sufficiency of which are
+hereby acknowledged, the parties agree as follows:
+1. SCOPE OF SERVICES
+1.1 General Scope
+The Contractor agrees to perform comprehensive electrical safety inspections (the "Services"
+or "Inspections") for the residential units and common areas of the Property as specified in
+Exhibit A (Schedule of Services). All Services shall be performed in accordance with:
+● The 2023 National Electrical Code (NFPA 70) as adopted by the State of Texas
+effective September 1, 2023, pursuant to Texas Occupations Code §1305.101
+● NFPA 70B-2023 (Standard for Electrical Maintenance) best practices
+● NFPA 70E (Standard for Electrical Safety in the Workplace)
+● ANSI/NETA MTS-2023 (Maintenance Testing Specifications)
+● Applicable local amendments and municipal electrical codes for [City/Municipality]
+● Industry standards and practices recognized by the Texas Department of Licensing and
+Regulation (TDLR)
+1.2 Per-Unit Inspection - Detailed Scope
+For each residential unit specified in Exhibit A, the Contractor shall perform the following
+inspections of accessible and visible electrical components:
+A. Electrical Panel Assessment
+1. Infrared Thermography Scan:
+○ Thermal imaging of all accessible electrical panels, breakers, and connections
+○ Equipment shall be inspected under at least 40% of nominal load conditions
+where feasible
+○ Temperature differentials exceeding 15°C (27°F) between similar components
+under similar loads shall be documented
+○ Thermal and visible light images shall be captured and included in the report
+2. Physical Panel Inspection:
+○ Visual inspection for physical damage, corrosion, moisture intrusion, burn marks,
+or overheating indicators
+○ Verification of proper panel mounting and security
+○ Check for adequate working clearance (minimum 36 inches per NEC 110.26)
+○ Inspection of panel location for code compliance (not in bathrooms, closets, or
+areas exposed to physical damage)
+○ Verification of proper grounding and bonding connections
+○ Check for proper panel labeling and circuit identification
+○ Inspection for double-tapping, improper wire connections, or undersized wiring
+○ Verification that wire connections are secure and properly torqued
+○ Check for unsealed openings or missing knockout plugs
+3. Circuit Breaker and Overcurrent Protection:
+○ Verification of proper circuit breaker sizing and type for connected loads
+○ Testing of main breaker operation (where safe and feasible)
+○ Visual inspection for signs of arcing, overheating, or failure
+○ Verification of proper amperage ratings
+○ Check for recalled or defective breaker brands
+B. Service Entrance and Main Disconnect
+● Inspection of service entrance conductors for damage or deterioration (where
+accessible)
+● Verification of proper service rating (minimum 150 amps per Texas Minimum
+Construction Standards for multi-family dwellings)
+● Check for proper clearances from windows, roofs, and structures
+● Verification of proper grounding electrode system connection
+C. In-Unit Electrical Devices and Wiring
+1. Receptacle Testing and Inspection:
+○ Testing of all accessible outlets for proper grounding, polarity, and functionality
+○ Verification of GFCI protection in required locations per NEC 210.8(A):
+■ Bathrooms
+■ Kitchens (countertop receptacles)
+■ Garages
+■ Outdoor receptacles
+■ Basements and unfinished areas
+■ Laundry areas
+○ GFCI testing using approved test equipment
+○ Check for two-prong (ungrounded) outlets
+○ Inspection for damaged, loose, or improperly installed receptacles
+○ Verification of proper outlet spacing per NEC requirements
+2. AFCI Protection Verification:
+○ Verification of Arc-Fault Circuit Interrupter protection in required areas per NEC
+210.12:
+■ Bedrooms
+■ Living rooms, family rooms, dining rooms, libraries, dens, sunrooms
+■ Closets, hallways, laundry areas (unless exempted)
+○ AFCI testing where accessible
+3. Lighting Fixtures and Switches:
+○ Inspection of all accessible light fixtures for proper installation and condition
+○ Testing of light switches for functionality
+○ Check for proper fixture support and securing
+○ Inspection for overheating, discoloration, or damage
+○ Verification of proper bulb wattage ratings
+4. Visible Wiring:
+○ Inspection of all accessible and visible wiring for:
+■ Proper insulation and condition
+■ Signs of damage, wear, or deterioration
+■ Proper securing and support per NEC requirements
+■ Evidence of amateur or improper modifications
+■ Knob-and-tube or aluminum wiring (where visible)
+■ Extension cord abuse or permanent use of temporary wiring
+5. Smoke and Carbon Monoxide Detectors:
+○ Verification of smoke detector presence and functionality per Texas Property
+Code §92.251
+○ Testing of smoke detectors (where accessible without causing unit disturbance)
+○ Verification of carbon monoxide detector presence where required
+○ Check for proper placement and mounting
+D. Permanently Connected Appliances
+● Visual inspection of permanently wired appliances (where accessible):
+○ Water heaters
+○ HVAC equipment electrical connections
+○ Dishwashers
+○ Garbage disposals
+○ Built-in microwaves
+○ Range/oven connections
+● Verification of proper disconnect means
+● Check for proper bonding and grounding
+E. Special Conditions and Safety Hazards
+● Investigation and documentation of any:
+○ Shock hazards
+○ Fire hazards
+○ Electrical surge indicators
+○ Evidence of water infiltration or moisture damage
+○ Improper modifications or DIY electrical work
+○ Code violations observed during inspection
+○ Inadequate electrical capacity for unit demand
+1.3 Common Areas Inspection - Detailed Scope
+For common areas specified in Exhibit A, the Contractor shall perform the following inspections:
+A. Main Distribution and Service Equipment
+1. Main Service Equipment:
+○ Infrared thermography of main distribution panels, switchgear, and bus
+connections
+○ Visual and mechanical inspection of all accessible components
+○ Verification of proper service capacity for building demand
+○ Check for proper grounding and bonding systems
+○ Inspection of main disconnect and overcurrent protection
+○ Verification of proper clearances and access per NEC 110.26
+2. Sub-Panels and Distribution Panels:
+○ Infrared and visual inspection of all common area distribution panels
+○ Verification that house loads (common area loads) are not supplied from
+individual dwelling unit panels per NEC 210.25(b)
+○ Verification of separate "house panel" for shared and common area loads
+○ Check for proper panel labeling with unit numbers served
+○ Inspection of panel location and accessibility
+○ Verification of proper grounding and bonding to main panel
+B. Common Area Lighting Systems
+1. General Lighting:
+○ Inspection of all common area lighting fixtures (lobbies, hallways, stairways,
+parking areas)
+○ Verification of adequate illumination levels (4 footcandles for exterior pedestrian
+pathways per Dallas Municipal Code §27-11, where applicable)
+○ Testing of lighting functionality
+○ Check for proper fixture mounting and security
+2. Emergency Lighting and Exit Signs:
+○ Verification of emergency lighting in required locations per NFPA 101:
+■ Buildings more than three stories in height
+■ Interior corridors and stairways
+■ Exit access and exit discharge areas
+■ Doors with delayed-egress locks
+○ Testing of emergency lighting systems:
+■ Minimum 90-minute duration capacity
+■ Average illumination of 1 footcandle (0.1 footcandle minimum) along
+egress paths
+■ Activation within 10 seconds of power failure
+○ Verification of monthly testing records (if maintained by property)
+○ Inspection of illuminated exit signs for functionality and compliance
+3. Exterior Lighting:
+○ Inspection of building entrance lighting
+○ Parking area lighting assessment
+○ Verification of GFCI protection for exterior receptacles
+○ Check for proper weatherproof enclosures
+C. Fire Alarm System Integration Points
+● Visual inspection of fire alarm panel electrical connections (where accessible)
+● Verification of proper integration with electrical systems
+● Check for proper backup power supply
+● Documentation of any observed deficiencies (Note: Comprehensive fire alarm testing is
+outside the scope of this Agreement unless specifically contracted)
+D. Elevators and Mechanical Rooms
+● Inspection of elevator electrical disconnect and emergency power (where accessible)
+● Visual inspection of mechanical room electrical panels and equipment
+● Verification of proper clearances and access
+● Check for environmental hazards (moisture, corrosion, etc.)
+E. Parking Garages and Exterior Areas
+● Inspection of parking garage electrical systems (where present)
+● Verification of proper GFCI protection
+● Check for damaged or deteriorating equipment
+● Inspection of outdoor electrical equipment and enclosures
+1.4 Testing Equipment and Calibration
+All testing equipment used in the performance of the Services shall be:
+● Properly calibrated within the previous twelve (12) months in accordance with NETA
+MTS-2023 standards
+● Appropriate for the specific measurements and tests being performed
+● Used in accordance with manufacturer specifications
+Calibration records shall be maintained by the Contractor and made available upon request.
+1.5 Comprehensive Reporting
+Upon completion of each inspection cycle, the Contractor shall provide the Client with a
+comprehensive written report (the "Report") containing:
+1. Executive Summary:
+○ Overview of inspection scope and methodology
+○ Summary of critical findings
+○ Priority recommendations
+2. Detailed Findings for Each Unit:
+○ Unit identification
+○ List of all components inspected
+○ Findings categorized by severity:
+■ Critical (C1 - Danger Present): Immediate safety hazards requiring
+emergency action
+■ Urgent (C2 - Potentially Dangerous): Significant deficiencies requiring
+prompt attention
+■ Advisory (C3 - Improvement Recommended): Non-urgent
+recommendations for improvement
+○ Photographic documentation (including IR images where applicable)
+○ Specific code violations identified (with NEC references)
+3. Common Areas Summary:
+○ Consolidated findings for all common area systems
+○ Infrastructure assessment
+○ Priority repair recommendations
+4. Compliance Assessment:
+○ Summary of NEC 2023 compliance status
+○ Local code compliance (to the extent observable)
+○ Required upgrades or modifications
+5. Recommendations:
+○ Clear, prioritized action items
+○ Suggested remediation timelines based on severity
+○ Cost implications (general estimates, if requested)
+6. Documentation and Disclaimers:
+○ Inspector name, credentials, and license number
+○ Date and conditions of inspection
+○ Equipment used and calibration status
+○ Limitations and exclusions (as detailed in Section 3)
+○ Required legal disclaimers
+1.6 Professional Standards
+All Services shall be performed by:
+● Texas-licensed electricians holding Master Electrician, Journeyman Electrician, or
+appropriate license classification per Texas Occupations Code Chapter 1305
+● Personnel meeting continuing education requirements (4 hours annually) per 16 TAC
+§73.25
+● Qualified thermographers holding Level III or Level IV certification per ANSI/NETA
+ETT-2000 (for infrared thermography services)
+2. SERVICES EXPLICITLY EXCLUDED FROM SCOPE
+2.1 General Exclusions
+The Contractor is NOT required to inspect, determine, predict, or report on the following:
+A. Property and Structural Matters:
+● Property boundary lines or encroachments
+● Structural integrity of buildings or premises (unless directly related to electrical
+mounting/support)
+● Conditions not directly related to electrical systems
+B. Inaccessible or Concealed Components:
+● Components or systems not readily accessible without:
+○ Removing furniture, stored items, floor coverings, ceiling tiles, wall coverings, or
+decorative items
+○ Entering spaces requiring unsafe actions (crawl spaces with inadequate
+clearance, unstable attic spaces, etc.)
+○ Using destructive testing methods
+○ Disconnecting or de-energizing essential building services
+● Electrical wiring concealed in walls, floors, ceilings, or conduit
+● Underground wiring or services
+● Electrical components blocked by tenant belongings or locked areas
+● Areas where access is denied by tenants
+C. Predictions and Warranties:
+● Service life expectancy of any component or system
+● Future conditions, including prediction of future failures
+● Warranties or guarantees of system performance
+● Long-term reliability or durability
+● Whether previously identified defects have been corrected (unless re-inspection
+specifically requested)
+D. Specialized Testing and Engineering:
+● Engineering services requiring Professional Engineering (P.E.) licensure
+● Load calculations or electrical demand studies (unless specifically contracted)
+● Power quality analysis or harmonic distortion testing
+● Electromagnetic field (EMF) measurements
+● Short-circuit or coordination studies (unless specifically contracted)
+● Single-line diagram creation or updating
+E. Environmental and Specialized Hazards:
+● Presence of environmental hazards including but not limited to:
+○ Asbestos
+○ Lead paint
+○ Toxic or contaminated materials
+○ Mold, mildew, or fungus
+○ Radon or other airborne hazards
+○ Underground storage tanks
+● Air quality assessment
+● Pest, rodent, or insect infestation
+F. Low-Voltage and Communication Systems:
+● Telephone systems and wiring
+● Cable television systems
+● Internet/data cabling (Cat-5/Cat-6)
+● Satellite dish systems
+● Antenna systems
+● Doorbell and intercom systems
+● Security systems and cameras
+● Audio/video systems
+● Smart home automation systems
+G. Specialty Systems:
+● Solar photovoltaic systems (unless specifically contracted and inspector is qualified)
+● Generator systems (standby or portable)
+● Uninterruptible Power Supply (UPS) systems
+● Battery backup systems
+● Electric vehicle charging stations (unless specifically contracted)
+● Landscape or irrigation system wiring
+H. Operational and Performance Testing:
+● Systems that are shut down, disconnected, or non-operational
+● Systems that do not respond to normal operating controls
+● Efficiency testing of electrical equipment
+● BTU, capacity, or performance ratings
+● Operational testing requiring specialist tools or knowledge
+● Testing that would require interruption of essential services
+I. Code Compliance Certification:
+● Comprehensive code compliance inspection (beyond observable defects)
+● Municipal permit verification or permitting services
+● Final inspection for occupancy permits (unless specifically contracted as municipal
+inspector)
+● Building code compliance unrelated to electrical systems
+● ADA compliance review
+● Energy code compliance analysis
+J. Legal and Administrative Matters:
+● Determination of compliance with specific insurance requirements
+● Analysis of previous repair history or contractor workmanship
+● Verification of permit history
+● Property valuation or appraisal services
+● Suitability determination for specific uses or alterations
+● Research into property history or previous electrical issues
+● Legal opinions regarding code violations or liability
+K. Tenant-Specific Matters:
+● Personal property electrical devices (lamps, appliances, electronics)
+● Tenant-installed fixtures or modifications (unless creating safety hazard)
+● Portable electrical equipment
+● Temporary power strips or extension cords (unless indicating underlying deficiency)
+2.2 Limitations Due to Inaccessibility
+If any portion of the Property cannot be inspected due to:
+● Tenant refusal or unavailability
+● Locked or secured areas without provided access
+● Obstructions by personal property, furniture, or stored items
+● Unsafe conditions
+● Required de-energization not authorized by Client
+● Building occupied status preventing full access
+The Contractor shall document such limitations in the Report. The inspection fee shall remain
+due for attempted inspection, though the Client may request pro-rata adjustment for substantial
+access limitations preventing meaningful inspection (defined as inability to access more than
+10% of contracted units).
+2.3 Optional Additional Services
+The following services are NOT included in the base scope but may be added by separate
+written agreement with additional compensation:
+● Detailed load calculation and service capacity analysis
+● Short-circuit and coordination study
+● Power quality monitoring
+● Comprehensive fire alarm system testing
+● Solar PV system inspection
+● Generator load bank testing
+● Destructive testing requiring repair afterward
+● Engineering stamped reports or plans
+● Expert witness services
+● Municipal permit application assistance
+● Code consulting services
+3. CONSPICUOUS LIMITATION OF LIABILITY
+THE FOLLOWING PROVISIONS LIMIT THE CONTRACTOR'S LIABILITY.
+READ CAREFULLY.
+3.1 MAXIMUM LIABILITY CAP
+TO THE FULLEST EXTENT PERMITTED BY TEXAS LAW, THE CONTRACTOR'S TOTAL
+AGGREGATE LIABILITY FOR ANY AND ALL CLAIMS, LOSSES, DAMAGES, INJURIES, OR
+EXPENSES ARISING FROM OR RELATED TO THIS AGREEMENT OR THE SERVICES
+PROVIDED HEREUNDER, WHETHER BASED IN CONTRACT, TORT (INCLUDING
+NEGLIGENCE AND GROSS NEGLIGENCE), STRICT LIABILITY, WARRANTY, INDEMNITY,
+OR ANY OTHER LEGAL THEORY, SHALL NOT EXCEED TWO TIMES (2X) THE TOTAL
+FEES ACTUALLY PAID BY CLIENT TO CONTRACTOR FOR THE SPECIFIC INSPECTION
+CYCLE GIVING RISE TO THE CLAIM.
+THIS LIMITATION APPLIES TO LIABILITY FOR THE CONTRACTOR'S OWN NEGLIGENCE,
+THE NEGLIGENCE OF ITS EMPLOYEES, AGENTS, OR SUBCONTRACTORS, AND ANY
+OTHER ACTS OR OMISSIONS BY THE CONTRACTOR, EXCEPT AS PROHIBITED BY
+LAW.
+3.2 EXCLUSION OF CONSEQUENTIAL DAMAGES
+THE CONTRACTOR SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
+CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO:
+● LOST PROFITS OR REVENUE
+● LOSS OF USE OF PROPERTY OR EQUIPMENT
+● COST OF CAPITAL
+● COST OF SUBSTITUTE SERVICES OR FACILITIES
+● DOWN TIME
+● BUSINESS INTERRUPTION
+● LOSS OF GOODWILL OR REPUTATION
+● CLAIMS OF TENANTS OR THIRD PARTIES
+THIS EXCLUSION APPLIES EVEN IF THE CONTRACTOR HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
+3.3 LATENT DEFECTS AND CONCEALED CONDITIONS
+The Contractor's Services are limited to visual inspection of accessible components at the
+time of inspection. The Contractor is not liable for:
+● Latent defects not visible or reasonably discoverable during standard inspection
+procedures
+● Electrical defects concealed within walls, floors, ceilings, conduit, or inaccessible
+spaces
+● Conditions that develop or manifest after the inspection date
+● Defects in components that were not accessible during the inspection
+● Issues requiring destructive testing to discover
+● Intermittent problems not present during the inspection
+● Conditions masked by tenant furnishings, stored property, or other obstructions
+3.4 No Duty to Repair or Remedy
+The Contractor's duty is limited to inspection and reporting only. The Contractor:
+● Has no obligation to repair, remedy, or correct any defects found
+● Does not guarantee or warrant that all defects will be discovered
+● Cannot predict future equipment failures or system performance
+● Does not warrant the adequacy of electrical capacity for future needs
+3.5 Reliance on Information Provided
+The Contractor is entitled to rely upon information provided by the Client, property management,
+tenants, and third parties, including:
+● Building age and construction information
+● Previous repair and maintenance records
+● Electrical permit history
+● System specifications and documentation
+● Access information and building layouts
+The Contractor is not liable for inaccuracies in such information unless the inaccuracy was
+obvious and should have been recognized by a reasonably prudent inspector.
+3.6 Subsequent Modifications
+The Contractor is not liable for:
+● Electrical work performed by others after the inspection date
+● Modifications made to electrical systems by the Client, tenants, or third-party contractors
+● Deterioration or damage occurring after the inspection
+● Improper repairs made by unqualified persons
+4. INDEMNIFICATION (TEXAS ANTI-INDEMNITY ACT
+COMPLIANT)
+4.1 Mutual Indemnification
+Each party (as "Indemnifying Party") shall indemnify, defend, and hold harmless the other
+party (as "Indemnified Party"), its officers, directors, employees, and agents from and against
+any and all claims, losses, damages, liabilities, and expenses (including reasonable attorneys'
+fees and costs of defense) arising out of, resulting from, or related to:
+(a) Any negligent acts, errors, or omissions of the Indemnifying Party, its employees, agents,
+or subcontractors in the performance of this Agreement, INCLUDING THE INDEMNIFYING
+PARTY'S OWN NEGLIGENCE;
+(b) Any breach of this Agreement by the Indemnifying Party;
+(c) Any violation of applicable laws, regulations, or codes by the Indemnifying Party; and
+(d) Bodily injury or death of the Indemnifying Party's employees, agents, or subcontractors of
+any tier occurring in connection with this Agreement, INCLUDING CLAIMS ARISING FROM
+THE SOLE OR CONCURRENT NEGLIGENCE OF THE INDEMNIFIED PARTY (as permitted
+by Texas Insurance Code §151.103).
+4.2 Exceptions to Indemnification
+The indemnification obligation in Section 4.1 shall NOT apply to:
+(a) Claims arising solely from the Indemnified Party's own negligence, gross negligence,
+or willful misconduct, except as provided in subsection (d) above regarding employee injuries;
+(b) Claims arising from the Indemnified Party's breach of this Agreement; or
+(c) Claims caused by the Indemnified Party's violation of applicable law.
+4.3 Texas Anti-Indemnity Act Compliance
+This indemnification provision is intended to comply fully with the Texas Anti-Indemnity Act
+(Texas Insurance Code Chapter 151). To the extent any provision of this Section 4 would be
+void under Texas Insurance Code §151.102, such provision shall be severed and the remaining
+provisions shall remain in full force and effect. Nothing in this Agreement requires the
+Contractor to indemnify the Client for the Client's own negligence or fault, except for
+employee injuries as expressly permitted by Texas Insurance Code §151.103.
+4.4 Defense Obligation
+The Indemnifying Party's defense obligation includes retention of counsel reasonably
+acceptable to the Indemnified Party and payment of all costs of defense, including attorneys'
+fees. The Indemnified Party may participate in the defense with counsel of its own choosing at
+its own expense. The Indemnifying Party shall not settle any claim without the Indemnified
+Party's prior written consent, which shall not be unreasonably withheld.
+4.5 Notice of Claims
+The Indemnified Party shall provide the Indemnifying Party with prompt written notice of any
+claim for which indemnification is sought, provided that failure to provide prompt notice shall not
+relieve the Indemnifying Party of its obligations except to the extent the Indemnifying Party is
+materially prejudiced by such failure.
+5. INSURANCE REQUIREMENTS
+5.1 Contractor's Insurance
+The Contractor shall maintain, at its own expense, the following minimum insurance coverage
+during the term of this Agreement:
+(a) Commercial General Liability Insurance:
+● Minimum limits: $1,000,000 per occurrence / $2,000,000 general aggregate
+● Coverage for bodily injury, property damage, and personal injury
+● Products and completed operations coverage: $1,000,000 aggregate
+● Exceeding Texas statutory minimum of $300,000/$600,000/$300,000 per 16 TAC
+§73.40
+(b) Professional Liability (Errors & Omissions) Insurance:
+● Minimum limits: $1,000,000 per claim / $1,000,000 annual aggregate
+● Coverage for negligent acts, errors, omissions, and breach of professional duty
+● Coverage maintained on a "claims-made" basis with retroactive date prior to or equal to
+the Effective Date
+(c) Workers' Compensation Insurance:
+● As required by Texas Labor Code Chapter 401 and Texas Occupations Code
+§1305.159(a)(3)
+● Covering all employees in statutory amounts
+● Alternatively, valid written election not to obtain coverage filed with Texas Department of
+Insurance
+(d) Commercial Automobile Liability Insurance:
+● If vehicles are used in performance of Services
+● Minimum limits: $1,000,000 combined single limit
+● Covering owned, non-owned, and hired vehicles
+5.2 Insurance Certificates and Additional Insured
+(a) The Contractor shall provide the Client with Certificates of Insurance evidencing the required
+coverage within ten (10) days of the Effective Date and upon renewal.
+(b) The Client shall be named as an Additional Insured on the Contractor's Commercial
+General Liability policy with respect to liability arising out of the Services performed under this
+Agreement.
+(c) All insurance policies shall include a provision requiring thirty (30) days' prior written
+notice to the Client of cancellation, non-renewal, or material change in coverage.
+(d) Insurance shall be placed with insurers:
+● Admitted in Texas, or
+● Eligible surplus lines carriers authorized to do business in Texas, or
+● Rated A- or higher by A.M. Best Company
+5.3 Maintenance of Coverage
+The Contractor shall maintain all required insurance coverage continuously throughout the term
+of this Agreement and for a period of two (2) years following final completion of Services (for
+claims-made professional liability policies). Failure to maintain required insurance may result in
+immediate suspension of Services and/or termination of this Agreement by the Client.
+5.4 No Limitation of Liability
+The Contractor's insurance coverage shall not be construed as limiting the Contractor's liability
+beyond the caps and limitations set forth in Section 3 of this Agreement. However, the
+Contractor's liability beyond its insurance coverage limits shall remain subject to Section
+3 limitations.
+5.5 Client's Insurance
+The Client represents that it maintains appropriate property insurance, general liability
+insurance, and any other insurance customary for property owners/managers in Texas. The
+Client is responsible for maintaining adequate insurance coverage for the Property and for any
+claims not covered by the Contractor's insurance or not subject to the Contractor's
+indemnification obligations.
+6. TERM, SCHEDULE, AND INSPECTION FREQUENCY
+6.1 Agreement Term
+This Agreement shall have an initial term of five (5) years commencing on the Effective Date
+and continuing through the fifth anniversary thereof (the "Initial Term"), unless earlier
+terminated in accordance with Section 10.
+6.2 Renewal Terms
+Upon expiration of the Initial Term, this Agreement shall automatically renew for successive
+one (1) year periods (each a "Renewal Term") unless either party provides written notice of
+non-renewal at least sixty (60) days prior to the expiration of the then-current term.
+During Renewal Terms, the Contractor may adjust fees to account for inflation, cost increases,
+or expanded scope, provided that such adjustments do not exceed five percent (5%) per year
+and the Client receives written notice of any fee adjustment at least sixty (60) days prior to the
+commencement of the Renewal Term. Fee increases exceeding 5% require mutual written
+agreement.
+6.3 Inspection Frequency
+The Client shall select the inspection frequency by checking one option below:
+☐ ANNUAL INSPECTION: Inspections shall be performed once per calendar year during the
+Term. The first inspection shall be scheduled for completion by: [Target Date]. Subsequent
+inspections shall occur approximately on the anniversary of the first inspection date (within a
+30-day window).
+☐ BIANNUAL INSPECTION: Inspections shall be performed twice per calendar year during the
+Term. The first inspection shall be scheduled for completion by: [Target Date #1]. The second
+inspection shall be scheduled for completion by: [Target Date #2]. Subsequent inspections shall
+follow a similar biannual schedule (within 30-day windows).
+☐ OTHER FREQUENCY: Inspections shall be performed according to the following schedule:
+[Specify custom schedule]
+6.4 Inspection Scheduling and Coordination
+(a) Advance Scheduling:
+The Contractor shall provide the Client with written notice at least sixty (60) days in advance of
+each scheduled inspection cycle, proposing specific dates for the inspections.
+(b) Client Coordination:
+The Client shall, within fourteen (14) days of receiving the Contractor's proposed schedule,
+either:
+● Confirm the proposed dates, or
+● Propose alternative dates within thirty (30) days of the original proposed dates
+(c) Finalized Schedule:
+Once dates are mutually agreed, the Contractor shall provide the Client with a finalized
+inspection schedule at least thirty (30) days before the inspection window, specifying:
+● Specific dates for unit and common area inspections
+● Expected times for unit access
+● Any special requirements or preparations needed
+(d) Client Access Responsibilities:
+The Client shall:
+● Provide the Contractor with a current list of all units to be inspected
+● Coordinate unit access with tenants or occupants
+● Provide tenant contact information (if applicable)
+● Arrange for keys, access codes, or property management escort
+● Ensure at least 90% of contracted units are accessible on scheduled dates
+6.5 Tenant Notice Requirements
+(a) The Client shall provide tenants with at least twenty-four (24) hours' advance written
+notice (or as required by applicable lease agreements) of scheduled inspections, including:
+● Date and approximate time of inspection
+● Purpose of inspection (electrical safety inspection)
+● Expected duration
+● Contractor's company name and contact information
+● Statement that the inspection is for the tenant's safety and benefit
+(b) The Client acknowledges that Texas law does not specify a mandatory notice period for
+landlord entry, and that notice requirements are primarily governed by lease agreements and
+the tenants' right to "quiet enjoyment." The Client represents that it will comply with all
+applicable lease provisions and legal requirements when arranging access.
+(c) If a tenant refuses access despite proper notice, the Client shall:
+● Document the refusal
+● Make reasonable additional attempts to coordinate access
+● Notify the Contractor within three (3) business days if access cannot be obtained
+The Contractor shall not be liable for inability to inspect units where tenant access is refused.
+6.6 Municipal Inspection Programs
+If the Property is located in a jurisdiction with mandatory multi-family inspection programs (such
+as Plano, Texas or other municipalities), the Client shall:
+● Notify the Contractor of any such requirements
+● Coordinate the Contractor's inspections with municipal inspection schedules
+● Provide any required documentation or reports to municipal authorities
+● Ensure the Contractor's Reports meet municipal reporting requirements (if applicable)
+7. COMPENSATION AND PAYMENT TERMS
+7.1 Per-Unit Pricing
+The Client shall compensate the Contractor at the following fixed rates for each inspection
+cycle:
+(a) Residential Units:
+Five Hundred Dollars ($500.00) per unit inspected and reported upon.
+(b) Common Areas:
+Three Thousand Dollars ($3,000.00) per floor of common area electrical systems inspected
+and reported upon, where "floor" is defined as each level of the building containing common
+area electrical infrastructure (lobbies, hallways, stairways, electrical rooms, etc.).
+For purposes of common area pricing:
+● The main service entrance and primary distribution equipment count as one (1) floor
+● Rooftop equipment and mechanical areas count as one (1) floor
+● Parking garages (if applicable) count as one (1) floor if underground/enclosed, or may be
+included with ground floor if open surface parking
+● Each occupied floor with common area hallways, corridors, or electrical infrastructure
+counts as one (1) floor
+The specific number of floors for common area pricing shall be detailed in Exhibit A.
+7.2 Initial Property Scope and Estimated Total Fee
+Based on the initial property assessment:
+● Total Residential Units to be Inspected: [___] units
+● Total Common Area Floors: [___] floors
+● **Estimated Per-Unit Fee:** [___] units × 500=∗∗500 = ** 500=∗∗[______]**
+● **Estimated Common Area Fee:** [___] floors × 3,000=∗∗3,000 = ** 3,000=∗∗[______]**
+● ESTIMATED TOTAL FEE PER INSPECTION CYCLE: $[______]
+The estimated total fee is based on the Client's representation of the current number of units
+and building configuration. The actual fee for each inspection cycle shall be adjusted to reflect:
+● The actual number of units inspected (if different from estimated)
+● Any pro-rata adjustments for inaccessible units (per Section 7.5)
+● Any additional services requested by the Client (per Section 7.6)
+7.3 Payment Schedule for Each Inspection Cycle
+(a) Deposit Payment:
+Upon the Contractor's delivery of the finalized inspection schedule (at least 30 days prior to the
+inspection window), the Client shall pay a non-refundable deposit equal to fifty percent (50%)
+of the estimated total fee for that inspection cycle.
+● Purpose: To secure the Contractor's scheduling commitment and compensate for
+mobilization costs
+● Due Date: Within fourteen (14) days of invoice
+● Non-Refundable: Except in cases of Contractor breach or force majeure preventing
+inspection
+(b) Final Balance Payment:
+Upon the Contractor's delivery of the final Report(s) for that inspection cycle, the Contractor
+shall invoice the Client for the remaining fifty percent (50%) of the fee, adjusted for:
+● Actual units inspected (if different from estimate)
+● Any pro-rata adjustments
+● Any additional services performed
+● Due Date: Thirty (30) days from invoice date ("Net 30")
+● Late Payment: Late payments shall accrue interest at the rate of 1.5% per month (18%
+per annum) or the maximum rate allowed by Texas law, whichever is lower
+7.4 Annual Fee Adjustments
+For Renewal Terms (years 6+), the Contractor may adjust the per-unit and per-floor rates to
+account for:
+● Consumer Price Index (CPI) increases
+● Changes in labor or material costs
+● Regulatory or code requirement changes
+● Insurance cost increases
+● Expanded scope requirements
+Fee adjustments during Renewal Terms shall not exceed five percent (5%) per year unless
+mutually agreed in writing. The Contractor shall provide written notice of any fee adjustment at
+least sixty (60) days prior to the commencement of the Renewal Term.
+7.5 Inaccessible Units - Pro-Rata Adjustment
+(a) Exclusion Threshold:
+The Client commits to providing access to at least 90% of the contracted units during each
+inspection cycle. If fewer than 90% of units are accessible on the scheduled date(s), the Client
+may be entitled to a pro-rata fee reduction for units not inspected, subject to the following
+conditions:
+(b) Advance Notice Requirement:
+To qualify for fee reduction, the Client must provide the Contractor with at least fourteen (14)
+days' advance written notice identifying specific units that will not be accessible and the
+reason for inaccessibility.
+(c) No Adjustment for Client-Caused Inaccessibility:
+No fee reduction shall apply if units are inaccessible due to:
+● Client's failure to coordinate tenant access
+● Client's failure to provide keys, access codes, or escort
+● Tenant refusal despite Client's reasonable efforts (evidenced by documentation)
+● Last-minute cancellations (less than 7 days' notice)
+(d) Attempted Inspection Fee:
+If the Contractor mobilizes to the Property and units are not accessible despite the schedule,
+the Client shall pay:
+● The full deposit (non-refundable)
+● $250.00 per unit for units that were scheduled but not accessible
+● The actual inspection fee for units that were successfully inspected
+7.6 Additional Services and Extra Charges
+The following services are not included in the base per-unit or per-floor pricing and shall be
+charged separately:
+(a) Re-Inspections Following Failed Inspections:
+● First Re-Inspection: $250.00 per unit OR $500.00 per common area floor (whichever
+applies)
+● Subsequent Re-Inspections: $350.00 per unit OR $750.00 per common area floor
+● Plus any applicable travel or mobilization costs if re-inspection requires separate trip
+(b) Emergency or After-Hours Inspections:
+● Emergency Response (life-safety issue): 1.5× standard rate plus $500 mobilization
+fee
+● After-Hours Inspection (requested by Client): 1.5× standard rate
+● "After-hours" defined as outside of normal business hours (8:00 AM - 5:00 PM,
+Monday-Friday)
+(c) Additional Site Visits Due to Access Issues:
+● If the Contractor must return for additional site visits due to Client's failure to provide
+adequate access, each additional visit shall be charged at $250.00 per unit for affected
+units
+● This fee is in addition to (not in lieu of) the base inspection fee
+(d) Expedited Report Delivery:
+● Standard report delivery: Within five (5) business days of inspection completion
+● Expedited delivery (within 48 hours): Additional $500.00 flat fee
+(e) Expanded Scope Services: If the Client requests services beyond the standard scope
+(Section 1), including but not limited to:
+● Detailed load calculations
+● Short-circuit or coordination studies
+● Engineering-stamped reports
+● Power quality analysis
+● Solar PV system inspection
+● Comprehensive fire alarm testing
+Such services shall be priced separately by written proposal and Change Order.
+7.7 Travel and Mobilization
+For Properties located more than 50 miles from the Contractor's principal office address, the
+Contractor may charge:
+● Mileage: Federal IRS mileage rate (currently $0.70/mile) for round-trip distance over 50
+miles
+● Mobilization: $500.00 flat fee for equipment and personnel mobilization (one-time per
+inspection cycle)
+Such charges shall be itemized on the deposit invoice.
+7.8 Taxes
+All fees stated in this Agreement are exclusive of any applicable federal, state, or local sales,
+use, excise, or other taxes. The Client shall pay any such taxes that may be applicable, or
+provide the Contractor with appropriate tax exemption certificates.
+7.9 Late Payment Consequences
+In addition to accruing interest per Section 7.3(b), if payment is more than thirty (30) days
+overdue:
+(a) The Contractor may suspend performance of future scheduled inspections until payment is
+received (with seven days' written notice to Client);
+(b) The Contractor may terminate this Agreement for material breach per Section 10.2; and
+(c) The Client shall be responsible for all reasonable costs of collection, including attorneys'
+fees.
+7.10 Invoicing and Payment Methods
+(a) All invoices shall be sent to the Client via email to: [Client Email Address] and shall include:
+● Invoice number and date
+● Description of services performed
+● Itemization of fees
+● Payment due date
+● Payment instructions
+(b) Payments may be made by:
+● Check mailed to: [Contractor Mailing Address]
+● ACH/Wire transfer to: [Bank Account Information]
+● Credit card (if accepted, may include processing fee)
+8. CLIENT RESPONSIBILITIES AND ACCESS
+OBLIGATIONS
+8.1 General Access Obligation
+The Client is solely responsible for ensuring the Contractor is granted timely, safe, and
+unobstructed access to all specified residential units, common areas, electrical panels, and
+electrical equipment during agreed-upon inspection dates and times.
+8.2 Specific Client Duties
+The Client shall:
+(a) Provide the Contractor with:
+● Accurate list of all units to be inspected
+● Current floor plans or building layouts (if available)
+● Location of all electrical panels and main service equipment
+● Any known electrical issues or previous inspection findings
+● Contact information for property management and emergency contacts
+(b) Coordinate with tenants, property management, and building staff to:
+● Provide advance notice per Section 6.5
+● Arrange for unit access (keys, access codes, escort service)
+● Ensure units are in accessible condition (not blocked by excessive personal property)
+● Advise tenants to secure pets and provide safe working environment
+(c) Provide safe working conditions:
+● Adequate lighting in electrical rooms and panel locations
+● Clear pathways to electrical equipment (36-inch minimum clearance)
+● Notification of any known hazards
+● Elimination of unsafe conditions prior to inspection
+● If requested, de-energization of specific circuits (with appropriate notice to affected
+parties)
+(d) Designate a representative:
+● The Client shall designate an authorized representative available during inspections
+● The representative shall have authority to:
+○ Grant access to secured areas
+○ Approve minor schedule adjustments
+○ Acknowledge completion of inspections
+○ Address questions or access issues
+8.3 Building Information and Documentation
+The Client shall provide the Contractor (to the extent available):
+● Building electrical service capacity and voltage specifications
+● Previous electrical inspection reports or records
+● History of electrical repairs or upgrades
+● Known electrical issues or tenant complaints
+● Building occupancy certificate or permit information
+● Fire alarm and emergency lighting system documentation
+● Any municipal inspection requirements or schedules
+Failure to provide available documentation does not relieve the Client of payment
+obligations, but may limit the Contractor's ability to provide comprehensive analysis.
+8.4 Access Denial and Delays
+If the Contractor arrives at the Property for a scheduled inspection and finds:
+(a) Insufficient Unit Access:
+Fewer than 90% of scheduled units are accessible without the Client's prior written notice (per
+Section 7.5(b)), the Client shall pay the "Attempted Inspection Fee" per Section 7.5(d) and may
+be charged for additional site visits.
+(b) Unsafe or Obstructed Conditions:
+Electrical panels or equipment are not accessible due to obstructions, unsafe conditions, or
+lack of adequate clearance, and the Client was not informed of such conditions in advance, the
+inspection may be postponed. The Client shall:
+● Remedy the conditions within seven (7) days
+● Reschedule the inspection within fourteen (14) days
+● Pay any additional mobilization or rescheduling fees
+(c) Tenant Refusal or Interference:
+If tenants refuse entry, interfere with inspections, or create hostile working conditions:
+● The Contractor may cease work at the affected unit(s) for safety reasons
+● The Client remains responsible for full payment unless the Client can demonstrate it took
+all reasonable measures to secure access per applicable law and lease agreements
+● The Client shall be responsible for resolving tenant access issues before re-inspection
+8.5 Hazardous Conditions and Work Stoppage
+(a) If the Contractor's personnel encounter imminent safety hazards (exposed energized
+conductors, immediate shock/electrocution risk, structural instability), the Contractor may
+immediately stop work and evacuate.
+(b) The Contractor shall promptly notify the Client of the hazardous condition.
+(c) The Client shall:
+● Take immediate corrective action to eliminate the hazard
+● Hire qualified emergency contractors if needed
+● Not require the Contractor to resume work until the hazard is abated
+● Compensate the Contractor for all work performed prior to work stoppage
+(d) If the hazardous condition was:
+● Not caused by the Contractor: The Client shall pay all fees including any
+remobilization costs
+● Caused by the Contractor's negligence: The Contractor's insurance shall respond per
+Section 5
+8.6 Changes to Building or Unit Count
+If, between inspection cycles, the Client:
+● Adds units (through construction, conversion, or acquisition): The Client shall notify the
+Contractor in writing within thirty (30) days. Additional units may be added to the next
+inspection cycle at the then-current per-unit rate.
+● Removes units (through sale, demolition, or conversion): The Client shall notify the
+Contractor in writing at least sixty (60) days prior to the next inspection cycle. The fee
+shall be adjusted accordingly.
+● Reconfigures common areas: The Client shall notify the Contractor in writing at least
+sixty (60) days prior to the next inspection cycle to allow scope and fee adjustment.
+Major changes (more than 10% change in unit count or significant common area
+reconfiguration) may require amendment to this Agreement or adjustment to Exhibit A.
+9. FAILED INSPECTIONS AND REMEDIATION
+PROTOCOLS
+9.1 Definition of Failed Inspection
+An inspection is considered "failed" if the Report identifies one or more of the following:
+(a) Critical (C1) deficiencies: Immediate safety hazards presenting danger of shock,
+electrocution, or fire, including but not limited to:
+● Exposed energized conductors
+● Missing or damaged panel covers
+● Severe overheating detected via thermography (>40°C delta-T)
+● Main grounding electrode system failure
+● Severely overloaded circuits
+● Active arcing or signs of electrical fire
+(b) Urgent (C2) deficiencies: Potentially dangerous conditions requiring prompt attention,
+including but not limited to:
+● Missing GFCI protection in required locations
+● Missing AFCI protection in required bedrooms
+● Improperly sized circuit breakers
+● Evidence of amateur electrical work
+● Double-tapping in panels
+● Significant code violations
+(c) Multiple Advisory (C3) deficiencies: While individual C3 items are non-urgent
+recommendations, if a unit or common area has more than ten (10) separate C3 deficiencies,
+it may be considered a failed inspection requiring comprehensive remediation plan.
+9.2 Client's Remediation Obligations
+Upon receipt of a Report indicating failed inspection(s), the Client shall:
+(a) Immediate Action Required (C1 Deficiencies):
+● Take emergency corrective action immediately upon notification (within 24 hours)
+● For life-safety issues, the Contractor will notify the Client by phone/email immediately
+upon discovery
+● Hire licensed electrical contractors to perform emergency repairs
+● Do not delay for cost estimates or bidding processes when safety is at issue
+(b) Urgent Action Required (C2 Deficiencies):
+● Initiate corrective action within seven (7) days of receiving the Report
+● Complete corrective action within thirty (30) days of receiving the Report
+● Obtain all necessary permits as required by local jurisdiction
+(c) Advisory Items (C3 Deficiencies):
+● Address recommendations within a reasonable timeframe (suggested 90 days)
+● Prioritize C3 items that, while not immediately dangerous, could lead to future failures
+● Document planned remediation schedule
+9.3 Standard Remediation Timeline
+Except as specified in Section 9.2 for C1 and C2 deficiencies, the Client shall complete all
+remediation work and notify the Contractor within:
+● Emergency repairs (C1): Immediate to 48 hours
+● Critical repairs (C2): 30 days
+● Standard repairs (C3): 90 days (recommended)
+These timelines align with Texas Property Code §92.052 which establishes a rebuttable
+presumption that seven (7) days is a reasonable time for repairs affecting physical health or
+safety (though electrical emergencies may require faster action).
+9.4 Extension of Remediation Period
+The Client may request an extension of remediation deadlines by providing written notice to the
+Contractor explaining:
+● The specific reason for delay (contractor availability, permit delays, parts on back-order,
+etc.)
+● The proposed new completion date
+● Interim safety measures being taken
+The Contractor shall not unreasonably withhold approval of reasonable extension requests,
+particularly if:
+● The delay is due to circumstances beyond the Client's control
+● Temporary safety measures are in place
+● The Client is making diligent good-faith efforts to complete repairs
+However, C1 (immediate danger) deficiencies may not be delayed without implementing
+adequate temporary safety measures (such as de-energizing affected circuits, posting warnings,
+or restricting access).
+9.5 Re-Inspection Procedures
+(a) Scheduling Re-Inspection:
+Upon completion of all required remediation work, the Client shall:
+● Notify the Contractor in writing that repairs are complete
+● Provide copies of any permits or inspection approvals from licensed electrical
+contractors
+● Provide documentation of work performed (invoices, permits, completion certificates)
+● Request scheduling of re-inspection
+(b) Re-Inspection Timing:
+The Contractor shall perform the re-inspection within:
+● C1 (emergency) deficiencies: Within 48 hours of Client's request (if feasible)
+● C2 (urgent) deficiencies: Within seven (7) business days of Client's request
+● C3 (advisory) deficiencies: Within fourteen (14) business days of Client's request
+(c) Re-Inspection Scope:
+The re-inspection shall be limited to verification that the previously identified deficiencies have
+been corrected. The Contractor is not required to perform a complete re-inspection of all
+systems unless separately contracted.
+(d) Re-Inspection Fees:
+● First Re-Inspection: $250.00 per unit or $500.00 per common area floor (as
+applicable)
+● Second and Subsequent Re-Inspections: $350.00 per unit or $750.00 per common
+area floor
+The first re-inspection fee is waived IF:
+● All remediation is completed within the prescribed timeline (Sections 9.2-9.3), AND
+● The re-inspection confirms all deficiencies have been properly corrected, AND
+● No new deficiencies are discovered that should have been addressed during
+remediation
+(e) Multiple Trip Fee:
+If the Contractor must make multiple trips to the Property because remediation work is
+incomplete or inadequate, each additional trip shall be charged at $350.00 per affected unit or
+$750.00 per affected common area floor, plus any travel/mobilization costs.
+9.6 Repeated Failed Inspections
+If any unit or common area fails re-inspection twice (meaning the remediation work was
+incomplete or inadequate on two separate re-inspections):
+(a) The Contractor may require the Client to engage a licensed Master Electrician (different
+from whoever performed the initial remediation) to review and certify that all work has been
+completed in accordance with the 2023 NEC and applicable codes before the Contractor will
+perform a third re-inspection.
+(b) The third and subsequent re-inspections shall be charged at $500.00 per unit or $1,000.00
+per common area floor.
+(c) If a pattern of repeated failures emerges (more than 25% of units requiring three or more
+re-inspections), the Contractor may:
+● Recommend that the Client hire a different electrical contractor for remediation
+● Recommend a comprehensive electrical system audit by a professional engineer
+● Exercise its right to terminate this Agreement per Section 10 if the Client's repeated
+failure to properly remediate indicates inability to maintain the Property's electrical
+systems
+9.7 Prohibition on Client Self-Repairs
+All electrical repairs and remediation work must be performed by licensed electrical
+contractors in accordance with Texas Occupations Code Chapter 1305. The Client may not:
+● Perform electrical work without proper licensing
+● Allow tenants to perform electrical repairs
+● Allow unqualified handymen or maintenance personnel to perform electrical work beyond
+basic tasks (changing light bulbs, resetting breakers, etc.)
+If the Contractor discovers that repairs were performed by unlicensed persons:
+● The Contractor may refuse to re-inspect until the work is certified by a licensed
+electrician
+● The Client may be liable for any damages or injuries resulting from such unlicensed work
+● Such work may void any warranties or representations made in this Agreement
+9.8 Consequences of Failure to Remediate
+If the Client fails to complete required remediation within the prescribed timelines (or
+approved extensions) and fails to schedule re-inspection:
+(a) The Contractor may:
+● Suspend performance of future scheduled inspections under this Agreement
+● Report life-safety violations to appropriate municipal authorities (if required by law)
+● Terminate this Agreement for material breach per Section 10.2
+(b) The Client acknowledges that failure to remediate electrical deficiencies may:
+● Violate Texas Property Code habitability requirements
+● Violate municipal building codes
+● Void insurance coverage for electrical-related claims
+● Create liability to tenants, future owners, or third parties
+● Subject the Client to municipal fines or penalties
+(c) The Contractor is not responsible for any consequences resulting from the Client's
+failure to remediate identified deficiencies.
+9.9 Documentation and Record-Keeping
+The Client shall maintain records of:
+● All electrical repairs and remediation work performed
+● Invoices and receipts from licensed electrical contractors
+● Electrical permits obtained (if required)
+● Municipal inspection approvals (if applicable)
+● Dates of completion
+● Re-inspection results
+The Client shall provide copies of such documentation to the Contractor upon request and shall
+maintain records for at least four (4) years in accordance with 16 TAC §73.51.
+10. TERM AND TERMINATION
+10.1 Term and Renewal
+As specified in Section 6.1, this Agreement has an initial term of five (5) years with automatic
+one-year renewals unless either party provides notice of non-renewal per Section 6.2.
+10.2 Termination for Cause
+Either party may terminate this Agreement upon thirty (30) days' written notice if the other
+party commits a material breach of this Agreement and fails to cure such breach within the
+30-day notice period.
+Material breaches include, but are not limited to:
+(a) By Client:
+● Failure to pay undisputed fees within sixty (60) days of invoice date
+● Repeated failure to provide access to 90% of contracted units (three or more inspection
+cycles)
+● Failure to remediate Critical (C1) deficiencies within mandated timeframes, creating
+continuing safety hazards
+● Violation of Sections 2.3 or 11.2 (unapproved third-party contractors or electrical work)
+● Breach of confidentiality obligations
+(b) By Contractor:
+● Failure to perform inspections within scheduled windows without valid force majeure
+reason
+● Failure to deliver Reports within timeframes (more than 30 days late)
+● Loss of required Texas electrical contractor license
+● Failure to maintain required insurance coverage
+● Grossly negligent performance of Services (determined by objective professional
+standard)
+● Breach of confidentiality obligations
+10.3 Termination for Convenience
+Either party may terminate this Agreement without cause upon ninety (90) days' written
+notice to the other party.
+(a) If terminated by Client:
+● The Client shall pay for all Services performed through the date of termination
+● If termination occurs after the 50% deposit has been paid but before the inspection cycle
+is completed, the Client forfeits the deposit but is not obligated to pay the remaining
+balance
+● If termination occurs after the inspection cycle is completed but before the next cycle, no
+additional fees are due
+(b) If terminated by Contractor:
+● The Contractor shall refund any unearned fees paid in advance
+● The Contractor shall complete any inspection cycle for which a deposit has been paid,
+unless the parties mutually agree otherwise
+10.4 Immediate Termination
+Either party may terminate this Agreement immediately upon written notice (without cure
+period) if:
+(a) The other party:
+● Files for bankruptcy or insolvency
+● Makes an assignment for the benefit of creditors
+● Has a receiver appointed
+● Ceases business operations
+(b) The Contractor's electrical contractor license is revoked or suspended by TDLR (Contractor
+may not continue to perform Services during suspension)
+(c) Life-safety grounds: The Contractor discovers that the Client has:
+● Knowingly concealed or misrepresented electrical hazards
+● Systematically failed to remediate Critical (C1) deficiencies creating imminent danger to
+occupants
+● Engaged in fraudulent conduct related to electrical systems or inspections
+● Retaliated against the Contractor for reporting code violations to authorities
+10.5 Effect of Termination
+Upon termination of this Agreement:
+(a) Payment Obligations:
+● The Client shall pay all undisputed fees for Services performed through the date of
+termination within thirty (30) days
+● The Contractor shall refund any unearned prepaid fees within thirty (30) days
+● If fees are disputed, the undisputed portion must be paid while the dispute is resolved
+per Section 15
+(b) Return of Property:
+● Each party shall return all Confidential Information and property of the other party within
+fourteen (14) days
+● The Contractor shall provide the Client with copies of all Reports and documentation
+created through the termination date
+(c) Survival of Provisions: The following provisions shall survive termination of this
+Agreement:
+● Section 3 (Limitation of Liability)
+● Section 4 (Indemnification)
+● Section 5 (Insurance - for claims-made policies with tail coverage)
+● Section 7 (Payment of fees earned through termination)
+● Section 12 (Confidentiality and Non-Disclosure)
+● Section 13 (Third-Party Disclaimer and Non-Reliance)
+● Section 14 (Records Retention)
+● Section 15 (Dispute Resolution)
+● Section 16 (Contractual Statute of Limitations)
+● Section 18 (Governing Law)
+● Any other provisions that by their nature should survive
+10.6 No Penalty for Termination
+Neither party shall be liable to the other for any consequential damages resulting from lawful
+termination of this Agreement in accordance with this Section 10. However, this does not relieve
+either party from liability for:
+● Unpaid fees or expenses accrued prior to termination
+● Breach of this Agreement that occurred prior to termination
+● Violations of surviving provisions
+10.7 Transition Assistance
+If the Client terminates this Agreement (for any reason) and engages a different electrical
+inspection contractor:
+(a) The Contractor shall cooperate reasonably with the transition, including:
+● Providing copies of all Reports and documentation (at no additional charge)
+● Answering reasonable questions about previous findings (limited to 2 hours of
+consultation time at no charge)
+● Coordinating with the new contractor if requested (beyond 2 hours at Contractor's
+standard hourly rate)
+(b) The Client acknowledges that:
+● The Contractor has no obligation to provide training to the new contractor
+● The Contractor's prior Reports are subject to the disclaimers and limitations in this
+Agreement
+● The new contractor must conduct its own independent inspections
+11. RIGHT OF FIRST REFUSAL FOR ELECTRICAL
+SERVICES
+11.1 Purpose and Scope
+To ensure the ongoing quality, safety, and integrity of the Property's electrical infrastructure, and
+to maintain the validity and continuity of the Contractor's inspection-related insurance coverage,
+the parties agree to the provisions of this Section 11.
+11.2 Right of First Refusal
+(a) Notice Requirement:
+If the Client receives a bona fide written offer from a licensed third-party electrical contractor
+to perform any electrical work at the Property (other than emergency repairs requiring
+immediate attention), including but not limited to:
+● Routine electrical maintenance or repairs
+● Electrical system upgrades or modifications
+● Remediation of deficiencies identified in the Contractor's Reports
+● New electrical installations or expansions
+● General electrical contracting work
+The Client shall provide the Contractor with written notice containing all material terms of such
+third-party offer within five (5) business days of receiving it.
+(b) Exercise Period:
+The Contractor shall have fifteen (15) business days from receipt of the Client's notice to
+notify the Client in writing of the Contractor's election to perform such electrical work on the
+same terms and conditions as set forth in the third-party offer.
+(c) Acceptance:
+If the Contractor timely exercises its right of first refusal by matching the third-party offer, the
+Client shall engage the Contractor to perform the work on the terms specified in the third-party
+offer. The parties shall execute a separate work order or service agreement documenting the
+specific scope, timeline, and any additional terms.
+(d) Client May Proceed with Third Party:
+If the Contractor does not exercise its right of first refusal within the fifteen-day period, the
+Client is free to engage the third-party contractor on the terms specified in the original offer.
+11.3 Exceptions to Right of First Refusal
+The right of first refusal in Section 11.2 does not apply to:
+(a) Bona fide emergencies where immediate repair is necessary to prevent injury, property
+damage, or code violations, and waiting 15 business days would create unreasonable risk.
+However, the Client shall notify the Contractor of such emergency work as soon as practicable.
+(b) Tenant repairs that are the tenant's responsibility under their lease agreement and
+performed at tenant's expense (not the Property owner's or HOA's expense).
+(c) Utility company work performed by the electric utility provider for service connections,
+meter installations, or utility-owned equipment.
+(d) Municipal requirement inspections performed by city/county electrical inspectors for
+permitting or code enforcement (as opposed to private inspection services).
+(e) Work performed by contractors already under contract to the Client as of the Effective
+Date of this Agreement, for projects that were bid, awarded, and documented prior to this
+Agreement (grandfather clause). However, renewals or extensions of such contracts after the
+Effective Date are subject to the right of first refusal.
+11.4 Approved Third-Party Contractors
+(a) If the Client elects not to engage the Contractor for electrical work (either because the
+Contractor declined to match the third-party offer or the exception in Section 11.3 applies), and if
+such work is related to remediation of deficiencies identified in the Contractor's Reports,
+the Client shall notify the Contractor of the selected third-party contractor's name, license
+number, and scope of work.
+(b) The Contractor reserves the right to review and approve the qualifications of the third-party
+contractor to ensure:
+● Valid Texas electrical contractor license
+● Appropriate insurance coverage (at least statutory minimums)
+● No history of major code violations or license suspensions
+● Qualified personnel for the scope of work
+(c) The Contractor's approval shall not be unreasonably withheld but may be conditioned on
+the third-party contractor meeting equivalent professional standards. Approval or disapproval
+shall be provided within ten (10) business days of the Client's notification.
+(d) Effect of Disapproval:
+If the Contractor reasonably disapproves a third-party contractor (with written explanation of the
+basis), the Client may:
+● Select a different contractor subject to the same approval process, or
+● Engage the Contractor to perform the work (if the Contractor is willing and able), or
+● Proceed with the disapproved contractor at the Client's own risk, acknowledging that:
+○ The Contractor's insurance coverage may not extend to issues arising from such
+work
+○ The Contractor may require additional documentation or re-inspection before
+resuming Services
+○ Future Reports may include disclaimers about work performed by unapproved
+contractors
+11.5 Effect of Unapproved Work on Agreement
+If the Client engages a third-party contractor to perform electrical work without complying with
+Sections 11.2 or 11.4 (i.e., fails to provide notice and opportunity to match, or proceeds with
+unapproved contractor for remediation work):
+(a) The Contractor may:
+● Require photographic documentation and certification of the completed work before
+performing future inspections
+● Require a comprehensive re-inspection of affected systems at the Client's expense
+● Add specific disclaimers to future Reports regarding areas worked on by unapproved
+contractors
+● In cases of repeated violations, terminate this Agreement per Section 10.2 (material
+breach)
+(b) The Contractor's insurance coverage and warranties may not extend to:
+● Defects or issues arising from work performed by unapproved contractors
+● Interactions between systems inspected by the Contractor and modifications made by
+unapproved contractors
+● Any claims alleging the Contractor "should have known" about defects introduced by
+unapproved work performed without the Contractor's knowledge
+11.6 Expiration of Right
+This Right of First Refusal shall:
+● Commence on the Effective Date
+● Continue throughout the Initial Term and any Renewal Terms
+● Terminate automatically upon expiration or termination of this Agreement
+● Not extend beyond the term of this Agreement or encumber the Property
+11.7 No Unreasonable Restraint of Trade
+This Section 11 is intended to:
+● Protect the Contractor's legitimate business interest in maintaining the integrity of the
+electrical systems it inspects
+● Ensure continuity of electrical maintenance standards
+● Prevent conflicting work that could affect the reliability of the Contractor's Reports
+It is not intended to unreasonably restrain trade or prevent the Client from engaging qualified
+contractors when the Contractor is unable or unwilling to perform work on competitive terms.
+The fifteen (15) day response period is designed to be commercially reasonable while allowing
+the Client to proceed promptly with needed electrical work.
+12. CONFIDENTIALITY AND NON-DISCLOSURE
+12.1 Definition of Confidential Information
+"Confidential Information" means any and all non-public information disclosed by one party
+(the "Disclosing Party") to the other party (the "Receiving Party") in connection with this
+Agreement, whether disclosed orally, in writing, electronically, or by observation, including but
+not limited to:
+(a) For Client's Confidential Information:
+● Building layouts, floor plans, and architectural drawings
+● Electrical system specifications, configurations, and capacities
+● Tenant information, lease terms, and rental income data
+● Property ownership and management structure
+● Financial information related to the Property
+● Findings from the Contractor's Reports (see Section 12.5)
+● Security systems, access codes, and safety protocols
+● Business plans and strategies for the Property
+● Any information marked "Confidential" or reasonably understood to be confidential
+(b) For Contractor's Confidential Information:
+● Proprietary inspection methodologies and procedures
+● Software, checklists, and documentation systems
+● Pricing structures, profit margins, and cost information
+● Business strategies and client lists
+● Technical know-how and trade secrets
+● Report templates and formatting (as distinct from the factual findings)
+12.2 Exclusions from Confidential Information
+Confidential Information does not include information that:
+(a) Is or becomes publicly available through no breach of this Agreement by the Receiving
+Party;
+(b) Was rightfully in the Receiving Party's possession prior to disclosure by the Disclosing Party,
+as evidenced by the Receiving Party's written records;
+(c) Is rightfully received by the Receiving Party from a third party without breach of any
+confidentiality obligation;
+(d) Is independently developed by the Receiving Party without use of or reference to the
+Disclosing Party's Confidential Information, as evidenced by written records; or
+(e) Is required to be disclosed by law, regulation, court order, or governmental authority,
+provided that the Receiving Party provides prompt notice to the Disclosing Party (if legally
+permitted) and cooperates in seeking protective orders or other confidential treatment.
+12.3 Obligations of Receiving Party
+The Receiving Party shall:
+(a) Hold the Disclosing Party's Confidential Information in strict confidence;
+(b) Not disclose Confidential Information to any third party without the Disclosing Party's prior
+written consent, except:
+● To the Receiving Party's employees, contractors, or agents who have a legitimate need
+to know and who are bound by confidentiality obligations at least as protective as those
+in this Agreement
+● As required by law (with notice per Section 12.2(e))
+(c) Use the same degree of care to protect the Confidential Information as the Receiving Party
+uses to protect its own confidential information, but in no event less than reasonable care;
+(d) Use the Confidential Information solely for the purpose of performing its obligations or
+exercising its rights under this Agreement;
+(e) Not copy, reproduce, or reverse-engineer any Confidential Information except as necessary
+to perform this Agreement;
+(f) Upon termination of this Agreement or upon the Disclosing Party's written request, either:
+● Return all Confidential Information (including copies) to the Disclosing Party, or
+● Certify in writing that all Confidential Information has been destroyed
+● The Receiving Party may retain one archival copy for legal compliance purposes, subject
+to continuing confidentiality obligations
+12.4 Term of Confidentiality Obligation
+The confidentiality obligations in this Section 12 shall:
+● Commence on the Effective Date
+● Continue during the Term of this Agreement
+● Survive termination or expiration of this Agreement for a period of three (3) years
+● For information constituting trade secrets under Texas Uniform Trade Secrets Act (Texas
+Civil Practice & Remedies Code Chapter 134A), continue for as long as such information
+qualifies as a trade secret
+12.5 Special Provisions for Inspection Reports
+(a) Client's Rights:
+The Client owns the factual findings and data contained in the Reports and may:
+● Share Reports with the Client's insurance companies, lenders, and legal/financial
+advisors
+● Share Reports with prospective buyers or lessees of the Property (subject to Section 13
+third-party disclaimer)
+● Share Reports with municipal authorities if required for permitting or code compliance
+● Use the factual data for the Client's internal property management purposes
+(b) Client's Restrictions:
+The Client may not:
+● Publicly disclose the Reports or findings in a manner that could damage the Contractor's
+reputation (except as required by law or in legal proceedings)
+● Provide Reports to competitors of the Contractor for the purpose of competitive bidding
+on inspection services
+● Modify, alter, or edit the Reports in any way (except redacting confidential tenant
+information if necessary)
+● Remove the Contractor's name, disclaimers, or limitations from the Reports
+(c) Third-Party Access:
+If the Client provides Reports to third parties (within permitted uses), the Client shall:
+● Include the Contractor's complete disclaimers and limitations of liability
+● Provide the third-party recipient with a copy of Section 13 (Third-Party Disclaimer)
+● Advise the recipient that the Reports were prepared solely for the Client and reliance by
+others is at the recipient's own risk
+● Indemnify the Contractor for claims by such third parties (except where the third party is
+entitled to rely under Section 13.4)
+12.6 Remedies for Breach
+(a) The parties acknowledge that breach of this Section 12 may cause irreparable harm for
+which monetary damages are an inadequate remedy.
+(b) In addition to any other remedies available at law or in equity, the Disclosing Party shall be
+entitled to seek injunctive or equitable relief (including temporary restraining orders and
+preliminary injunctions) to prevent or restrain breaches of confidentiality obligations, without the
+need to post bond.
+(c) The prevailing party in any action to enforce confidentiality obligations shall be entitled to
+recover its reasonable attorneys' fees and costs.
+13. THIRD-PARTY DISCLAIMER AND NON-RELIANCE
+13.1 No Third-Party Beneficiaries
+THIS AGREEMENT IS SOLELY BETWEEN THE CLIENT AND THE CONTRACTOR. Nothing
+in this Agreement shall create, or shall be construed to create, any contractual relationship with,
+duty owed to, or cause of action in favor of any third party, including but not limited to:
+● Tenants or occupants of the Property
+● Prospective buyers or lessees of the Property
+● Lenders or financing institutions
+● Insurance companies (except as Additional Insured per Section 5.2(b))
+● Property managers or HOA members
+● Subsequent owners of the Property
+● Contractors performing remediation work
+● Municipal or governmental authorities
+13.2 Reports Prepared Solely for Client
+The Contractor's Reports are prepared exclusively for the Client's use and benefit in
+connection with the Client's management, maintenance, and operation of the Property. The
+Reports are not intended for use by, and should not be relied upon by, any other party.
+13.3 Prohibition on Third-Party Reliance Without Consent
+NO THIRD PARTY SHALL HAVE THE RIGHT TO RELY ON THE CONTRACTOR'S
+REPORTS, OPINIONS, OR SERVICES WITHOUT THE CONTRACTOR'S EXPRESS PRIOR
+WRITTEN CONSENT, which may be granted or withheld in the Contractor's sole discretion and
+may be conditioned upon:
+● Execution of a separate reliance agreement
+● Payment of additional fees
+● Acceptance of additional disclaimers and limitations
+● Provision of additional information or access
+The Client shall not represent, expressly or impliedly, that any third party has the right to rely on
+the Contractor's Reports without such written consent.
+13.4 Limited Exception for Permitted Third Parties
+Notwithstanding Section 13.3, the Contractor acknowledges that the Client may need to share
+Reports with certain parties as specified in Section 12.5(a) (insurance companies, lenders,
+legal/financial advisors, prospective buyers, municipal authorities).
+For such Permitted Third Parties, the Contractor agrees that the Reports may be shared,
+PROVIDED THAT:
+(a) The Reports are provided in complete and unaltered form, including all disclaimers,
+limitations, and qualifications;
+(b) The third party receives a copy of this Section 13 and Section 3 (Limitation of Liability);
+(c) The Contractor has no obligation to update the Reports or provide additional information to
+such third parties;
+(d) The Contractor's liability to such Permitted Third Parties is subject to the same limitations
+and caps set forth in Section 3 of this Agreement;
+(e) Such Permitted Third Parties' reliance is at their own risk, and they must conduct their own
+independent due diligence; and
+(f) The Client indemnifies the Contractor for claims by such third parties to the extent provided in
+Section 4.
+13.5 No Duty of Care to Third Parties
+The Contractor owes no professional duty of care to any third party. Under Texas law, as
+established in Black + Vernooy Architects v. Smith, 346 S.W.3d 877 (Tex. App.—Austin 2011),
+the Contractor's duty of care arises from the contractual relationship with the Client, not from
+common law tort principles.
+The Contractor does not assume, and expressly disclaims, any duty to:
+● Inspect the Property for the benefit of third parties
+● Discover defects that may harm third parties
+● Warn third parties of hazardous conditions
+● Protect third parties from electrical hazards at the Property
+Third parties who may be affected by conditions at the Property must rely on their own
+inspections, advisors, and due diligence.
+13.6 No Control Over Work
+The Contractor's Services are limited to inspection and reporting. The Contractor:
+● Does not design, construct, repair, or maintain electrical systems
+● Does not have the "right to control" electrical work at the Property
+● Does not direct, supervise, or manage contractors performing repairs or remediation
+● Does not assume responsibility for the adequacy or safety of work performed by others
+Under Texas law's "right to control" test (Coastal Marine Service of Texas, Inc. v. Lawrence, 988
+S.W.2d 223), the Contractor is not liable for defects in construction or repair work absent actual
+control over such work.
+13.7 Tenant Notification
+If the Client is required by law or lease agreements to provide tenants with copies of electrical
+inspection reports, the Client shall:
+(a) Include a written notice to tenants stating:
+"This electrical inspection report was prepared for the property owner/management
+and is provided to you for informational purposes only. The inspection contractor
+does not owe any duty of care to tenants and is not liable for any claims by tenants.
+If you have concerns about electrical safety, you should report them to property
+management and/or engage your own qualified electrical inspector."
+(b) Include the Contractor's complete disclaimers and limitations from the Reports;
+(c) Not misrepresent the scope or findings of the Reports; and
+(d) Indemnify the Contractor for any claims by tenants arising from the provision of Reports to
+tenants.
+13.8 Subsequent Owners
+If the Client sells or transfers the Property:
+(a) This Agreement does not automatically transfer to the new owner unless the Contractor
+consents in writing;
+(b) The Contractor's prior Reports may be provided to prospective buyers for due diligence
+purposes (subject to Section 12.5 and this Section 13), but the Contractor has no obligation to
+provide updated Reports, answer questions, or assist the prospective buyer unless separately
+contracted;
+(c) The new owner is not a third-party beneficiary of this Agreement and may not enforce its
+terms or rely on prior Reports without executing a new agreement with the Contractor;
+(d) The Client shall notify the Contractor in writing if the Property is sold and this Agreement is
+terminated.
+14. RECORDS RETENTION
+14.1 Contractor's Records
+The Contractor shall maintain records of the Services performed under this Agreement for a
+period of four (4) years following completion of each inspection cycle, in accordance with 16
+TAC §73.51 (Texas electrical contractor record-keeping requirements).
+Such records shall include:
+● Copies of all Reports delivered to the Client
+● Inspection notes, checklists, and field data
+● Photographic documentation and infrared thermography images
+● Calibration records for testing equipment
+● Invoice and payment records
+● Correspondence with the Client regarding the Services
+● Remediation tracking and re-inspection results
+14.2 Client's Records
+The Client shall maintain records for at least four (4) years, including:
+● All Reports received from the Contractor
+● Electrical repair and remediation invoices and receipts
+● Permits and municipal inspection records
+● Correspondence regarding electrical deficiencies and remediation
+● Documentation of tenant notifications
+● Access logs and scheduling confirmations
+14.3 Production for Legal Proceedings
+If records are needed for litigation, insurance claims, or regulatory proceedings, each party
+shall:
+● Preserve all relevant records and not destroy them during any active or reasonably
+anticipated legal matter
+● Cooperate in producing records in response to valid subpoenas or discovery requests
+● Be entitled to reimbursement of reasonable costs for record production (copying,
+attorney review time, etc.) from the requesting party if not otherwise required by law
+15. DISPUTE RESOLUTION
+15.1 Informal Negotiation
+Before initiating mediation or litigation, the parties agree to first attempt to resolve any dispute,
+claim, or controversy arising out of or relating to this Agreement through good-faith informal
+negotiations between senior representatives of each party who have authority to settle the
+dispute.
+Either party may initiate informal negotiations by sending a written notice describing the dispute
+to the other party. Within fourteen (14) days of such notice, representatives of both parties shall
+meet (in person or by videoconference) and attempt to resolve the dispute.
+15.2 Mandatory Mediation
+If the parties are unable to resolve the dispute through informal negotiations within thirty (30)
+days of the initial notice, either party may require non-binding mediation by sending written
+notice to the other party.
+(a) Selection of Mediator:
+Within fourteen (14) days of the mediation notice, the parties shall mutually agree upon a
+mediator. If the parties cannot agree on a mediator, either party may request that a mediator be
+appointed by the American Arbitration Association (AAA) or another mutually agreed dispute
+resolution organization.
+(b) Mediation Location:
+Mediation shall take place in [City, County], Texas, or by videoconference if mutually agreed.
+(c) Mediation Costs:
+The parties shall share the mediator's fees and expenses equally. Each party shall bear its own
+attorneys' fees and costs.
+(d) Mediation Timeline:
+The mediation session shall be scheduled within sixty (60) days of the mediator's acceptance
+of the appointment, unless the parties and mediator mutually agree to extend the timeline.
+(e) Confidentiality:
+All mediation communications shall be confidential and inadmissible in any subsequent
+proceeding, except as required by law.
+15.3 Litigation as Last Resort
+If the parties are unable to resolve the dispute through mediation (or if either party refuses to
+participate in mediation), either party may pursue litigation in accordance with Sections 16 and
+18.
+Exception for Injunctive Relief: Notwithstanding the foregoing, either party may seek
+immediate injunctive or equitable relief in court without first completing informal negotiations
+or mediation if necessary to:
+● Prevent irreparable harm
+● Enforce confidentiality obligations (Section 12)
+● Enforce temporary restraining orders
+● Preserve evidence
+15.4 Attorneys' Fees
+In any litigation or arbitration arising from this Agreement, the prevailing party shall be
+entitled to recover its reasonable attorneys' fees and costs from the non-prevailing party, as
+determined by the court or arbitrator.
+"Prevailing party" means the party who obtains substantially the relief sought, whether by
+judgment, settlement, or dismissal of the other party's claims.
+15.5 Continuance of Performance During Disputes
+Unless otherwise agreed or unless a court issues an order requiring suspension, both parties
+shall continue performing their respective obligations under this Agreement during any
+dispute resolution process, provided that:
+● The Client continues to make payments that are not directly subject to the dispute
+● The Contractor continues to perform scheduled inspections not directly affected by the
+dispute
+● Either party may suspend performance if the dispute directly prevents performance or
+creates safety concerns
+16. CONTRACTUAL STATUTE OF LIMITATIONS
+16.1 Two-Year Limitation Period
+TO THE FULLEST EXTENT PERMITTED BY TEXAS CIVIL PRACTICE AND REMEDIES
+CODE §16.070, ANY ACTION OR PROCEEDING BY EITHER PARTY TO ENFORCE ANY
+PROVISION OF THIS AGREEMENT, OR ARISING OUT OF ANY ALLEGED BREACH OF
+THIS AGREEMENT, OR SEEKING DAMAGES FOR PERSONAL INJURY OR PROPERTY
+DAMAGE ARISING OUT OF OR RELATED TO THE SERVICES, MUST BE COMMENCED
+WITHIN TWO (2) YEARS FROM THE DATE THE CAUSE OF ACTION ACCRUES.
+16.2 Accrual of Cause of Action
+For purposes of this Section 16, a cause of action shall accrue:
+(a) For Breach of Contract Claims:
+On the date of the alleged breach. For inspection-related claims, this is generally the date the
+Report is delivered to the Client.
+(b) For Negligence or Professional Liability Claims:
+On the date the alleged negligent act or omission occurred, or the date the Services were
+completed, whichever is later.
+(c) For Payment Disputes:
+On the date payment was due and not made.
+(d) Discovery Rule Does Not Extend Period:
+The two-year period begins on the accrual date as defined above, not on the date the claimant
+discovered or should have discovered the injury or breach.
+16.3 Written Notice of Claims Required
+As required by Texas Civil Practice and Remedies Code §16.071, any party asserting a claim
+under this Agreement must provide the other party with written notice of the claim within
+ninety (90) days of the date the cause of action accrues (or within ninety days of discovery if
+the discovery rule applies).
+(a) Notice must:
+● Be in writing
+● Describe the nature of the claim with reasonable specificity
+● State the legal basis for the claim (breach of contract, negligence, etc.)
+● Be sent via certified mail or hand delivery to the addresses specified in Section 19
+(b) Failure to provide timely written notice may bar the claim unless the failure to notify is
+specifically pleaded under oath by the party claiming lack of notice.
+(c) Exception: Notice requirements do not apply to actions for debt or sworn accounts.
+16.4 Compliance with Minimum Standards
+This contractual limitations period:
+● Meets the minimum two-year period required by Texas Civil Practice and Remedies
+Code §16.070
+● Is enforceable to the maximum extent permitted by Texas law
+● Does not reduce any longer limitations period that may apply under statute (such as the
+10-year statute of repose for construction defects)
+● Applies to all claims arising from or related to this Agreement, including contract,
+tort, negligence, strict liability, and statutory claims
+16.5 Preservation of Statute of Repose
+Nothing in this Section 16 is intended to extend or shorten any applicable statute of repose
+under Texas law, including:
+● Ten-year statute of repose for construction-related claims under Texas Civil Practice and
+Remedies Code §16.009
+● Ten-year statute of repose for architects and engineers under Texas Civil Practice and
+Remedies Code §16.008
+If a statute of repose applies and provides a shorter period than the two-year contractual
+limitation, the shorter period shall control.
+16.6 Tolling and Suspension
+The two-year contractual limitations period may be tolled or suspended in accordance with
+applicable Texas law, including but not limited to:
+● Death of a party (12-month suspension per Texas Civil Practice and Remedies Code
+§16.062)
+● Defendant's absence from Texas (suspension during absence per §16.063)
+● Legal disability of a minor or person of unsound mind (suspension while disability exists
+per §16.001)
+● Fraudulent concealment of a cause of action
+● Written presentation of a claim during the limitations period (extends limitations by two
+years per §16.009)
+17. FORCE MAJEURE
+17.1 Definition
+Neither party shall be liable for any delay, failure to perform, or breach of this Agreement arising
+from circumstances beyond its reasonable control (a "Force Majeure Event"), including but not
+limited to:
+● Acts of God (earthquakes, floods, hurricanes, tornadoes, severe weather)
+● Fire, explosion, or natural disasters
+● Epidemics, pandemics, or public health emergencies
+● War, invasion, terrorism, or armed conflict
+● Strikes, labor disputes, or lockouts (not involving the party's own employees)
+● Riots, civil unrest, or insurrection
+● Government orders, regulations, or actions (including evacuation orders, quarantines, or
+shelter-in-place mandates)
+● Failure or interruption of utilities, transportation, or telecommunications
+● Inability to obtain necessary materials, supplies, or equipment
+● Cyberattacks, hacking, or technology failures beyond the party's control
+17.2 Notice and Mitigation
+(a) Notice:
+A party affected by a Force Majeure Event shall:
+● Notify the other party within seven (7) days of becoming aware of the event
+● Describe the nature of the Force Majeure Event and its expected impact
+● Provide reasonable updates as circumstances evolve
+(b) Mitigation:
+The affected party shall use commercially reasonable efforts to:
+● Minimize the impact of the Force Majeure Event
+● Resume performance as soon as reasonably practicable
+● Find alternative means of performance if feasible
+17.3 Suspension of Performance
+During a Force Majeure Event:
+(a) The affected party's performance obligations shall be suspended for the duration of the
+Force Majeure Event, but only to the extent performance is actually prevented or materially
+hindered by the event.
+(b) The non-affected party's payment obligations for Services already performed shall not be
+suspended.
+(c) Deadlines and timeframes shall be extended by the duration of the Force Majeure Event,
+provided the affected party is diligently working to resume performance.
+17.4 Termination for Extended Force Majeure
+If a Force Majeure Event continues for more than ninety (90) consecutive days and
+substantially prevents either party from performing its material obligations:
+(a) Either party may terminate this Agreement upon thirty (30) days' written notice to the other
+party;
+(b) Upon such termination:
+● The Client shall pay for all Services performed and expenses incurred through the
+termination date
+● Neither party shall be liable to the other for consequential damages resulting from the
+Force Majeure termination
+● All other termination provisions in Section 10.5 shall apply
+17.5 Force Majeure Does Not Excuse Payment
+Force Majeure does not excuse the Client's obligation to pay for Services already
+performed prior to or during the Force Majeure Event, nor does it excuse payment of
+undisputed invoices that became due before the Force Majeure Event occurred.
+17.6 Pandemic-Specific Provisions
+In the event of a pandemic, epidemic, or public health emergency:
+(a) If federal, state, or local authorities impose restrictions that prevent in-person inspections
+(such as lockdowns, quarantines, or building access restrictions), the parties shall work
+cooperatively to:
+● Postpone inspections to a mutually agreed later date
+● Conduct remote consultations or document reviews (if feasible and if the Client provides
+necessary documentation)
+● Adjust inspection protocols to comply with health and safety requirements (PPE, social
+distancing, etc.)
+(b) Any additional costs incurred due to enhanced health and safety protocols (PPE,
+disinfection, health screenings, etc.) shall be borne by the party incurring such costs unless
+otherwise mutually agreed.
+18. GOVERNING LAW AND JURISDICTION
+18.1 Texas Law Governs
+This Agreement shall be governed by and construed in accordance with the laws of the State
+of Texas, without regard to its conflicts of laws principles.
+All substantive and procedural aspects of this Agreement, including formation, performance,
+breach, and remedies, shall be determined under Texas law, including but not limited to:
+● Texas Occupations Code Chapter 1305 (Electrical Safety and Licensing Act)
+● 16 TAC Chapter 73 (Electricians regulations)
+● Texas Insurance Code Chapter 151 (Texas Anti-Indemnity Act)
+● Texas Civil Practice and Remedies Code (including statutes of limitations)
+● Texas Business & Commerce Code (including contracts and commercial transactions)
+● Texas Property Code (to the extent applicable to multi-unit residential property)
+● The 2023 National Electrical Code as adopted by Texas
+18.2 Exclusive Venue
+Any lawsuit or legal proceeding arising from or related to this Agreement must be brought
+exclusively in the state or federal courts located in [County Name] County, Texas.
+(a) Mandatory Venue:
+The parties agree that the courts of [County Name] County, Texas (both state district courts and
+federal district court for the [specify] District of Texas) shall have exclusive jurisdiction over
+any disputes arising from this Agreement.
+(b) Waiver of Objections:
+Each party irrevocably waives any objection to venue in [County Name] County, Texas, and
+any claim that such courts are an inconvenient forum.
+(c) Personal Jurisdiction:
+By executing this Agreement, each party consents to the personal jurisdiction of the courts of
+[County Name] County, Texas for any proceeding arising from this Agreement.
+18.3 Texas Anti-SLAPP Statute
+The parties acknowledge that Texas has enacted the Citizens Participation Act (Texas Civil
+Practice and Remedies Code Chapter 27), also known as the Texas Anti-SLAPP statute, which
+provides for expedited dismissal of lawsuits that are based on, relate to, or are in response to a
+party's exercise of the right of free speech, right to petition, or right of association.
+Nothing in this Agreement waives any party's rights under Chapter 27, and each party retains all
+defenses, remedies, and procedures available under that statute.
+18.4 Severability
+If any provision of this Agreement is held to be invalid, illegal, or unenforceable by a court of
+competent jurisdiction:
+(a) The invalid provision shall be severed from this Agreement;
+(b) The remaining provisions shall remain in full force and effect to the maximum extent
+possible;
+(c) If severing the invalid provision would substantially frustrate the parties' intent or render the
+Agreement commercially impracticable, the parties shall negotiate in good faith to replace the
+invalid provision with a valid provision that achieves the parties' original intent as closely as
+possible.
+18.5 No Waiver
+No waiver of any provision of this Agreement shall be effective unless in writing and signed by
+the party against whom the waiver is sought to be enforced. No failure or delay by either party in
+exercising any right, power, or privilege under this Agreement shall operate as a waiver thereof,
+nor shall any single or partial exercise preclude any other or further exercise of any right, power,
+or privilege.
+19. NOTICE PROVISIONS
+19.1 Required Method
+All notices, demands, consents, approvals, or other communications required or permitted
+under this Agreement (collectively, "Notices") must be in writing and shall be deemed properly
+given if:
+(a) Delivered personally (with signed receipt);
+(b) Sent by certified or registered mail, return receipt requested, postage prepaid;
+(c) Sent by a nationally recognized overnight courier service (FedEx, UPS, etc.) with tracking
+and delivery confirmation; or
+(d) Sent by email to the addresses specified below, provided that a hard copy is also sent by
+one of the methods in (a)-(c) within two (2) business days (email alone is insufficient for formal
+notices).
+19.2 Notice Addresses
+Notices shall be sent to the following addresses:
+If to Client:
+[Client Legal Name]
+Attention: [Name and Title]
+Address: [Street Address]
+City, State ZIP: [City], TX [ZIP]
+Email: [Email Address]
+Phone: [Phone Number]
+If to Contractor:
+[Contractor Legal Name]
+Attention: [Name and Title]
+Address: [Street Address]
+City, State ZIP: [City], TX [ZIP]
+Email: [Email Address]
+Phone: [Phone Number]
+Texas Electrical Contractor License No.: [License Number]
+19.3 Change of Address
+Either party may change its notice address by providing written notice to the other party in
+accordance with this Section 19. The change of address shall be effective ten (10) days after
+receipt of the notice.
+19.4 Deemed Receipt
+Notices shall be deemed received:
+● Personal delivery: On the date of delivery with signed receipt
+● Certified/registered mail: Three (3) business days after mailing
+● Overnight courier: On the date shown on the delivery confirmation
+● Email (when followed by hard copy): On the date the email was sent (if sent during
+normal business hours on a business day), or the next business day (if sent after
+business hours or on a weekend/holiday)
+20. GENERAL PROVISIONS
+20.1 Entire Agreement
+This Agreement, including all Exhibits attached hereto and incorporated by reference,
+constitutes the entire agreement between the parties concerning the subject matter hereof and
+supersedes all prior and contemporaneous agreements, understandings, negotiations,
+and discussions, whether oral or written, between the parties.
+There are no representations, warranties, covenants, or agreements between the parties except
+as expressly set forth in this Agreement.
+20.2 Amendments
+This Agreement may be amended, modified, or supplemented only by a written instrument
+executed by both parties. No oral modification shall be effective.
+Changes to the scope of Services, pricing, or schedule may be made by written Change Order
+signed by both parties. Change Orders shall be deemed incorporated into this Agreement.
+20.3 Assignment
+(a) By Client:
+The Client may not assign, transfer, or delegate this Agreement or any rights or obligations
+hereunder without the Contractor's prior written consent, except:
+● In connection with a sale or transfer of the Property, provided the assignee assumes all
+of the Client's obligations in writing and the Contractor consents (not to be unreasonably
+withheld)
+● To an affiliate, subsidiary, or entity under common control, with notice to the Contractor
+(b) By Contractor:
+The Contractor may not assign this Agreement without the Client's prior written consent,
+except:
+● To an affiliate, subsidiary, or successor entity, provided the assignee maintains
+equivalent licensing, insurance, and professional qualifications
+● The Contractor may subcontract portions of the Services to qualified subcontractors
+without the Client's consent, provided the Contractor remains fully responsible for the
+subcontractors' performance
+(c) Attempted Assignment:
+Any attempted assignment in violation of this Section 20.3 shall be void and of no effect.
+(d) Binding on Successors:
+Subject to the restrictions above, this Agreement shall be binding upon and inure to the benefit
+of the parties' permitted successors and assigns.
+20.4 Independent Contractor Relationship
+The Contractor is an independent contractor and not an employee, agent, partner, or joint
+venturer of the Client. Nothing in this Agreement creates an employment relationship,
+partnership, joint venture, or agency relationship between the parties.
+The Contractor shall:
+● Be solely responsible for all employment taxes, workers' compensation insurance, and
+benefits for its employees
+● Have sole control over the manner and means of performing the Services, subject to
+achieving the results specified in this Agreement
+● Provide its own tools, equipment, and materials
+● Be free to contract with other clients
+20.5 No Third-Party Beneficiaries
+As emphasized in Section 13, this Agreement is for the sole benefit of the Client and the
+Contractor. No third party shall have any rights under this Agreement, and no third party
+shall be a third-party beneficiary of this Agreement.
+20.6 Counterparts and Electronic Signatures
+This Agreement may be executed in one or more counterparts, each of which shall be deemed
+an original and all of which together shall constitute one and the same instrument.
+The parties agree that electronic signatures and electronically executed documents shall have
+the same legal effect as original signatures and manually executed documents under:
+● The Uniform Electronic Transactions Act (as adopted in Texas)
+● The federal Electronic Signatures in Global and National Commerce Act (E-SIGN Act)
+● Any other applicable law
+Delivery of an executed counterpart by email (PDF) or electronic signature platform (DocuSign,
+Adobe Sign, etc.) shall be effective delivery.
+20.7 Further Assurances
+Each party agrees to execute and deliver such additional documents and instruments, and to
+take such further actions, as may be reasonably necessary or desirable to effectuate the
+purposes and intent of this Agreement.
+20.8 Cooperation with Insurance Claims
+If either party makes a claim under its insurance policies arising from this Agreement or the
+Services:
+(a) The other party shall reasonably cooperate in providing information, documentation, and
+testimony as may be required by the insurance carrier;
+(b) Such cooperation shall not constitute an admission of liability;
+(c) The party making the claim shall reimburse the cooperating party's reasonable out-of-pocket
+expenses (but not attorneys' fees or personnel time) if the cooperation requires substantial time
+or travel.
+20.9 Compliance with Laws
+Each party shall comply with all applicable federal, state, and local laws, regulations, and
+ordinances in performing its obligations under this Agreement, including but not limited to:
+● Texas electrical licensing and safety laws
+● OSHA workplace safety regulations
+● Building codes and electrical codes
+● Fair Labor Standards Act and employment laws
+● Anti-discrimination and civil rights laws
+● Environmental laws
+● Data privacy and security laws (if applicable)
+20.10 Headings
+The section and subsection headings in this Agreement are for convenience of reference only
+and shall not affect the interpretation or construction of this Agreement.
+20.11 Interpretation Rules
+(a) Drafting:
+This Agreement has been negotiated by both parties with the assistance of legal counsel. It
+shall not be construed against either party as the "drafter."
+(b) Including/Including But Not Limited To:
+The words "including," "including but not limited to," and similar phrases shall be deemed to be
+followed by the phrase "without limitation."
+(c) Singular/Plural:
+Unless the context otherwise requires, words in the singular include the plural and vice versa.
+(d) Business Days:
+When this Agreement specifies a period of "days" without further qualification, it means
+calendar days. "Business Days" means Monday through Friday, excluding federal and Texas
+state holidays.
+21. ACKNOWLEDGMENTS AND REPRESENTATIONS
+21.1 Client Acknowledgments
+The Client acknowledges and agrees that:
+(a) The Client has read and understands all provisions of this Agreement, including:
+● The limitations on scope of Services (Sections 1 and 2)
+● The limitation of liability provisions (Section 3)
+● The indemnification provisions (Section 4)
+● The insurance requirements (Section 5)
+● The third-party disclaimer (Section 13)
+● The contractual statute of limitations (Section 16)
+(b) The Client has had the opportunity to consult with legal counsel regarding this
+Agreement and has either done so or voluntarily waived the opportunity;
+(c) The Client understands that the Contractor's Services are limited to inspection and
+reporting, and that the Contractor does not design, repair, or maintain electrical systems;
+(d) The Client understands that the Contractor cannot discover all defects, particularly those
+that are latent, concealed, or intermittent;
+(e) The Client accepts the risks inherent in electrical inspection services and agrees to the
+allocation of risks set forth in this Agreement;
+(f) The Client represents that it has authority to enter into this Agreement and to bind the
+property owner, HOA, or management company on whose behalf it is acting;
+(g) The Client represents that it has provided the Contractor with accurate information about
+the Property, including the number of units, building configuration, and any known electrical
+issues;
+(h) The Client understands that it is the Client's responsibility to remediate deficiencies
+identified in the Reports and to maintain the Property's electrical systems in safe and
+code-compliant condition.
+21.2 Contractor Representations and Warranties
+The Contractor represents and warrants that:
+(a) The Contractor holds all licenses, permits, and certifications required by Texas law to
+perform electrical inspection services, including:
+● Valid Texas electrical contractor license (number specified on signature page)
+● Master Electrician on staff or under employment
+● Compliance with TDLR requirements under Texas Occupations Code Chapter 1305 and
+16 TAC Chapter 73
+(b) The Contractor maintains the insurance coverage required by Section 5 and shall provide
+proof of insurance upon request;
+(c) The Services shall be performed in a workmanlike manner consistent with the standard of
+care, skill, and diligence ordinarily exercised by electrical inspectors performing similar services
+in Texas under similar circumstances;
+(d) The Contractor shall perform the Services using personnel who are qualified and
+experienced in electrical inspection, infrared thermography, and applicable codes and
+standards;
+(e) The Contractor's personnel shall perform the Services in accordance with:
+● The 2023 National Electrical Code as adopted by Texas
+● NFPA 70B-2023 and NFPA 70E standards
+● Industry best practices
+● All applicable safety regulations
+(f) The Contractor has the expertise, resources, and capability to perform the Services as
+described in this Agreement;
+(g) To the Contractor's knowledge, there are no legal proceedings, license suspensions, or
+regulatory actions pending against the Contractor that would materially impair its ability to
+perform the Services.
+21.3 NO OTHER WARRANTIES
+EXCEPT AS EXPRESSLY SET FORTH IN SECTION 21.2, THE CONTRACTOR MAKES NO
+OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES
+OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+The Contractor specifically disclaims any warranty:
+● That all defects will be discovered
+● That the electrical systems will operate without failure
+● That the Property complies with all applicable codes
+● Regarding the future performance or longevity of electrical systems
+● That the Reports are suitable for any purpose other than the Client's internal use
+21.4 Mutual Representations
+Each party represents and warrants to the other that:
+(a) It has full power and authority to enter into and perform this Agreement;
+(b) The execution and performance of this Agreement does not violate any other agreement,
+court order, or law to which it is subject;
+(c) The person signing this Agreement on its behalf has the authority to bind the party;
+(d) All information provided to the other party is accurate and complete to the best of its
+knowledge.
+22. SIGNATURES
+BY SIGNING BELOW, THE PARTIES ACKNOWLEDGE THAT THEY HAVE READ,
+UNDERSTOOD, AND AGREE TO BE BOUND BY ALL TERMS AND CONDITIONS OF THIS
+AGREEMENT, INCLUDING THE CONSPICUOUS LIMITATION OF LIABILITY,
+INDEMNIFICATION, AND CONTRACTUAL STATUTE OF LIMITATIONS PROVISIONS.
+CLIENT:
+[Legal Name of Building Owner/Property Manager/HOA]
+By: __________________________________
+Print Name: ___________________________
+Title: _______________________________
+Date: _______________________________
+CONTRACTOR:
+[Your Company Legal Name]
+By: __________________________________
+Print Name: ___________________________
+Title: _______________________________
+Date: _______________________________
+Texas Electrical Contractor License No.: __________________
+Master Electrician License No.: __________________
+EXHIBIT A: SCHEDULE OF SERVICES
+Property Information:
+Property Name: [Name of Multi-Unit Building/Complex]
+Property Address:
+[Street Address]
+[City], TX [ZIP Code]
+[County] County
+Property Description:
+[Brief description: e.g., "A 50-unit, 5-story multi-family residential apartment building with
+underground parking garage, built in 1998, with recent electrical panel upgrades in 2020."]
+Residential Units to Be Inspected:
+Total Number of Units: [___] units
+Unit Breakdown by Floor:
+● 1st Floor: [___] units (Unit numbers: [specify if needed])
+● 2nd Floor: [___] units (Unit numbers: [specify if needed])
+● 3rd Floor: [___] units (Unit numbers: [specify if needed])
+● 4th Floor: [___] units (Unit numbers: [specify if needed])
+● 5th Floor: [___] units (Unit numbers: [specify if needed])
+● Other (if applicable): [___] units
+Unit Types (if varied):
+● 1-Bedroom Units: [___]
+● 2-Bedroom Units: [___]
+● 3-Bedroom Units: [___]
+● Other: [___]
+Exclusions (if any):
+[List any units specifically excluded from inspection, with reason if applicable]
+Common Areas to Be Inspected:
+Total Number of Common Area Floors: [___] floors
+Floor-by-Floor Breakdown:
+Floor Level Description of
+Common Areas
+Electrical Components to Be
+Inspected
+Ground/1st Floor Main lobby, mailroom,
+management office,
+ground-floor hallways
+Main service entrance, house panel,
+lobby lighting, hallway receptacles and
+lighting, management office panel
+2nd Floor Hallways, laundry
+room, common storage
+Floor distribution panel, hallway lighting
+and receptacles, emergency lighting, exit
+signs, laundry room panel and
+equipment
+3rd Floor Hallways, resident
+lounge, fitness center
+Floor distribution panel, hallway lighting
+and receptacles, emergency lighting,
+lounge and fitness center panels and
+lighting
+4th Floor Hallways, conference
+room
+Floor distribution panel, hallway lighting
+and receptacles, emergency lighting,
+conference room panel
+5th Floor Hallways, rooftop
+access
+Floor distribution panel, hallway lighting
+and receptacles, emergency lighting,
+roof access lighting
+Rooftop/Mechanical HVAC equipment,
+elevator mechanical
+room
+Rooftop HVAC electrical connections,
+elevator equipment electrical systems,
+mechanical room panels
+Basement/Parking
+Garage (if applicable)
+Underground parking,
+utility room, storage
+Garage lighting and receptacles, utility
+room main panels and sub-panels, sump
+pump electrical, vehicle charging
+stations (if present)
+Special Systems (if applicable):
+● Fire alarm panel integration points: [Location(s)]
+● Emergency generator (if present): [Location and scope of inspection]
+● Electric vehicle charging stations: [Number and location]
+● Pool/spa electrical systems (if applicable): [Location]
+● Irrigation system electrical (if applicable): [Brief description]
+Exclusions:
+[List any common areas specifically excluded, such as "roof mechanical systems owned by
+HVAC vendor" or "tenant storage lockers"]
+Inspection Frequency Selected:
+☐ Annual Inspection
+First inspection to be completed by: [Target Date]
+☐ Biannual Inspection
+First inspection to be completed by: [Target Date #1]
+Second inspection to be completed by: [Target Date #2]
+☐ Other Frequency: [Specify custom schedule]
+Fee Summary:
+Per-Unit Fee: $500.00 per residential unit
+Common Area Fee: $3,000.00 per floor
+Calculation:
+● **Residential Units:** [___] units × 500.00=∗∗500.00 = ** 500.00=∗∗[________]**
+● **Common Area Floors:** [___] floors × 3,000.00=∗∗3,000.00 = **
+3,000.00=∗∗[________]**
+TOTAL ESTIMATED FEE PER INSPECTION CYCLE: $[________]
+(Subject to adjustment for actual units inspected and any additional services per Section 7)
+Special Considerations or Notes:
+[Use this section to document any special circumstances, such as:
+● "Building is partially occupied; vacant units to be inspected separately"
+● "Tenant access may be limited on weekends; prefer weekday inspections"
+● "Property management will provide master keys and escort service"
+● "Previous inspection reports from 20XX available for comparison"
+● "Municipal inspection program requires copy of reports to be filed with [City] Building
+Department"
+● Any other relevant information]
+This Exhibit A is incorporated into and made a part of the Electrical Inspection Service
+Agreement dated [Date].
+Client Initials: _____
+Contractor Initials: _____
+[End of Agreement]

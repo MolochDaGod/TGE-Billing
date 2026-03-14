@@ -1850,7 +1850,8 @@ Return ONLY a valid JSON object with this structure:
       }
 
       // Verify user has access to this conversation
-      if (conversation.user_id !== req.user.id && req.user.role !== 'admin') {
+      const managerRoles = ['pirate_king', 'admin', 'partner'];
+      if (conversation.user_id !== req.user.id && !managerRoles.includes(req.user.role)) {
         return res.status(403).json({ message: "Access denied" });
       }
 
@@ -1885,7 +1886,7 @@ Return ONLY a valid JSON object with this structure:
     }
   });
 
-  app.post('/api/ai-agents', isAuthenticated, requireRole('admin'), async (req, res) => {
+  app.post('/api/ai-agents', isAuthenticated, requireRole('pirate_king', 'admin', 'partner'), async (req, res) => {
     try {
       const agentData = insertAIAgentSchema.parse(req.body);
       const agent = await storage.createAIAgent(agentData);
@@ -1896,7 +1897,7 @@ Return ONLY a valid JSON object with this structure:
     }
   });
 
-  app.patch('/api/ai-agents/:id', isAuthenticated, requireRole('admin'), async (req, res) => {
+  app.patch('/api/ai-agents/:id', isAuthenticated, requireRole('pirate_king', 'admin', 'partner'), async (req, res) => {
     try {
       const { id } = req.params;
       const agent = await storage.updateAIAgent(id, req.body);
@@ -1989,7 +1990,7 @@ Return ONLY a valid JSON object with this structure:
     }
   });
 
-  app.get('/api/sales-leads', isAuthenticated, requireRole('admin', 'employee'), async (req, res) => {
+  app.get('/api/sales-leads', isAuthenticated, requireRole('pirate_king', 'admin', 'partner', 'staff_captain', 'staff', 'employee'), async (req, res) => {
     try {
       const leads = await storage.getAllSalesLeads();
       res.json(leads);

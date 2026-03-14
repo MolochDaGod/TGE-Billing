@@ -29,7 +29,7 @@ export function useVoiceActivation({
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { user } = useAuth();
 
-  const isEligibleRole = user?.role === "admin" || user?.role === "employee";
+  const isEligibleRole = ["pirate_king", "admin", "partner", "staff_captain", "staff"].includes(user?.role || "");
 
   // Initialize speech recognition - ONLY ONCE
   useEffect(() => {

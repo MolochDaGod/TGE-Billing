@@ -16,7 +16,8 @@ import {
   MessageSquare,
   ClipboardList,
   Building2,
-  Sparkles
+  Sparkles,
+  Gift
 } from "lucide-react";
 import {
   Sidebar,
@@ -101,7 +102,19 @@ export function AppSidebar() {
     { title: "My Dashboard", url: "/client-dashboard", icon: Home },
     { title: "Request Service", url: "/customer-portal", icon: MessageSquare },
     { title: "My Invoices", url: "/invoices", icon: FileText },
+    { title: "Referrals", url: "/referrals", icon: Gift },
     { title: "About Us", url: "/about", icon: Info },
+  ];
+
+  // Partner-only System items (partners co-manage the business)
+  const partnerSystemItems = [
+    { title: "Users", url: "/users", icon: Users },
+    { title: "Settings", url: "/settings", icon: Settings },
+  ];
+
+  // Vendor additional items
+  const vendorAIItems = [
+    { title: "AI Agents", url: "/ai-agents", icon: Bot },
   ];
 
   const getHelpItems = () => {
@@ -255,28 +268,68 @@ export function AppSidebar() {
                 </SidebarMenu>
               </SidebarGroupContent>
             </SidebarGroup>
+
+            {/* Partners also get System access (Users + Settings) */}
+            {role === 'partner' && (
+              <SidebarGroup>
+                <SidebarGroupLabel>System</SidebarGroupLabel>
+                <SidebarGroupContent>
+                  <SidebarMenu>
+                    {partnerSystemItems.map((item) => (
+                      <SidebarMenuItem key={item.title}>
+                        <SidebarMenuButton asChild isActive={location === item.url} data-testid={`nav-${item.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                          <Link href={item.url}>
+                            <item.icon className="h-4 w-4" />
+                            <span>{item.title}</span>
+                          </Link>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    ))}
+                  </SidebarMenu>
+                </SidebarGroupContent>
+              </SidebarGroup>
+            )}
           </>
         )}
 
         {/* Vendor Role (Service Providers) */}
         {role === 'vendor' && (
-          <SidebarGroup>
-            <SidebarGroupLabel>My Work</SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {vendorItems.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={location === item.url} data-testid={`nav-${item.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                      <Link href={item.url}>
-                        <item.icon className="h-4 w-4" />
-                        <span>{item.title}</span>
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
+          <>
+            <SidebarGroup>
+              <SidebarGroupLabel>My Work</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {vendorItems.map((item) => (
+                    <SidebarMenuItem key={item.title}>
+                      <SidebarMenuButton asChild isActive={location === item.url} data-testid={`nav-${item.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                        <Link href={item.url}>
+                          <item.icon className="h-4 w-4" />
+                          <span>{item.title}</span>
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  ))}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+            <SidebarGroup>
+              <SidebarGroupLabel>Tools</SidebarGroupLabel>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {vendorAIItems.map((item) => (
+                    <SidebarMenuItem key={item.title}>
+                      <SidebarMenuButton asChild isActive={location === item.url} data-testid={`nav-${item.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                        <Link href={item.url}>
+                          <item.icon className="h-4 w-4" />
+                          <span>{item.title}</span>
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  ))}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </>
         )}
 
         {/* Client Role (Customers - Sales Portal) */}

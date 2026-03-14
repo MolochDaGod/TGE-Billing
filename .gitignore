@@ -15,3 +15,6 @@ vite.config.ts.*
 .vercel
 # Esbuild pre-bundle output (created by vercel-build, not tracked in git)
 api/index.mjs
+
+attached_assets/crack-saga-*.json
+attached_assets/server_*.js

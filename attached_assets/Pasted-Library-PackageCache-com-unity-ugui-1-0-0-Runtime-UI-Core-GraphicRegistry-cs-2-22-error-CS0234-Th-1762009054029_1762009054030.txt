@@ -1,0 +1,252 @@
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\GraphicRegistry.cs(2,22): error CS0234: The type or namespace name 'Collections' does not exist in the namespace 'UnityEngine.UI' (are you missing an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Layout\LayoutGroup.cs(14,41): error CS0246: The type or namespace name 'UIBehaviour' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Layout\LayoutGroup.cs(14,54): error CS0246: The type or namespace name 'ILayoutElement' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Layout\LayoutGroup.cs(14,70): error CS0246: The type or namespace name 'ILayoutGroup' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\EventSystem\Raycasters\Physics2DRaycaster.cs(20,39): error CS0246: The type or namespace name 'PhysicsRaycaster' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Layout\HorizontalLayoutGroup.cs(7,42): error CS0246: The type or namespace name 'HorizontalOrVerticalLayoutGroup' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\MaskableGraphic.cs(10,45): error CS0246: The type or namespace name 'Graphic' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\MaskableGraphic.cs(10,77): error CS0246: The type or namespace name 'IMaterialModifier' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\EventSystem\EventData\AxisEventData.cs(6,34): error CS0246: The type or namespace name 'BaseEventData' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\GraphicRegistry.cs(47,63): error CS0246: The type or namespace name 'Graphic' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\GraphicRegistry.cs(77,70): error CS0246: The type or namespace name 'Graphic' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\GraphicRegistry.cs(103,65): error CS0246: The type or namespace name 'Graphic' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\GraphicRegistry.cs(125,72): error CS0246: The type or namespace name 'Graphic' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\GraphicRegistry.cs(145,62): error CS0246: The type or namespace name 'Graphic' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\GraphicRegistry.cs(167,69): error CS0246: The type or namespace name 'Graphic' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\GraphicRegistry.cs(189,29): error CS0246: The type or namespace name 'Graphic' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\GraphicRegistry.cs(203,29): error CS0246: The type or namespace name 'Graphic' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Layout\HorizontalLayoutGroup.cs(15,30): error CS0115: 'HorizontalLayoutGroup.CalculateLayoutInputHorizontal()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Layout\HorizontalLayoutGroup.cs(24,30): error CS0115: 'HorizontalLayoutGroup.CalculateLayoutInputVertical()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Layout\HorizontalLayoutGroup.cs(32,30): error CS0115: 'HorizontalLayoutGroup.SetLayoutHorizontal()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Layout\HorizontalLayoutGroup.cs(40,30): error CS0115: 'HorizontalLayoutGroup.SetLayoutVertical()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\EventSystem\UIElements\PanelRaycaster.cs(13,35): error CS0246: The type or namespace name 'BaseRaycaster' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(18,27): error CS0246: The type or namespace name 'Selectable' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(18,39): error CS0246: The type or namespace name 'IDragHandler' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(18,53): error CS0246: The type or namespace name 'IInitializePotentialDragHandler' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(18,86): error CS0246: The type or namespace name 'ICanvasElement' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\EventSystem\EventData\AxisEventData.cs(18,30): error CS0246: The type or namespace name 'EventSystem' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\GraphicRegistry.cs(13,45): error CS0246: The type or namespace name 'IndexedSet<>' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\GraphicRegistry.cs(13,56): error CS0246: The type or namespace name 'Graphic' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\EventSystem\Raycasters\Physics2DRaycaster.cs(32,38): error CS0246: The type or namespace name 'PointerEventData' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\EventSystem\Raycasters\Physics2DRaycaster.cs(32,71): error CS0246: The type or namespace name 'RaycastResult' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\EventSystem\UIElements\PanelRaycaster.cs(62,38): error CS0246: The type or namespace name 'PointerEventData' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\EventSystem\UIElements\PanelRaycaster.cs(62,71): error CS0246: The type or namespace name 'RaycastResult' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\EventSystem\UIElements\PanelRaycaster.cs(59,29): error CS0115: 'PanelRaycaster.sortOrderPriority': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\EventSystem\UIElements\PanelRaycaster.cs(60,29): error CS0115: 'PanelRaycaster.renderOrderPriority': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\EventSystem\UIElements\PanelRaycaster.cs(141,32): error CS0115: 'PanelRaycaster.eventCamera': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Text.cs(11,42): error CS0246: The type or namespace name 'ILayoutElement' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\MaskableGraphic.cs(168,33): error CS0115: 'MaskableGraphic.OnEnable()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\MaskableGraphic.cs(181,33): error CS0115: 'MaskableGraphic.OnDisable()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\MaskableGraphic.cs(197,33): error CS0115: 'MaskableGraphic.OnValidate()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\MaskableGraphic.cs(207,33): error CS0115: 'MaskableGraphic.OnTransformParentChanged()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\MaskableGraphic.cs(223,33): error CS0115: 'MaskableGraphic.OnCanvasHierarchyChanged()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\MaskableGraphic.cs(10,54): error CS0535: 'MaskableGraphic' does not implement interface member 'IClippable.gameObject'
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\MaskableGraphic.cs(10,54): error CS0535: 'MaskableGraphic' does not implement interface member 'IClippable.rectTransform'
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(404,37): error CS0246: The type or namespace name 'CanvasUpdate' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\RawImage.cs(135,48): error CS0246: The type or namespace name 'VertexHelper' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\RawImage.cs(32,33): error CS0115: 'RawImage.mainTexture': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\RawImage.cs(123,30): error CS0115: 'RawImage.SetNativeSize()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\RawImage.cs(158,33): error CS0115: 'RawImage.OnDidApplyAnimationProperties()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\MaskableGraphic.cs(19,17): error CS0246: The type or namespace name 'RectMask2D' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Layout\LayoutGroup.cs(134,33): error CS0115: 'LayoutGroup.OnEnable()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Layout\LayoutGroup.cs(140,33): error CS0115: 'LayoutGroup.OnDisable()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Layout\LayoutGroup.cs(150,33): error CS0115: 'LayoutGroup.OnDidApplyAnimationProperties()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Layout\LayoutGroup.cs(328,33): error CS0115: 'LayoutGroup.OnRectTransformDimensionsChange()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Layout\LayoutGroup.cs(374,33): error CS0115: 'LayoutGroup.OnValidate()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\GraphicRegistry.cs(14,45): error CS0246: The type or namespace name 'IndexedSet<>' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\GraphicRegistry.cs(14,56): error CS0246: The type or namespace name 'Graphic' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\GraphicRegistry.cs(182,38): error CS0246: The type or namespace name 'Graphic' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(608,25): error CS0246: The type or namespace name 'PointerEventData' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\VertexModifiers\IMeshModifier.cs(27,25): error CS0246: The type or namespace name 'VertexHelper' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(627,30): error CS0246: The type or namespace name 'PointerEventData' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Navigation.cs(97,17): error CS0246: The type or namespace name 'Selectable' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(632,44): error CS0246: The type or namespace name 'PointerEventData' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Navigation.cs(101,17): error CS0246: The type or namespace name 'Selectable' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(653,36): error CS0246: The type or namespace name 'PointerEventData' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Navigation.cs(105,17): error CS0246: The type or namespace name 'Selectable' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Navigation.cs(109,17): error CS0246: The type or namespace name 'Selectable' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\VertexModifiers\Shadow.cs(11,27): error CS0246: The type or namespace name 'BaseMeshEffect' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\VertexModifiers\PositionAsUV1.cs(9,34): error CS0246: The type or namespace name 'BaseMeshEffect' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(700,25): error CS0246: The type or namespace name 'Selectable' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(710,25): error CS0246: The type or namespace name 'Selectable' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\VertexModifiers\PositionAsUV1.cs(14,41): error CS0246: The type or namespace name 'VertexHelper' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(720,25): error CS0246: The type or namespace name 'Selectable' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(730,25): error CS0246: The type or namespace name 'Selectable' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(737,55): error CS0246: The type or namespace name 'PointerEventData' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(380,33): error CS0115: 'Slider.OnValidate()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(424,33): error CS0115: 'Slider.OnEnable()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(433,33): error CS0115: 'Slider.OnDisable()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(453,33): error CS0115: 'Slider.OnDidApplyAnimationProperties()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(544,33): error CS0115: 'Slider.OnRectTransformDimensionsChange()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(660,30): error CS0115: 'Slider.OnMove(AxisEventData)': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(700,36): error CS0115: 'Slider.FindSelectableOnLeft()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(710,36): error CS0115: 'Slider.FindSelectableOnRight()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(720,36): error CS0115: 'Slider.FindSelectableOnUp()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(730,36): error CS0115: 'Slider.FindSelectableOnDown()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Slider.cs(356,17): error CS0246: The type or namespace name 'Image' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Navigation.cs(158,16): error CS0246: The type or namespace name 'Selectable' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Navigation.cs(193,16): error CS0246: The type or namespace name 'Selectable' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Navigation.cs(228,16): error CS0246: The type or namespace name 'Selectable' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Navigation.cs(263,16): error CS0246: The type or namespace name 'Selectable' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Text.cs(658,48): error CS0246: The type or namespace name 'VertexHelper' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Text.cs(55,33): error CS0115: 'Text.mainTexture': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Text.cs(576,33): error CS0115: 'Text.UpdateGeometry()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Text.cs(585,33): error CS0115: 'Text.Reset()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Text.cs(754,30): error CS0115: 'Text.OnRebuildRequested()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\VertexModifiers\Shadow.cs(130,41): error CS0246: The type or namespace name 'VertexHelper' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\VertexModifiers\Outline.cs(14,41): error CS0246: The type or namespace name 'VertexHelper' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\VertexModifiers\Shadow.cs(28,33): error CS0115: 'Shadow.OnValidate()': no suitable method found to override
+
+Library\PackageCache\com.unity.ugui@1.0.0\Runtime\UI\Core\Text.cs(13,34): error CS0246: The type or namespace name 'FontData' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.test-framework@1.1.33\UnityEngine.TestRunner\TestRunner\Callbacks\PlayModeRunnerCallback.cs(7,60): error CS0246: The type or namespace name 'ITestRunnerListener' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.test-framework@1.1.33\UnityEngine.TestRunner\Assertions\LogScope\LogScope.cs(8,29): error CS0246: The type or namespace name 'ILogScope' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.test-framework@1.1.33\UnityEngine.TestRunner\Assertions\ConstraintsExtensions.cs(16,23): error CS0246: The type or namespace name 'AllocatingGCMemoryConstraint' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.test-framework@1.1.33\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableApplyChangesToContextCommand.cs(11,91): error CS0246: The type or namespace name 'IEnumerableTestMethodCommand' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.test-framework@1.1.33\UnityEngine.TestRunner\NUnitExtensions\Commands\EnumerableRetryTestCommand.cs(12,72): error CS0246: The type or namespace name 'IEnumerableTestMethodCommand' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.test-framework@1.1.33\UnityEngine.TestRunner\NUnitExtensions\Runner\DefaultTestWorkItem.cs(19,42): error CS0246: The type or namespace name 'UnityWorkItem' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.test-framework@1.1.33\UnityEngine.TestRunner\NUnitExtensions\Runner\DefaultTestWorkItem.cs(28,40): error CS0115: 'DefaultTestWorkItem.PerformWork()': no suitable method found to override
+
+Library\PackageCache\com.unity.test-framework@1.1.33\UnityEngine.TestRunner\NUnitExtensions\Runner\FailCommand.cs(9,47): error CS0246: The type or namespace name 'IEnumerableTestMethodCommand' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.test-framework@1.1.33\UnityEngine.TestRunner\Utils\AssemblyProvider\ScriptingRuntimeProxy.cs(3,44): error CS0246: The type or namespace name 'IScriptingRuntimeProxy' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.test-framework@1.1.33\UnityEngine.TestRunner\NUnitExtensions\Runner\UnityLogCheckDelegatingCommand.cs(14,67): error CS0246: The type or namespace name 'IEnumerableTestMethodCommand' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.test-framework@1.1.33\UnityEngine.TestRunner\Assertions\LogScope\LogScope.cs(16,22): error CS0246: The type or namespace name 'LogMatch' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.test-framework@1.1.33\UnityEngine.TestRunner\NUnitExtensions\Runner\WorkItemFactory.cs(9,16): error CS0246: The type or namespace name 'UnityWorkItem' could not be found (are you missing a using directive or an assembly reference?)
+
+Library\PackageCache\com.unity.test-framework@1.1.33\UnityEngine.TestRunner\NUnitExtensions\Runner\WorkItemFactory.cs(26,28): error CS0246: The type or namespace name 'UnityWorkItem' could not be found (are you missing a using directive or an assembly reference?)
+
+Error: Cannot create FMOD::Sound instance for clip "kings_tomb_loop" (FMOD error: File not found. )
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
+Problem detected while opening the Scene file: 'Assets/uMMORPG/GRUDGE SCENES/MOBILE.unity'.
+Check the following logs for more details.
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
+Prefab instance problem: AreaSphere_SimpleTeleport (Missing Prefab with guid: 8a1149c73ac3849dab6adba52151490c)
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
+Prefab instance problem: Storage (1) (Missing Prefab with guid: 45204438d5c90ac42a2486e7520ba661)
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
+Prefab instance problem: Lv5 Boss Spawner (Missing Prefab with guid: 3d910568b396ce341b9b392e68401883). 3 instances are missing the same Prefab
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
+Prefab instance problem: OpenAiApiGatewayV1 (Missing Prefab with guid: 15d84929ed54ded40904bb85c13f5b87)
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
+Prefab instance problem: Pvp Vendor (Missing Prefab with guid: 46bfc38bba3b2de42afc19289aa58312)
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
+Prefab instance problem: AreaBox_Travelroute (1) (Missing Prefab with guid: 5982bbac891974457922bc3cc0762678)
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
+Prefab instance problem: Area_WaveSpawnerBoss (Missing Prefab with guid: 966c62cdcaa634fadab8b20bcd3eb23c)
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+

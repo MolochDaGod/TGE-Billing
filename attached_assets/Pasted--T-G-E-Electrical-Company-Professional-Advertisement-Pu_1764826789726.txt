@@ -1,0 +1,118 @@
+
+T.G.E. Electrical Company Professional Advertisement
+Publish
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T.G.E. Electrical Company - Master Electrician Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+        }
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+        .contact-section {
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <div class="gradient-bg text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <!-- Company Info -->
+            <div class="flex-1">
+                <h1 class="text-5xl font-bold mb-2">T.G.E. Electrical Company</h1>
+                <p class="text-2xl text-blue-200 mb-4">Chris C. - Master Electrician</p>
+                <p class="text-gray-300 text-lg max-w-md">Professional electrical services for residential and commercial properties throughout Houston, Texas.</p>
+            </div>
+            <!-- Lightbulb Placeholder -->
+            <div class="flex-1 flex justify-center">
+                <div class="w-48 h-48 bg-yellow-300 rounded-full flex items-center justify-center shadow-2xl border-8 border-yellow-400">
+                    <span class="text-6xl">💡</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="bg-gray-100 py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg shadow-lg p-8 border-t-4 border-blue-600">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Residential Installations</h3>
+                    <p class="text-gray-600">Expert electrical installations for your home.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg shadow-lg p-8 border-t-4 border-blue-600">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Commercial Repairs</h3>
+                    <p class="text-gray-600">Reliable repairs for businesses in Houston.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg shadow-lg p-8 border-t-4 border-blue-600">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Emergency Services</h3>
+                    <p class="text-gray-600">24/7 emergency electrical support.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-lg shadow-lg p-8 border-t-4 border-blue-600">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Lighting Solutions</h3>
+                    <p class="text-gray-600">Custom lighting for any space.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Get In Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Phone -->
+                <div class="bg-blue-900 bg-opacity-50 rounded-lg p-8 backdrop-blur-sm">
+                    <p class="text-blue-200 text-lg mb-2">Call Us</p>
+                    <p class="text-3xl font-bold">361-404-1267</p>
+                </div>
+
+                <!-- Email -->
+                <div class="bg-blue-900 bg-opacity-50 rounded-lg p-8 backdrop-blur-sm">
+                    <p class="text-blue-200 text-lg mb-2">Email Us</p>
+                    <p class="text-xl font-bold break-all">TGEBilling@GMAIL.COM</p>
+                </div>
+
+                <!-- Address -->
+                <div class="bg-blue-900 bg-opacity-50 rounded-lg p-8 backdrop-blur-sm">
+                    <p class="text-blue-200 text-lg mb-2">Visit Us</p>
+                    <p class="text-sm font-bold">8405 Wilcrest DR B<br>Houston, TX 77072</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="gradient-bg text-center text-gray-400 py-6 px-4">
+        <p>&copy; 2024 T.G.E. Electrical Company. All rights reserved. Chris C. - Master Electrician.</p>
+    </div>
+
+</body>
+</html>
+
+Generated by Claude Haiku 4.5
+Convert this artifact to website now
