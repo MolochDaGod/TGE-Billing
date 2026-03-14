@@ -1,191 +1,116 @@
-# ElectraPro Deployment Configuration Guide
+# TGE-Billing Deployment Guide
 
-## Current Status
-✅ **Application is running successfully on port 5000**
-✅ **Build and start scripts are configured in package.json**
+## Architecture
 
-## .replit Configuration Issues
+| Layer | Platform | What it does |
+|---|---|---|
+| Frontend (React SPA) | **Vercel** | Static build served from CDN |
+| Backend API (/api/*) | **Vercel Serverless** | Express wrapped in a serverless function |
+| AI Worker | **Puter Serverless** | Chat, lead scoring, content generation |
+| Database | **Neon PostgreSQL** | Managed Postgres (DATABASE_URL) |
+| Payments | **Stripe** | Invoicing & payment processing |
 
-### Problem
-The current `.replit` file has **multiple port configurations** (14 different port mappings), which causes issues for production deployment on Replit.
+## Repository
 
-According to Replit documentation:
-- **For Autoscale and Reserved VM deployments, only ONE external port can be exposed**
-- Multiple port configurations can cause deployment failures
-- The service should bind to `0.0.0.0:5000` (not localhost)
+GitHub: `MolochDaGod/TGE-Billing` (branch: `main`)
 
-### Current Excessive Port Configuration
-```toml
-[[ports]]
-localPort = 5000
-externalPort = 80
+## Quick Start (Local Dev)
 
-[[ports]]
-localPort = 34237
-externalPort = 8099
-
-# ... 12 more port configurations (unnecessary)
-```
-
-### Recommended Configuration
-
-Since I cannot edit the `.replit` file directly, you'll need to manually update it with this clean configuration:
-
-```toml
-modules = ["nodejs-20", "web", "postgresql-16"]
-run = "npm run dev"
-hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
-
-[nix]
-channel = "stable-24_05"
-
-[deployment]
-deploymentTarget = "autoscale"
-build = ["npm", "run", "build"]
-run = ["npm", "run", "start"]
-ignorePorts = false
-
-# ONLY expose port 5000 for production deployment
-[[ports]]
-localPort = 5000
-externalPort = 80
-
-[env]
-PORT = "5000"
-
-[workflows]
-runButton = "Project"
-
-[[workflows.workflow]]
-name = "Project"
-mode = "parallel"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Start application"
-
-[[workflows.workflow]]
-name = "Start application"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npm run dev"
-waitForPort = 5000
-
-[agent]
-integrations = ["javascript_log_in_with_replit:1.0.0", "javascript_openai_ai_integrations:1.0.0", "javascript_stripe:1.0.0", "javascript_database:1.0.0", "twilio:1.0.0", "google-drive:1.0.0"]
-```
-
-## Deployment Readiness Checklist
-
-### ✅ Already Configured
-
-1. **Build Script**: `npm run build` - Builds frontend and backend
-2. **Start Script**: `npm run start` - Runs production server
-3. **Environment Variables**: All secrets configured via Replit Secrets
-4. **Database**: PostgreSQL configured with DATABASE_URL
-5. **Port Binding**: Server binds to `0.0.0.0:5000`
-6. **Integrations**: 6 integrations properly configured
-
-### 🔧 Requires Manual Fix
-
-1. **Clean up .replit file**: Remove extra port configurations (lines 17-68)
-   - Keep only the first `[[ports]]` block (localPort 5000, externalPort 80)
-   - Delete all other `[[ports]]` blocks
-
-### 📋 Deployment Configuration Explained
-
-#### Development (Current)
 ```bash
-npm run dev
-# Runs: tsx server/index.ts
-# Purpose: Hot reload for development
-# Port: 5000
+npm install
+npm run dev       # Express + Vite dev server on port 5000
 ```
 
-#### Production Build
+## Deploy to Vercel
+
+### 1. Connect GitHub repo to Vercel
+
+1. Go to https://vercel.com/new
+2. Import `MolochDaGod/TGE-Billing`
+3. Vercel auto-detects `vercel.json` config
+
+### 2. Set environment variables in Vercel dashboard
+
+Required env vars (Settings > Environment Variables):
+
+- `DATABASE_URL` — Neon PostgreSQL connection string
+- `SESSION_SECRET` — Random secret for sessions
+- `STRIPE_SECRET_KEY` — Stripe secret key
+- `VITE_STRIPE_PUBLIC_KEY` — Stripe publishable key
+- `GOOGLE_CLIENT_ID` — Google OAuth client ID
+- `GOOGLE_CLIENT_SECRET` — Google OAuth secret
+- `GOOGLE_CLOUD_SERVICE_ACCOUNT_KEY` — Service account JSON
+- `TWILIO_ACCOUNT_SID` — Twilio SID
+- `TWILIO_AUTH_TOKEN` — Twilio auth token
+- `TWILIO_PHONE_NUMBER` — Twilio phone
+- `AGENTMAIL_API_KEY` — AgentMail key
+- `AI_INTEGRATIONS_OPENAI_API_KEY` — OpenAI key
+- `VITE_TGEWORKER_URL` — Puter worker URL (set after deploying worker)
+- `APP_URL` — Your production URL (e.g. https://tgebilling.pro)
+
+### 3. Deploy
+
+Push to `main` — Vercel auto-deploys.
+
+### How Vercel serves the app
+
+- `vercel.json` routes `/api/*` requests to `api/index.ts` (serverless Express)
+- Everything else is served as static files from the Vite build (`dist/public`)
+- The `vercel-build` script runs `vite build` to produce the frontend
+
+### Limitation
+
+WebSocket (realtime AI voice) is not supported on Vercel serverless. AI chat works via HTTP through the Express API routes and the Puter worker.
+
+## Deploy Puter AI Worker
+
+### Prerequisites
+
 ```bash
-npm run build
-# Runs: vite build (frontend) && esbuild (backend)
-# Output: dist/ directory with compiled code
+npm install -g puter-cli
+puter login
 ```
 
-#### Production Start
+### Automated deploy
+
 ```bash
-npm run start
-# Runs: node dist/index.js
-# Purpose: Production server (no hot reload)
-# Port: 5000 (from process.env.PORT)
+node scripts/deploy-puter.js              # Deploy site + worker
+node scripts/deploy-puter.js --site       # Frontend only
+node scripts/deploy-puter.js --worker     # Worker only
 ```
 
-## Server Configuration
+### Manual worker activation
 
-The server is already configured correctly in `server/index.ts`:
+After uploading, activate the worker in the Puter browser console:
 
-```typescript
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`[express] serving on port ${PORT}`);
-});
+```js
+const dep = await puter.hosting.create('tgeworker', 'tgeworker.js');
+console.log('Worker URL:', dep.subdomain + '.puter.site');
 ```
 
-This ensures:
-- ✅ Uses environment variable PORT (set in .replit)
-- ✅ Binds to `0.0.0.0` (required for Replit deployment)
-- ✅ Falls back to 5000 if PORT not set
+Then add the worker URL as `VITE_TGEWORKER_URL` in Vercel env vars.
 
-## Environment Variables for Deployment
+## Build Scripts
 
-All required environment variables are configured as Replit Secrets:
-- ✅ DATABASE_URL (PostgreSQL connection)
-- ✅ SESSION_SECRET (Session encryption)
-- ✅ STRIPE_SECRET_KEY (Payment processing)
-- ✅ VITE_STRIPE_PUBLIC_KEY (Frontend Stripe key)
-- ✅ GOOGLE_CLIENT_ID (OAuth)
-- ✅ GOOGLE_CLIENT_SECRET (OAuth)
-- ✅ TWILIO credentials (SMS notifications)
-- ✅ AGENTMAIL_WEBHOOK_SECRET (Email automation)
-- ✅ AI_INTEGRATIONS_OPENAI_API_KEY (AI features)
+- `npm run dev` — Local development (Express + Vite HMR on port 5000)
+- `npm run build` — Full production build (frontend + backend bundle)
+- `npm run vercel-build` — Frontend-only build (used by Vercel)
+- `npm run start` — Run production server locally (`node dist/index.js`)
+- `npm run db:push` — Push Drizzle schema to database
 
-## How to Deploy
+## Project Structure
 
-### Step 1: Clean .replit Configuration
-1. Open `.replit` file
-2. Delete extra `[[ports]]` blocks (keep only port 5000)
-3. Save the file
-
-### Step 2: Test Build Locally
-```bash
-npm run build
-# Should complete without errors
-# Output: dist/index.js and client build files
 ```
-
-### Step 3: Deploy via Replit
-1. Click "Deploy" in Replit
-2. Select "Autoscale" deployment
-3. Wait for build to complete
-4. Your app will be live at your .replit.app domain
-
-## Verification
-
-✅ **Current Status**: Application running successfully
-✅ **Port Configuration**: Server binds to 0.0.0.0:5000
-✅ **Build Scripts**: Configured and tested
-✅ **Environment**: All secrets configured
-⚠️ **Action Required**: Clean up .replit port configurations
-
-## Support
-
-If you encounter deployment issues:
-1. Check Replit deployment logs
-2. Verify all environment variables are set
-3. Ensure only one port is exposed in .replit
-4. Contact Replit support if issues persist
+api/index.ts          — Vercel serverless entry point
+client/               — React frontend (Vite)
+server/               — Express backend
+workers/tgeworker.js  — Puter AI worker
+scripts/              — Deploy scripts
+shared/               — Shared types & schemas
+vercel.json           — Vercel routing config
+```
 
 ---
 
-**Last Updated**: November 7, 2025
-**Status**: Ready for deployment after .replit cleanup
+**Last Updated**: March 14, 2026
+**Status**: Ready for Vercel + Puter deployment

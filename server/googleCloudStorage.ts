@@ -12,7 +12,7 @@ export function getGoogleCloudStorage(): Storage {
   const privateKey = process.env.GCS_PRIVATE_KEY;
 
   if (!clientEmail || !privateKey) {
-    throw new Error("GCS_CLIENT_EMAIL and GCS_PRIVATE_KEY must be set in Replit Secrets");
+    throw new Error("GCS_CLIENT_EMAIL and GCS_PRIVATE_KEY environment variables must be set");
   }
 
   storage = new Storage({

@@ -269,7 +269,7 @@ export function DownloadAppButton({
                   Visit this website on your Android or iPhone to download the mobile app.
                 </p>
                 <div className="bg-background rounded-lg p-3 border text-xs font-mono break-all">
-                  {typeof window !== 'undefined' ? window.location.origin : 'https://tgepros.replit.app'}
+                  {typeof window !== 'undefined' ? window.location.origin : ''}
                 </div>
               </div>
             </div>

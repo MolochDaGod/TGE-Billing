@@ -191,7 +191,7 @@ export default function ClientGuide() {
         <CardContent className="space-y-3">
           <p className="text-sm">Your account is protected by:</p>
           <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground ml-2">
-            <li>Secure Replit authentication</li>
+            <li>Secure authentication (Puter.js & Google OAuth)</li>
             <li>Encrypted data transmission (HTTPS)</li>
             <li>PCI-compliant payment processing through Stripe</li>
             <li>Role-based access controls (you only see your own data)</li>

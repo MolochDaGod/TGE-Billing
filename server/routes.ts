@@ -837,7 +837,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const shouldSendSMS = clientUser?.sms_notifications_enabled !== false;
         
         if (shouldSendSMS && invoice.status === 'sent') {
-          const paymentUrl = `${process.env.REPLIT_DOMAINS || 'http://localhost:5000'}/payment/${invoice.id}`;
+          const paymentUrl = `${process.env.APP_URL || 'http://localhost:5000'}/payment/${invoice.id}`;
           await sendInvoiceNotification(client.phone, {
             clientName: client.name,
             invoiceNumber: invoice.invoice_number,

@@ -10,8 +10,9 @@ import { seedAIAgents } from "./services/ai-agents-seed";
 import { seedDefaultAutomations } from "./services/ai-automation";
 import { seedWorkflowTemplates } from "./services/ai-workflow-templates";
 
-const app = express();
+export const app = express();
 const isProduction = process.env.NODE_ENV === "production";
+const isVercel = !!process.env.VERCEL;
 
 // Security headers with helmet (relaxed CSP for development)
 app.use(helmet({
@@ -30,11 +31,15 @@ app.use(helmet({
   crossOriginOpenerPolicy: false,
 }));
 
-// CORS configuration
+// CORS configuration — allow Vercel preview/production URLs
+const allowedOrigins = [
+  process.env.APP_URL || 'https://tgebilling.pro',
+  process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '',
+  process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : '',
+].filter(Boolean);
+
 app.use(cors({
-  origin: isProduction 
-    ? [process.env.APP_URL || 'https://tgebilling.pro'].filter(Boolean)
-    : true,
+  origin: isProduction ? allowedOrigins : true,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
@@ -109,56 +114,62 @@ app.use((req, res, next) => {
   next();
 });
 
-(async () => {
-  const server = await registerRoutes(app);
-  
-  // Setup Realtime AI voice conversation WebSocket
-  setupRealtimeAI(server);
+// Initialize routes (exported for Vercel serverless usage)
+let _initPromise: Promise<void> | null = null;
+export function initApp() {
+  if (!_initPromise) {
+    _initPromise = (async () => {
+      const server = await registerRoutes(app);
 
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = isProduction ? "Internal Server Error" : (err.message || "Internal Server Error");
+      app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+        const status = err.status || err.statusCode || 500;
+        const message = isProduction ? "Internal Server Error" : (err.message || "Internal Server Error");
 
-    // Log error details server-side
-    console.error(`[Error] ${err.message || 'Unknown error'}`, {
-      status,
-      stack: err.stack,
-      path: _req.path,
-      method: _req.method,
-    });
+        console.error(`[Error] ${err.message || 'Unknown error'}`, {
+          status,
+          stack: err.stack,
+          path: _req.path,
+          method: _req.method,
+        });
 
-    res.status(status).json({ message });
-  });
+        res.status(status).json({ message });
+      });
 
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
-    await setupVite(app, server);
-  } else {
-    serveStatic(app);
+      // On Vercel, skip Vite dev server, static serving, and listen()
+      if (!isVercel) {
+        // Setup Realtime AI voice conversation WebSocket (not supported on Vercel)
+        setupRealtimeAI(server);
+
+        if (app.get("env") === "development") {
+          await setupVite(app, server);
+        } else {
+          serveStatic(app);
+        }
+
+        const port = parseInt(process.env.PORT || '5000', 10);
+        server.listen({
+          port,
+          host: "0.0.0.0",
+          reusePort: true,
+        }, async () => {
+          log(`serving on port ${port}`);
+
+          try {
+            await seedAIAgents();
+            await seedDefaultAutomations();
+            await seedWorkflowTemplates();
+            log("[AI Systems] All AI agents, automations, and workflows seeded successfully");
+          } catch (error) {
+            console.error("[AI Systems] Error seeding AI systems:", error);
+          }
+        });
+      }
+    })();
   }
+  return _initPromise;
+}
 
-  // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 5000 if not specified.
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, async () => {
-    log(`serving on port ${port}`);
-    
-    // Seed AI systems in background after server starts
-    try {
-      await seedAIAgents();
-      await seedDefaultAutomations();
-      await seedWorkflowTemplates();
-      log("[AI Systems] All AI agents, automations, and workflows seeded successfully");
-    } catch (error) {
-      console.error("[AI Systems] Error seeding AI systems:", error);
-    }
-  });
-})();
+// Auto-start when running directly (not imported by Vercel)
+if (!isVercel) {
+  initApp();
+}

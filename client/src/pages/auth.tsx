@@ -5,17 +5,36 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
-import { Zap, Loader2 } from "lucide-react";
+import { Zap, Loader2, Cloud } from "lucide-react";
 import { SiGoogle } from "react-icons/si";
 import { useToast } from "@/hooks/use-toast";
 import { useLocation } from "wouter";
+import { usePuterAuth } from "@/hooks/usePuterAuth";
 import tgeLogo from "@assets/tgelogo_1763888346781.webp";
 
 export default function Auth() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
+  const { signIn: puterSignIn, isLoading: puterLoading } = usePuterAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [mode, setMode] = useState<"login" | "register">("login");
+
+  const handlePuterSignIn = async () => {
+    try {
+      await puterSignIn();
+      toast({
+        title: "Welcome!",
+        description: "Signed in with Puter successfully.",
+      });
+      window.location.href = "/";
+    } catch (error: any) {
+      toast({
+        title: "Puter sign-in failed",
+        description: error.message || "Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
 
   const [loginForm, setLoginForm] = useState({
     username: "",
@@ -163,6 +182,20 @@ export default function Auth() {
             >
               <SiGoogle className="mr-2 h-4 w-4" />
               Continue with Google
+            </Button>
+
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={handlePuterSignIn}
+              disabled={puterLoading}
+            >
+              {puterLoading ? (
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              ) : (
+                <Cloud className="mr-2 h-4 w-4" />
+              )}
+              Continue with Puter
             </Button>
 
             <div className="relative">
