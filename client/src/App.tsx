@@ -14,7 +14,8 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { RoleSwitchProvider, useRoleSwitch } from "@/contexts/RoleSwitchContext";
 import { RoleSwitcher } from "@/components/RoleSwitcher";
 import { useEffect, useState } from "react";
-import tgeBrandingBg from "@assets/19ab4903672e9_1763965916024.png";
+// Background image disabled for readability — using CSS gradient instead
+// import tgeBrandingBg from "@assets/19ab4903672e9_1763965916024.png";
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { registerServiceWorker, requestPersistentStorage } from "@/lib/pwa-register";
@@ -183,13 +184,11 @@ function AppContent() {
       <SidebarProvider style={style as React.CSSProperties}>
         <AppSidebar />
         <div className="relative flex flex-col flex-1 overflow-hidden">
-            {/* Background Image Layer - Only under content area */}
+            {/* Subtle gradient background */}
             <div 
-              className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${tgeBrandingBg})` }}
+              className="absolute inset-0 z-0"
+              style={{ background: 'linear-gradient(145deg, hsl(222 47% 8%) 0%, hsl(220 30% 12%) 50%, hsl(225 40% 10%) 100%)' }}
             />
-            {/* Dark overlay for readability - Lighter for better image visibility */}
-            <div className="absolute inset-0 z-0 bg-black/25" />
             
             <header className="premium-header relative z-10 flex h-16 items-center justify-between gap-4 px-6">
               <div className="flex items-center gap-3">
