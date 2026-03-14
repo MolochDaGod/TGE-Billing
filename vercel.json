@@ -8,12 +8,6 @@
     { "source": "/attached_assets/:path*", "destination": "/api/index" },
     { "source": "/:path*", "destination": "/index.html" }
   ],
-  "functions": {
-    "api/index.mjs": {
-      "maxDuration": 30,
-      "memory": 1024
-    }
-  },
   "env": {
     "NODE_ENV": "production"
   }
