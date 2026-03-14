@@ -34,7 +34,7 @@ const CHANNELS = [
 ];
 
 const ROLE_COLORS: Record<string, string> = {
-  pirate_king: "text-yellow-400",
+  pirate_king: "text-amber-500",
   admin: "text-red-400",
   partner: "text-purple-400",
   staff_captain: "text-blue-400",
@@ -46,15 +46,15 @@ const ROLE_COLORS: Record<string, string> = {
 };
 
 const ROLE_LABELS: Record<string, string> = {
-  pirate_king: "👑 King",
-  admin: "🛡️ Admin",
-  partner: "🤝 Partner",
-  staff_captain: "⚡ Captain",
-  staff: "🔧 Staff",
-  sparky_ai: "🤖 Sparky AI",
-  sparky: "✨ Sparky",
-  client: "👤 Client",
-  vendor: "📦 Vendor",
+  pirate_king: "Owner",
+  admin: "Admin",
+  partner: "Partner",
+  staff_captain: "Team Lead",
+  staff: "Staff",
+  sparky_ai: "AI Agent",
+  sparky: "AI Assistant",
+  client: "Client",
+  vendor: "Vendor",
 };
 
 function formatMsgTime(dateStr: string) {
@@ -136,14 +136,14 @@ export default function Messages() {
     }
   };
 
-  const askSparky = async (msg: TeamMessage) => {
+  const askAssistant = async (msg: TeamMessage) => {
     setAiLoadingFor(msg.id);
     try {
       const reply = await puterChat([
         {
           role: "system",
           content:
-            "You are Sparky, the TGE Pros AI assistant. You help with electrical job scheduling, invoicing, and team coordination. Be friendly, concise, and helpful.",
+            "You are the TGE Operations AI assistant. You help with job scheduling, invoicing, estimates, and team coordination. Be concise and professional.",
         },
         { role: "user", content: msg.content },
       ]);
@@ -151,7 +151,7 @@ export default function Messages() {
       await apiRequest("POST", "/api/team/messages", {
         channel: activeChannel,
         content: reply,
-        sender_name: "Sparky AI",
+        sender_name: "TGE Assistant",
         sender_role: "sparky_ai",
         is_ai_message: true,
         ai_trigger: msg.id,
@@ -159,7 +159,7 @@ export default function Messages() {
       queryClient.invalidateQueries({ queryKey: ["/api/team/messages", activeChannel] });
     } catch {
       toast({
-        title: "Sparky Error",
+        title: "Error",
         description: "AI response failed. Try again.",
         variant: "destructive",
       });
@@ -234,7 +234,7 @@ export default function Messages() {
           </div>
           <div className="flex items-center gap-1.5 text-xs text-cyan-400">
             <Bot className="h-4 w-4" />
-            <span className="hidden sm:inline">Sparky AI online</span>
+            <span className="hidden sm:inline">AI Assistant online</span>
           </div>
         </div>
 
@@ -293,12 +293,12 @@ export default function Messages() {
                       </div>
                       {!isAI && !isMe && (
                         <button
-                          onClick={() => askSparky(msg)}
+                          onClick={() => askAssistant(msg)}
                           disabled={aiLoadingFor !== null}
                           className="mt-0.5 opacity-0 group-hover:opacity-100 flex items-center gap-1 text-[10px] text-cyan-400 hover:text-cyan-200 transition-all disabled:cursor-not-allowed"
                         >
                           <Sparkles className="h-3 w-3" />
-                          {aiLoadingFor === msg.id ? "Sparky thinking…" : "Ask Sparky ⚡"}
+                          {aiLoadingFor === msg.id ? "Thinking…" : "Ask AI"}
                         </button>
                       )}
                     </div>
@@ -330,7 +330,7 @@ export default function Messages() {
             </Button>
           </div>
           <p className="text-[10px] text-muted-foreground mt-1.5 px-1">
-            Enter to send · Hover any message to Ask Sparky ⚡
+            Enter to send · Hover any message to ask the AI assistant
           </p>
         </div>
       </div>

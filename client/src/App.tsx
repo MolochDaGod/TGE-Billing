@@ -9,7 +9,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { AIAssistant } from "@/components/ai-assistant";
 import { PWAInstallPrompt } from "@/components/pwa-install-prompt";
 import { NotificationsButton } from "@/components/notifications-button";
-import { SiteMascot } from "@/components/site-mascot";
+// import { SiteMascot } from "@/components/site-mascot"; // Disabled: professional mode
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { RoleSwitchProvider, useRoleSwitch } from "@/contexts/RoleSwitchContext";
 import { RoleSwitcher } from "@/components/RoleSwitcher";
@@ -32,6 +32,7 @@ import CustomerPortal from "@/pages/customer-portal";
 
 // Core Business Operations
 import Invoices from "@/pages/invoices";
+import Estimates from "@/pages/estimates";
 import Clients from "@/pages/clients";
 import Jobs from "@/pages/jobs";
 import Payment from "@/pages/payment";
@@ -123,6 +124,7 @@ function Router() {
       
       {/* Core Business Operations */}
       <Route path="/invoices" component={Invoices} />
+      <Route path="/estimates" component={Estimates} />
       <Route path="/clients" component={Clients} />
       <Route path="/jobs" component={Jobs} />
       <Route path="/payment/:invoiceId" component={Payment} />
@@ -214,7 +216,6 @@ function AppContent() {
           </div>
           <AIAssistant externalIsOpen={isSparkyOpen} externalSetIsOpen={setIsSparkyOpen} />
         <PWAInstallPrompt />
-        <SiteMascot />
       </SidebarProvider>
     </RoleSwitchProvider>
   );

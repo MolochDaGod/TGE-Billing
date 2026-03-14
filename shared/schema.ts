@@ -1374,6 +1374,65 @@ export const insertAILeadScoreSchema = createInsertSchema(ai_lead_scores).omit({
   qualification_status: z.enum(["unqualified", "mql", "sql", "opportunity"]).default("unqualified"),
 });
 
+// Estimates — Quotes sent to clients before invoicing
+export const estimates = pgTable("estimates", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  company_id: varchar("company_id").references(() => companies.id),
+  estimate_number: text("estimate_number").notNull().unique(),
+  client_id: varchar("client_id").references(() => clients.id).notNull(),
+  created_by: varchar("created_by").references(() => users.id).notNull(),
+  status: text("status").notNull().default("draft"), // draft, sent, accepted, rejected, expired
+  estimate_date: timestamp("estimate_date").defaultNow().notNull(),
+  valid_until: timestamp("valid_until"),
+  subtotal: decimal("subtotal", { precision: 10, scale: 2 }).notNull(),
+  tax_rate: decimal("tax_rate", { precision: 5, scale: 2 }).default("0"),
+  tax_amount: decimal("tax_amount", { precision: 10, scale: 2 }).default("0"),
+  total: decimal("total", { precision: 10, scale: 2 }).notNull(),
+  notes: text("notes"),
+  converted_to_invoice_id: varchar("converted_to_invoice_id").references(() => invoices.id),
+  pdf_url: text("pdf_url"),
+  created_at: timestamp("created_at").defaultNow().notNull(),
+  updated_at: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export const estimate_items = pgTable("estimate_items", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  estimate_id: varchar("estimate_id").references(() => estimates.id).notNull(),
+  description: text("description").notNull(),
+  quantity: decimal("quantity", { precision: 10, scale: 2 }).notNull(),
+  unit_price: decimal("unit_price", { precision: 10, scale: 2 }).notNull(),
+  amount: decimal("amount", { precision: 10, scale: 2 }).notNull(),
+  order_index: integer("order_index").notNull(),
+});
+
+export const insertEstimateSchema = createInsertSchema(estimates).omit({
+  id: true,
+  created_at: true,
+  updated_at: true,
+}).extend({
+  estimate_date: z.coerce.date().optional(),
+  valid_until: z.coerce.date().optional(),
+  subtotal: z.string().refine((val) => parseFloat(val) >= 0, { message: "Subtotal must be positive" }),
+  tax_rate: z.string().optional(),
+  tax_amount: z.string().optional(),
+  total: z.string().refine((val) => parseFloat(val) >= 0, { message: "Total must be positive" }),
+  status: z.enum(["draft", "sent", "accepted", "rejected", "expired"]).default("draft"),
+});
+
+export const insertEstimateItemSchema = createInsertSchema(estimate_items).omit({
+  id: true,
+}).extend({
+  quantity: z.string().refine((val) => parseFloat(val) > 0, { message: "Quantity must be > 0" }),
+  unit_price: z.string().refine((val) => parseFloat(val) >= 0, { message: "Unit price must be positive" }),
+  amount: z.string().refine((val) => parseFloat(val) >= 0, { message: "Amount must be positive" }),
+  description: z.string().min(1, "Description is required"),
+});
+
+export type InsertEstimate = z.infer<typeof insertEstimateSchema>;
+export type Estimate = typeof estimates.$inferSelect;
+export type InsertEstimateItem = z.infer<typeof insertEstimateItemSchema>;
+export type EstimateItem = typeof estimate_items.$inferSelect;
+
 // Team Messages — In-app team / group chat
 export const team_messages = pgTable("team_messages", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),

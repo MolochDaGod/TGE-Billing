@@ -2,15 +2,15 @@
  * Role-Based Access Control (RBAC) System
  * 
  * Role Hierarchy (highest to lowest):
- * 1. pirate_king - Ultimate owner/creator (JB Emmons)
+ * 1. pirate_king - Business Owner (top-level authority)
  * 2. admin - System administrators
- * 3. partner - Company owners who can create invoices and manage their company
+ * 3. partner - Company partners who can create invoices and manage their company
  * 4. staff_captain - Department managers who oversee staff
- * 5. staff - Employees who work under captains
+ * 5. staff - Employees who work under managers
  * 6. vendor - Service providers who can manage their own work and invoices
  * 7. sparky_ai - AI agent with advanced capabilities
- * 8. sparky - Basic AI agent
- * 9. client - Customers using the sales/onboarding portal to request services
+ * 8. sparky - Basic AI assistant
+ * 9. client - Customers using the portal to request services
  */
 
 export const ROLES = {
@@ -72,14 +72,14 @@ export function getRolesWithMinimumLevel(minimumRole: Role): Role[] {
  * Role display names for UI
  */
 export const ROLE_DISPLAY_NAMES: Record<Role, string> = {
-  [ROLES.PIRATE_KING]: "Pirate King",
+  [ROLES.PIRATE_KING]: "Owner",
   [ROLES.ADMIN]: "Administrator",
   [ROLES.PARTNER]: "Partner",
-  [ROLES.STAFF_CAPTAIN]: "Staff Captain",
+  [ROLES.STAFF_CAPTAIN]: "Team Lead",
   [ROLES.STAFF]: "Staff",
   [ROLES.VENDOR]: "Vendor",
-  [ROLES.SPARKY_AI]: "Sparky AI",
-  [ROLES.SPARKY]: "Sparky",
+  [ROLES.SPARKY_AI]: "AI Agent",
+  [ROLES.SPARKY]: "AI Assistant",
   [ROLES.CLIENT]: "Customer",
 };
 
@@ -87,15 +87,15 @@ export const ROLE_DISPLAY_NAMES: Record<Role, string> = {
  * Role descriptions
  */
 export const ROLE_DESCRIPTIONS: Record<Role, string> = {
-  [ROLES.PIRATE_KING]: "Ultimate system owner with full control",
+  [ROLES.PIRATE_KING]: "Business owner with full system control",
   [ROLES.ADMIN]: "System administrator with full management access",
-  [ROLES.PARTNER]: "Company owner who can manage their company and create invoices",
-  [ROLES.STAFF_CAPTAIN]: "Department manager who oversees staff members",
-  [ROLES.STAFF]: "Employee working under a staff captain",
-  [ROLES.VENDOR]: "Service provider who can manage their own invoices and jobs",
+  [ROLES.PARTNER]: "Company partner who can manage operations and create invoices",
+  [ROLES.STAFF_CAPTAIN]: "Team lead who oversees staff and operations",
+  [ROLES.STAFF]: "Team member working under a team lead",
+  [ROLES.VENDOR]: "Contractor who can manage their own invoices and jobs",
   [ROLES.SPARKY_AI]: "AI agent with advanced automation capabilities",
-  [ROLES.SPARKY]: "Basic AI assistant",
-  [ROLES.CLIENT]: "Customer using sales portal to request and book services",
+  [ROLES.SPARKY]: "AI assistant for platform support",
+  [ROLES.CLIENT]: "Customer using the portal to request and book services",
 };
 
 /**

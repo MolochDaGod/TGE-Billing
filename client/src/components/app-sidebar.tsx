@@ -50,6 +50,7 @@ export function AppSidebar() {
   const adminOperationsItems = [
     { title: "Dashboard", url: "/", icon: Home },
     { title: "Invoices", url: "/invoices", icon: FileText },
+    { title: "Estimates", url: "/estimates", icon: ClipboardList },
     { title: "Clients", url: "/clients", icon: Users },
     { title: "Jobs", url: "/jobs", icon: Calendar },
     { title: "Compliance", url: "/compliance", icon: Shield },
@@ -73,6 +74,7 @@ export function AppSidebar() {
   const employeeOperationsItems = [
     { title: "Dashboard", url: "/", icon: Home },
     { title: "Invoices", url: "/invoices", icon: FileText },
+    { title: "Estimates", url: "/estimates", icon: ClipboardList },
     { title: "Clients", url: "/clients", icon: Users },
     { title: "Jobs", url: "/jobs", icon: Calendar },
     { title: "Compliance", url: "/compliance", icon: Shield },
@@ -93,8 +95,9 @@ export function AppSidebar() {
     { title: "My Profile", url: "/vendor/profile", icon: Building2 },
     { title: "My Clients", url: "/clients", icon: Users },
     { title: "My Invoices", url: "/invoices", icon: FileText },
+    { title: "My Estimates", url: "/estimates", icon: ClipboardList },
     { title: "My Jobs", url: "/jobs", icon: Calendar },
-    { title: "Bookings", url: "/bookings", icon: ClipboardList },
+    { title: "Bookings", url: "/bookings", icon: Calendar },
   ];
 
   // Client Navigation - Customer Portal (Sales/Onboarding)
@@ -164,8 +167,8 @@ export function AppSidebar() {
             </div>
           </div>
           <div>
-            <div className="font-bold text-lg electric-text tracking-wide">T.G.E. PROS</div>
-            <div className="text-xs text-muted-foreground font-medium">Licensed Contractor Platform</div>
+            <div className="font-bold text-lg electric-text tracking-wide">TGE Operations</div>
+            <div className="text-xs text-muted-foreground font-medium">Contractor Management Platform</div>
           </div>
         </div>
       </SidebarHeader>

@@ -14,7 +14,7 @@ import {
   sendFollowUp,
   sendSMS
 } from "./services/twilio";
-import { sendInvoiceEmail, sendAppointmentEmail, verifyWebhookSignature } from "./services/agentmail";
+import { sendInvoiceEmail, sendAppointmentEmail, sendGenericEmail, buildBranding, verifyWebhookSignature } from "./services/agentmail";
 import { 
   insertClientSchema,
   insertInvoiceSchema,
@@ -34,6 +34,8 @@ import {
   insertOnboardingDocumentSchema,
   insertOnboardingChecklistSchema,
   insertVendorSchema,
+  insertEstimateSchema,
+  insertEstimateItemSchema,
 } from "@shared/schema";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
@@ -167,6 +169,193 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Error fetching user CRM data:", error);
       res.status(500).json({ message: "Failed to fetch user CRM data" });
+    }
+  });
+
+  // ============================================
+  // Generic Email Send
+  // ============================================
+  app.post('/api/email/send', isAuthenticated, async (req: any, res) => {
+    try {
+      const { to, subject, body } = req.body;
+      if (!to || !subject || !body) {
+        return res.status(400).json({ message: 'to, subject, and body are required' });
+      }
+
+      // Load company_settings for branding
+      const settings = await storage.getCompanySettings();
+      const branding = buildBranding(settings);
+
+      const result = await sendGenericEmail({ to, subject, body, branding });
+      if (!result.success) {
+        return res.status(500).json({ message: result.error || 'Failed to send email' });
+      }
+      res.json({ success: true });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      res.status(500).json({ message: 'Failed to send email' });
+    }
+  });
+
+  // ============================================
+  // Estimates CRUD
+  // ============================================
+  app.get('/api/estimates', isAuthenticated, async (req: any, res) => {
+    try {
+      const user = req.user;
+      let estimates;
+      if (user.role === 'vendor') {
+        estimates = await storage.getEstimatesByCreator(user.id);
+      } else if (user.role === 'client') {
+        const clients = await storage.getClientsByUserId(user.id);
+        const all = await Promise.all(clients.map(c => storage.getEstimatesByClientId(c.id)));
+        estimates = all.flat();
+      } else if (user.role === 'staff') {
+        estimates = await storage.getEstimatesByCreator(user.id);
+      } else {
+        estimates = await storage.getAllEstimates();
+      }
+      res.json(estimates);
+    } catch (error) {
+      console.error("Error fetching estimates:", error);
+      res.status(500).json({ message: "Failed to fetch estimates" });
+    }
+  });
+
+  app.get('/api/estimates/:id', isAuthenticated, async (req: any, res) => {
+    try {
+      const estimate = await storage.getEstimate(req.params.id);
+      if (!estimate) return res.status(404).json({ message: "Estimate not found" });
+      const items = await storage.getEstimateItems(estimate.id);
+      res.json({ ...estimate, items });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch estimate" });
+    }
+  });
+
+  app.post('/api/estimates', isAuthenticated, async (req: any, res) => {
+    try {
+      const user = req.user;
+      const { items, ...estimateData } = req.body;
+
+      // Generate estimate number
+      const allEstimates = await storage.getAllEstimates();
+      const nextNum = allEstimates.length + 1;
+      const estimate_number = `EST-${String(nextNum).padStart(5, '0')}`;
+
+      const estimate = await storage.createEstimate({
+        ...estimateData,
+        estimate_number,
+        created_by: user.id,
+      });
+
+      if (items && items.length > 0) {
+        for (let i = 0; i < items.length; i++) {
+          await storage.createEstimateItem({
+            estimate_id: estimate.id,
+            description: items[i].description,
+            quantity: items[i].quantity,
+            unit_price: items[i].unit_price,
+            amount: items[i].amount,
+            order_index: i,
+          });
+        }
+      }
+
+      const createdItems = await storage.getEstimateItems(estimate.id);
+      res.status(201).json({ ...estimate, items: createdItems });
+    } catch (error) {
+      console.error("Error creating estimate:", error);
+      res.status(500).json({ message: "Failed to create estimate" });
+    }
+  });
+
+  app.patch('/api/estimates/:id', isAuthenticated, async (req: any, res) => {
+    try {
+      const { items, ...updates } = req.body;
+      const estimate = await storage.updateEstimate(req.params.id, updates);
+      if (!estimate) return res.status(404).json({ message: "Estimate not found" });
+
+      if (items) {
+        await storage.deleteEstimateItems(estimate.id);
+        for (let i = 0; i < items.length; i++) {
+          await storage.createEstimateItem({
+            estimate_id: estimate.id,
+            description: items[i].description,
+            quantity: items[i].quantity,
+            unit_price: items[i].unit_price,
+            amount: items[i].amount,
+            order_index: i,
+          });
+        }
+      }
+
+      const updatedItems = await storage.getEstimateItems(estimate.id);
+      res.json({ ...estimate, items: updatedItems });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to update estimate" });
+    }
+  });
+
+  app.delete('/api/estimates/:id', isAuthenticated, async (req: any, res) => {
+    try {
+      const deleted = await storage.deleteEstimate(req.params.id);
+      if (!deleted) return res.status(404).json({ message: "Estimate not found" });
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to delete estimate" });
+    }
+  });
+
+  // Convert estimate to invoice
+  app.post('/api/estimates/:id/convert-to-invoice', isAuthenticated, async (req: any, res) => {
+    try {
+      const user = req.user;
+      const estimate = await storage.getEstimate(req.params.id);
+      if (!estimate) return res.status(404).json({ message: "Estimate not found" });
+      if (estimate.converted_to_invoice_id) return res.status(400).json({ message: "Estimate already converted" });
+
+      const estimateItems = await storage.getEstimateItems(estimate.id);
+
+      // Generate invoice number
+      const allInvoices = await storage.getAllInvoices();
+      const nextNum = allInvoices.length + 1;
+      const invoice_number = `INV-${String(nextNum).padStart(5, '0')}`;
+
+      const invoice = await storage.createInvoice({
+        invoice_number,
+        client_id: estimate.client_id,
+        created_by: user.id,
+        company_id: estimate.company_id,
+        status: 'draft',
+        subtotal: estimate.subtotal,
+        tax_rate: estimate.tax_rate,
+        tax_amount: estimate.tax_amount,
+        total: estimate.total,
+        notes: estimate.notes || `Converted from estimate ${estimate.estimate_number}`,
+      });
+
+      for (let i = 0; i < estimateItems.length; i++) {
+        await storage.createInvoiceItem({
+          invoice_id: invoice.id,
+          description: estimateItems[i].description,
+          quantity: estimateItems[i].quantity,
+          unit_price: estimateItems[i].unit_price,
+          amount: estimateItems[i].amount,
+          order_index: i,
+        });
+      }
+
+      // Mark estimate as converted
+      await storage.updateEstimate(estimate.id, {
+        status: 'accepted',
+        converted_to_invoice_id: invoice.id,
+      } as any);
+
+      res.json({ invoice, estimate_number: estimate.estimate_number });
+    } catch (error) {
+      console.error("Error converting estimate:", error);
+      res.status(500).json({ message: "Failed to convert estimate to invoice" });
     }
   });
 

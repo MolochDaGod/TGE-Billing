@@ -52,6 +52,10 @@ import type {
   InsertAIWorkflowTemplate,
   TeamMessage,
   InsertTeamMessage,
+  Estimate,
+  InsertEstimate,
+  EstimateItem,
+  InsertEstimateItem,
 } from "@shared/schema";
 
 export interface IStorage {
@@ -204,6 +208,19 @@ export interface IStorage {
   getAIWorkflowTemplate(id: string): Promise<AIWorkflowTemplate | undefined>;
   createAIWorkflowTemplate(template: InsertAIWorkflowTemplate): Promise<AIWorkflowTemplate>;
   updateAIWorkflowTemplate(id: string, updates: Partial<InsertAIWorkflowTemplate>): Promise<AIWorkflowTemplate | undefined>;
+
+  // Estimates
+  getEstimate(id: string): Promise<Estimate | undefined>;
+  getEstimateByNumber(estimateNumber: string): Promise<Estimate | undefined>;
+  getAllEstimates(): Promise<Estimate[]>;
+  getEstimatesByClientId(clientId: string): Promise<Estimate[]>;
+  getEstimatesByCreator(userId: string): Promise<Estimate[]>;
+  createEstimate(estimate: InsertEstimate): Promise<Estimate>;
+  updateEstimate(id: string, updates: Partial<InsertEstimate>): Promise<Estimate | undefined>;
+  deleteEstimate(id: string): Promise<boolean>;
+  getEstimateItems(estimateId: string): Promise<EstimateItem[]>;
+  createEstimateItem(item: InsertEstimateItem): Promise<EstimateItem>;
+  deleteEstimateItems(estimateId: string): Promise<boolean>;
 
   // Team Messages
   getTeamMessages(channel: string, limit?: number): Promise<TeamMessage[]>;
@@ -913,6 +930,62 @@ export class DbStorage implements IStorage {
       .where(eq(schema.ai_workflow_templates.id, id))
       .returning();
     return result[0];
+  }
+
+  // Estimates
+  async getEstimate(id: string): Promise<Estimate | undefined> {
+    const result = await db.select().from(schema.estimates).where(eq(schema.estimates.id, id));
+    return result[0];
+  }
+
+  async getEstimateByNumber(estimateNumber: string): Promise<Estimate | undefined> {
+    const result = await db.select().from(schema.estimates).where(eq(schema.estimates.estimate_number, estimateNumber));
+    return result[0];
+  }
+
+  async getAllEstimates(): Promise<Estimate[]> {
+    return await db.select().from(schema.estimates).orderBy(desc(schema.estimates.created_at));
+  }
+
+  async getEstimatesByClientId(clientId: string): Promise<Estimate[]> {
+    return await db.select().from(schema.estimates).where(eq(schema.estimates.client_id, clientId)).orderBy(desc(schema.estimates.created_at));
+  }
+
+  async getEstimatesByCreator(userId: string): Promise<Estimate[]> {
+    return await db.select().from(schema.estimates).where(eq(schema.estimates.created_by, userId)).orderBy(desc(schema.estimates.created_at));
+  }
+
+  async createEstimate(estimate: InsertEstimate): Promise<Estimate> {
+    const result = await db.insert(schema.estimates).values(estimate).returning();
+    return result[0];
+  }
+
+  async updateEstimate(id: string, updates: Partial<InsertEstimate>): Promise<Estimate | undefined> {
+    const result = await db.update(schema.estimates)
+      .set({ ...updates, updated_at: sql`now()` })
+      .where(eq(schema.estimates.id, id))
+      .returning();
+    return result[0];
+  }
+
+  async deleteEstimate(id: string): Promise<boolean> {
+    await db.delete(schema.estimate_items).where(eq(schema.estimate_items.estimate_id, id));
+    const result = await db.delete(schema.estimates).where(eq(schema.estimates.id, id)).returning();
+    return result.length > 0;
+  }
+
+  async getEstimateItems(estimateId: string): Promise<EstimateItem[]> {
+    return await db.select().from(schema.estimate_items).where(eq(schema.estimate_items.estimate_id, estimateId)).orderBy(schema.estimate_items.order_index);
+  }
+
+  async createEstimateItem(item: InsertEstimateItem): Promise<EstimateItem> {
+    const result = await db.insert(schema.estimate_items).values(item).returning();
+    return result[0];
+  }
+
+  async deleteEstimateItems(estimateId: string): Promise<boolean> {
+    const result = await db.delete(schema.estimate_items).where(eq(schema.estimate_items.estimate_id, estimateId)).returning();
+    return result.length >= 0;
   }
 
   // Team Messages
