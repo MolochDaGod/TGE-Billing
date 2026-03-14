@@ -14,10 +14,6 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { RoleSwitchProvider, useRoleSwitch } from "@/contexts/RoleSwitchContext";
 import { RoleSwitcher } from "@/components/RoleSwitcher";
 import { useEffect, useState } from "react";
-// Background image disabled for readability — using CSS gradient instead
-// import tgeBrandingBg from "@assets/19ab4903672e9_1763965916024.png";
-import { Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { registerServiceWorker, requestPersistentStorage } from "@/lib/pwa-register";
 
 // Public Pages
@@ -189,17 +185,8 @@ function AppContent() {
                 <SidebarTrigger data-testid="button-sidebar-toggle" className="text-foreground/80 hover:text-primary transition-colors" />
                 <div className="h-6 w-px bg-border/50" />
                 <NotificationsButton />
-                {user && <RoleSwitcher user={user} />}
+              {user && <RoleSwitcher user={user} />}
               </div>
-              <Button
-                onClick={() => setIsSparkyOpen(true)}
-                size="icon"
-                className="gradient-border-btn relative h-10 w-10 rounded-xl text-primary hover:text-primary transition-all duration-300"
-                data-testid="button-sparky-header"
-              >
-                <Sparkles className="h-5 w-5" />
-                <span className="absolute -top-1 -right-1 h-3 w-3 bg-primary rounded-full pulse-ring" />
-              </Button>
             </header>
             <main className="flex-1 overflow-auto p-6">
               <div className="mx-auto max-w-7xl">

@@ -172,7 +172,7 @@ export default function Messages() {
 
   return (
     <div
-      className="flex overflow-hidden rounded-xl border border-border/50"
+      className="flex overflow-hidden rounded-xl border border-border/50 bg-background"
       style={{ height: "calc(100vh - 5.5rem)" }}
     >
       {/* Sidebar */}
@@ -224,9 +224,9 @@ export default function Messages() {
       </div>
 
       {/* Chat area */}
-      <div className="flex-1 flex flex-col min-w-0 bg-background/30">
+      <div className="flex-1 flex flex-col min-w-0 bg-background">
         {/* Header */}
-        <div className="px-4 py-2.5 border-b border-border/50 flex items-center gap-3 bg-card/40">
+        <div className="px-4 py-2.5 border-b border-border/50 flex items-center gap-3 bg-card">
           <activeChInfo.icon className="h-5 w-5 text-primary flex-shrink-0" />
           <div className="flex-1 min-w-0">
             <span className="font-semibold text-sm">{activeChInfo.name}</span>
