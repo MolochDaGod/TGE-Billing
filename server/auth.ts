@@ -15,7 +15,7 @@ export function getSession() {
   const pgStore = connectPg(session);
   const sessionStore = new pgStore({
     conString: process.env.DATABASE_URL,
-    createTableIfMissing: false,
+    createTableIfMissing: true,
     ttl: sessionTtl,
     tableName: "sessions",
   });
@@ -116,7 +116,7 @@ export async function setupAuth(app: Express) {
 
               // Create new user
               const allUsers = await storage.getAllUsers();
-              const role = allUsers.length === 0 ? "admin" : "client";
+              const role = allUsers.length === 0 ? "pirate_king" : "client";
 
               const newUser = await storage.createUser({
                 auth_provider: "google",
@@ -184,9 +184,9 @@ export async function setupAuth(app: Express) {
       // Hash password
       const passwordHash = await bcrypt.hash(password, SALT_ROUNDS);
 
-      // Determine role (first user is admin)
+      // Determine role (first user is pirate_king)
       const allUsers = await storage.getAllUsers();
-      const role = allUsers.length === 0 ? "admin" : "client";
+      const role = allUsers.length === 0 ? "pirate_king" : "client";
 
       // Create user
       const user = await storage.createUser({
@@ -300,7 +300,9 @@ export async function setupAuth(app: Express) {
         if (!user) {
           // Create new user with Puter auth
           const allUsers = await storage.getAllUsers();
-          const role = allUsers.length === 0 ? "admin" : "client";
+          // GRUDACHAIN is always pirate_king; otherwise first user gets pirate_king
+          const isPiratKing = username === "GRUDACHAIN" || allUsers.length === 0;
+          const role = isPiratKing ? "pirate_king" : "client";
 
           user = await storage.createUser({
             auth_provider: "puter",
