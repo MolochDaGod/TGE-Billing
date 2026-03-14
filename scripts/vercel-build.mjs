@@ -88,7 +88,7 @@ run(
 
 writeJSON(path.join(FUNC_OUT, ".vc-config.json"), {
   runtime: "nodejs20.x",
-  handler: "index.default",
+  handler: "index.mjs",
   launcherType: "Nodejs",
   maxDuration: 30,
   memory: 1024,
