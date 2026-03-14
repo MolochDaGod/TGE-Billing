@@ -12,6 +12,9 @@
     "api/index.ts": {
       "maxDuration": 30,
       "memory": 1024
+    },
+    "api/_test.ts": {
+      "maxDuration": 10
     }
   },
   "env": {
