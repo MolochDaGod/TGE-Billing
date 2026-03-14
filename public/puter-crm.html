@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T.G.E. PROS - CRM Portal</title>
+  <script src="https://js.puter.com/v2/"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --primary: #e5fa00;
+      --primary-dark: #c4d600;
+      --bg-dark: #0a0a0a;
+      --bg-card: #141414;
+      --bg-input: #1a1a1a;
+      --text: #ffffff;
+      --text-muted: #888888;
+      --border: #2a2a2a;
+      --accent-blue: #3B9EFF;
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --error: #ef4444;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      background: linear-gradient(135deg, var(--bg-card) 0%, #1a1a1a 100%);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--primary), var(--accent-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .user-role {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .role-admin { background: var(--primary); color: #000; }
+    .role-employee { background: var(--accent-blue); color: #fff; }
+    .role-vendor { background: var(--warning); color: #000; }
+    .role-client { background: var(--success); color: #fff; }
+    
+    /* Login Screen */
+    .login-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      background: radial-gradient(ellipse at top, #1a1a1a 0%, var(--bg-dark) 100%);
+    }
+    
+    .login-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    
+    .login-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    
+    .login-header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      background: linear-gradient(90deg, var(--primary), var(--accent-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .login-header p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    
+    .role-selector {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    
+    .role-btn {
+      padding: 16px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg-input);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    
+    .role-btn:hover {
+      border-color: var(--primary);
+      background: rgba(229, 250, 0, 0.05);
+    }
+    
+    .role-btn.selected {
+      border-color: var(--primary);
+      background: rgba(229, 250, 0, 0.1);
+    }
+    
+    .role-btn .icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    
+    .role-btn .label {
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .form-group {
+      margin-bottom: 16px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-input);
+      color: var(--text);
+      font-size: 16px;
+      transition: border-color 0.2s;
+    }
+    
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    
+    .btn-primary {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #000;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(229, 250, 0, 0.3);
+    }
+    
+    .btn-secondary {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text);
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 12px;
+    }
+    
+    .btn-secondary:hover {
+      background: var(--bg-input);
+    }
+    
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 24px 0;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+    
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    
+    .divider span {
+      padding: 0 16px;
+    }
+    
+    /* Dashboard */
+    .dashboard {
+      display: none;
+      min-height: 100vh;
+    }
+    
+    .dashboard.active {
+      display: block;
+    }
+    
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 24px;
+    }
+    
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    
+    .stat-card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    
+    .stat-card .value {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    
+    .stat-card .label {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    
+    /* Quick Actions */
+    .quick-actions {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 0 24px 24px;
+    }
+    
+    .quick-actions h3 {
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
+    
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+    }
+    
+    .action-btn {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-input);
+      color: var(--text);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    
+    .action-btn:hover {
+      border-color: var(--primary);
+      background: rgba(229, 250, 0, 0.05);
+    }
+    
+    .action-btn .icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    
+    /* Client List */
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 0 24px 24px;
+    }
+    
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .section-header h3 {
+      font-size: 18px;
+    }
+    
+    .client-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .client-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      background: var(--bg-input);
+      border-radius: 10px;
+      transition: background 0.2s;
+    }
+    
+    .client-item:hover {
+      background: #222;
+    }
+    
+    .client-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-blue), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    
+    .client-info {
+      flex: 1;
+    }
+    
+    .client-name {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    
+    .client-email {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    
+    .client-status {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    
+    .status-active { background: rgba(34, 197, 94, 0.2); color: var(--success); }
+    .status-pending { background: rgba(245, 158, 11, 0.2); color: var(--warning); }
+    .status-inactive { background: rgba(136, 136, 136, 0.2); color: var(--text-muted); }
+    
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+    }
+    
+    .footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    /* Responsive */
+    @media (max-width: 600px) {
+      .role-selector {
+        grid-template-columns: 1fr;
+      }
+      
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+        padding: 16px;
+      }
+      
+      .quick-actions, .section-card {
+        margin: 0 16px 16px;
+      }
+    }
+    
+    /* Loading spinner */
+    .spinner {
+      width: 24px;
+      height: 24px;
+      border: 3px solid var(--border);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <!-- Login Screen -->
+  <div id="loginScreen" class="login-screen">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="logo-icon" style="width: 60px; height: 60px; margin: 0 auto 16px; font-size: 28px;">
+          <span>&#9889;</span>
+        </div>
+        <h1>T.G.E. PROS</h1>
+        <p>Professional Electrical Services CRM</p>
+      </div>
+      
+      <div class="role-selector">
+        <button class="role-btn selected" data-role="admin" data-testid="btn-role-admin">
+          <div class="icon">&#128081;</div>
+          <div class="label">Admin</div>
+        </button>
+        <button class="role-btn" data-role="employee" data-testid="btn-role-employee">
+          <div class="icon">&#128119;</div>
+          <div class="label">Employee</div>
+        </button>
+        <button class="role-btn" data-role="vendor" data-testid="btn-role-vendor">
+          <div class="icon">&#128736;</div>
+          <div class="label">Vendor</div>
+        </button>
+        <button class="role-btn" data-role="client" data-testid="btn-role-client">
+          <div class="icon">&#128100;</div>
+          <div class="label">Client</div>
+        </button>
+      </div>
+      
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter username" required data-testid="input-username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" required data-testid="input-password">
+        </div>
+        <button type="submit" class="btn-primary" data-testid="btn-login">
+          <span id="loginBtnText">Sign In</span>
+          <div id="loginSpinner" class="spinner hidden"></div>
+        </button>
+      </form>
+      
+      <div class="divider"><span>OR</span></div>
+      
+      <button id="puterLoginBtn" class="btn-secondary" data-testid="btn-puter-login">
+        &#9729; Sign in with Puter
+      </button>
+      
+      <p style="text-align: center; margin-top: 20px; font-size: 13px; color: var(--text-muted);">
+        Texas Master Electrician License #750779
+      </p>
+    </div>
+  </div>
+  
+  <!-- Dashboard -->
+  <div id="dashboard" class="dashboard">
+    <header class="header">
+      <div class="logo">
+        <div class="logo-icon"><span>&#9889;</span></div>
+        <span class="logo-text">T.G.E. PROS</span>
+      </div>
+      <div class="user-info">
+        <span id="userName">User</span>
+        <span id="userRole" class="user-role role-admin">Admin</span>
+        <button id="logoutBtn" class="action-btn" style="padding: 8px 16px;" data-testid="btn-logout">Logout</button>
+      </div>
+    </header>
+    
+    <div class="dashboard-grid">
+      <div class="stat-card">
+        <div class="icon" style="background: rgba(229, 250, 0, 0.15);">&#128100;</div>
+        <div class="value" id="statClients">24</div>
+        <div class="label">Active Clients</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon" style="background: rgba(59, 158, 255, 0.15);">&#128221;</div>
+        <div class="value" id="statJobs">12</div>
+        <div class="label">Open Jobs</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon" style="background: rgba(34, 197, 94, 0.15);">&#128176;</div>
+        <div class="value" id="statRevenue">$8,450</div>
+        <div class="label">This Month</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon" style="background: rgba(245, 158, 11, 0.15);">&#128203;</div>
+        <div class="value" id="statInvoices">5</div>
+        <div class="label">Pending Invoices</div>
+      </div>
+    </div>
+    
+    <div class="quick-actions">
+      <h3>Quick Actions</h3>
+      <div class="action-grid">
+        <button class="action-btn" data-action="new-client" data-testid="btn-new-client">
+          <div class="icon">&#128100;</div>
+          <div>New Client</div>
+        </button>
+        <button class="action-btn" data-action="new-job" data-testid="btn-new-job">
+          <div class="icon">&#128295;</div>
+          <div>New Job</div>
+        </button>
+        <button class="action-btn" data-action="new-invoice" data-testid="btn-new-invoice">
+          <div class="icon">&#128196;</div>
+          <div>New Invoice</div>
+        </button>
+        <button class="action-btn" data-action="ai-assist" data-testid="btn-ai-assist">
+          <div class="icon">&#129302;</div>
+          <div>AI Assistant</div>
+        </button>
+      </div>
+    </div>
+    
+    <div class="section-card">
+      <div class="section-header">
+        <h3>Recent Clients</h3>
+        <button class="action-btn" style="padding: 8px 16px;" data-testid="btn-view-all">View All</button>
+      </div>
+      <div class="client-list" id="clientList">
+        <div class="client-item">
+          <div class="client-avatar">JD</div>
+          <div class="client-info">
+            <div class="client-name">John Doe</div>
+            <div class="client-email">john.doe@email.com</div>
+          </div>
+          <span class="client-status status-active">Active</span>
+        </div>
+        <div class="client-item">
+          <div class="client-avatar">SM</div>
+          <div class="client-info">
+            <div class="client-name">Sarah Miller</div>
+            <div class="client-email">sarah.m@company.com</div>
+          </div>
+          <span class="client-status status-pending">Pending</span>
+        </div>
+        <div class="client-item">
+          <div class="client-avatar">RJ</div>
+          <div class="client-info">
+            <div class="client-name">Robert Johnson</div>
+            <div class="client-email">r.johnson@corp.net</div>
+          </div>
+          <span class="client-status status-active">Active</span>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="footer">
+      <p>T.G.E. PROS &copy; 2024 | Texas Master Electrician License #750779</p>
+      <p>Contact: <a href="tel:361-404-1267">361-404-1267</a> | <a href="mailto:TGEBilling@gmail.com">TGEBilling@gmail.com</a></p>
+      <p style="margin-top: 8px;">Powered by <a href="https://puter.com" target="_blank">Puter</a></p>
+    </footer>
+  </div>
+  
+  <script>
+    // App State
+    let currentUser = null;
+    let selectedRole = 'admin';
+    let isPuterAuth = false;
+    
+    // DOM Elements
+    const loginScreen = document.getElementById('loginScreen');
+    const dashboard = document.getElementById('dashboard');
+    const loginForm = document.getElementById('loginForm');
+    const puterLoginBtn = document.getElementById('puterLoginBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const roleButtons = document.querySelectorAll('.role-btn');
+    const loginBtnText = document.getElementById('loginBtnText');
+    const loginSpinner = document.getElementById('loginSpinner');
+    
+    // Role selection
+    roleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        roleButtons.forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedRole = btn.dataset.role;
+      });
+    });
+    
+    // Standard login
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
+      showLoading(true);
+      
+      // Simulate auth check - in production, validate against your backend
+      setTimeout(() => {
+        currentUser = {
+          username,
+          role: selectedRole,
+          name: username.charAt(0).toUpperCase() + username.slice(1)
+        };
+        
+        // Store in Puter KV if available
+        if (typeof puter !== 'undefined' && puter.kv) {
+          puter.kv.set('tge_user', JSON.stringify(currentUser)).catch(console.log);
+        }
+        
+        showDashboard();
+        showLoading(false);
+      }, 1000);
+    });
+    
+    // Puter login
+    puterLoginBtn.addEventListener('click', async () => {
+      if (typeof puter === 'undefined') {
+        alert('Puter SDK not loaded. Please try again.');
+        return;
+      }
+      
+      try {
+        showLoading(true);
+        
+        // Check if already signed in
+        const isSignedIn = await puter.auth.isSignedIn();
+        
+        if (!isSignedIn) {
+          await puter.auth.signIn();
+        }
+        
+        const user = await puter.auth.getUser();
+        
+        currentUser = {
+          username: user.username,
+          role: selectedRole,
+          name: user.username,
+          puterUser: true
+        };
+        
+        isPuterAuth = true;
+        
+        // Store role preference
+        await puter.kv.set('tge_role', selectedRole);
+        
+        showDashboard();
+      } catch (error) {
+        console.error('Puter login failed:', error);
+        alert('Login failed. Please try again.');
+      } finally {
+        showLoading(false);
+      }
+    });
+    
+    // Logout
+    logoutBtn.addEventListener('click', async () => {
+      if (isPuterAuth && typeof puter !== 'undefined') {
+        try {
+          await puter.auth.signOut();
+        } catch (e) {
+          console.log('Puter signout:', e);
+        }
+      }
+      
+      currentUser = null;
+      isPuterAuth = false;
+      showLogin();
+    });
+    
+    // Quick actions
+    document.querySelectorAll('.action-btn[data-action]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const action = btn.dataset.action;
+        handleAction(action);
+      });
+    });
+    
+    function handleAction(action) {
+      switch(action) {
+        case 'new-client':
+          alert('New Client form would open here');
+          break;
+        case 'new-job':
+          alert('New Job form would open here');
+          break;
+        case 'new-invoice':
+          alert('New Invoice form would open here');
+          break;
+        case 'ai-assist':
+          openAIAssistant();
+          break;
+      }
+    }
+    
+    async function openAIAssistant() {
+      if (typeof puter === 'undefined' || !puter.ai) {
+        alert('AI Assistant requires Puter. Please sign in with Puter.');
+        return;
+      }
+      
+      const question = prompt('Ask Sparky AI anything about electrical work:');
+      if (!question) return;
+      
+      try {
+        const response = await puter.ai.chat(
+          `You are Sparky, an AI assistant for T.G.E. PROS electrical services. 
+          Help with electrical questions, business advice, and customer service.
+          User question: ${question}`,
+          { model: 'gpt-4o' }
+        );
+        alert('Sparky AI: ' + response);
+      } catch (error) {
+        console.error('AI error:', error);
+        alert('AI Assistant is not available right now.');
+      }
+    }
+    
+    function showDashboard() {
+      loginScreen.style.display = 'none';
+      dashboard.classList.add('active');
+      
+      document.getElementById('userName').textContent = currentUser.name;
+      const roleEl = document.getElementById('userRole');
+      roleEl.textContent = currentUser.role.charAt(0).toUpperCase() + currentUser.role.slice(1);
+      roleEl.className = 'user-role role-' + currentUser.role;
+      
+      // Load data from Puter KV if available
+      loadDashboardData();
+    }
+    
+    function showLogin() {
+      dashboard.classList.remove('active');
+      loginScreen.style.display = 'flex';
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
+    }
+    
+    function showLoading(show) {
+      loginBtnText.classList.toggle('hidden', show);
+      loginSpinner.classList.toggle('hidden', !show);
+    }
+    
+    async function loadDashboardData() {
+      if (typeof puter === 'undefined' || !puter.kv) return;
+      
+      try {
+        // Try to load saved stats from Puter KV
+        const stats = await puter.kv.get('tge_stats');
+        if (stats) {
+          const data = JSON.parse(stats);
+          document.getElementById('statClients').textContent = data.clients || '24';
+          document.getElementById('statJobs').textContent = data.jobs || '12';
+          document.getElementById('statRevenue').textContent = data.revenue || '$8,450';
+          document.getElementById('statInvoices').textContent = data.invoices || '5';
+        }
+      } catch (e) {
+        console.log('Could not load stats:', e);
+      }
+    }
+    
+    // Check for existing Puter session on load
+    async function checkExistingSession() {
+      if (typeof puter === 'undefined') return;
+      
+      try {
+        const isSignedIn = await puter.auth.isSignedIn();
+        if (isSignedIn) {
+          const user = await puter.auth.getUser();
+          const savedRole = await puter.kv.get('tge_role');
+          
+          currentUser = {
+            username: user.username,
+            role: savedRole || 'admin',
+            name: user.username,
+            puterUser: true
+          };
+          
+          isPuterAuth = true;
+          showDashboard();
+        }
+      } catch (e) {
+        console.log('No existing session');
+      }
+    }
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(checkExistingSession, 500);
+    });
+  </script>
+</body>
+</html>

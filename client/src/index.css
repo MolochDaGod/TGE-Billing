@@ -1,0 +1,1087 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LIGHT MODE - Professional Electrical Industry Theme */
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+
+  --opaque-button-border-intensity: -8;
+
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+
+  /* Neutral backgrounds - clean whites and light grays */
+  --background: 70.91 21.57% 90%;
+  --foreground: 0 0% 8.24%;
+  --border: 35 10.53% 77.65%;
+
+  /* Card styling - slightly elevated white */
+  --card: 180 6.6667% 97.0588%;
+  --card-foreground: 210 25% 7.8431%;
+  --card-border: 210 10% 92%;
+
+  /* Sidebar - professional blue-gray */
+  --sidebar: 180 6.6667% 97.0588%;
+  --sidebar-foreground: 210 25% 7.8431%;
+  --sidebar-border: 205.0000 25.0000% 90.5882%;
+
+  --sidebar-primary: 203.8863 88.2845% 53.1373%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 211.5789 51.3514% 92.7451%;
+  --sidebar-accent-foreground: 203.8863 88.2845% 53.1373%;
+  --sidebar-ring: 202.8169 89.1213% 53.1373%;
+
+  /* Popover - Light blue background for dropdown visibility */
+  --popover: 0 0% 100%;
+  --popover-foreground: 210 25% 7.8431%;
+  --popover-border: 203 70% 85%;
+
+  /* Primary - Professional Electric Blue */
+  --primary: 165.65 26.44% 65.88%;
+  --primary-foreground: 0 0% 8.24%;
+
+  /* Secondary - Dark Gray */
+  --secondary: 0 0% 8.24%;
+  --secondary-foreground: 70.91 21.57% 90%;
+
+  /* Muted - Soft gray for less important UI */
+  --muted: 72 12.82% 84.71%;
+  --muted-foreground: 72 2.39% 40.98%;
+
+  /* Accent - Safety Orange for CTAs and important actions */
+  --accent: 292.13 48.03% 75.1%;
+  --accent-foreground: 0 0% 8.24%;
+
+  /* Destructive - Red for warnings/errors */
+  --destructive: 0.49 54.19% 55.49%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Form inputs */
+  --input: 35.29 11.41% 70.78%;
+  --ring: 166.76 29.82% 44.71%;
+
+  /* Charts - using blue spectrum with yellow accent */
+  --chart-1: 203.8863 88.2845% 53.1373%;
+  --chart-2: 159.7826 100% 36.0784%;
+  --chart-3: 42.0290 92.8251% 56.2745%;
+  --chart-4: 147.1429 78.5047% 41.9608%;
+  --chart-5: 341.4894 75.2000% 50.9804%;
+
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-serif: 'Source Serif Pro', serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --radius: 0.875rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+/* DARK MODE - Premium Electric Professional Theme */
+.dark {
+  --button-outline: rgba(255,255,255, .12);
+  --badge-outline: rgba(255,255,255, .08);
+
+  --opaque-button-border-intensity: 9;
+
+  --elevate-1: rgba(255,255,255, .06);
+  --elevate-2: rgba(255,255,255, .12);
+
+  /* Deep premium dark backgrounds */
+  --background: 225 15% 6%;
+  --foreground: 210 20% 95%;
+  --border: 220 15% 18%;
+
+  /* Card - Rich elevated dark with subtle glow potential */
+  --card: 225 18% 10%;
+  --card-foreground: 210 15% 92%;
+  --card-border: 220 20% 22%;
+
+  /* Sidebar - Deep premium dark blue */
+  --sidebar: 225 20% 8%;
+  --sidebar-foreground: 210 15% 92%;
+  --sidebar-border: 220 25% 20%;
+
+  --sidebar-primary: 56 100% 50%;
+  --sidebar-primary-foreground: 225 20% 8%;
+  --sidebar-accent: 220 30% 15%;
+  --sidebar-accent-foreground: 56 100% 50%;
+  --sidebar-ring: 56 100% 50%;
+
+  /* Popover - Premium dark */
+  --popover: 225 20% 8%;
+  --popover-foreground: 210 15% 92%;
+  --popover-border: 220 15% 12%;
+
+  /* Primary - Electric Yellow/Gold - THE SIGNATURE COLOR */
+  --primary: 56 100% 50%;
+  --primary-foreground: 225 20% 8%;
+
+  /* Secondary - Clean white for contrast */
+  --secondary: 210 15% 92%;
+  --secondary-foreground: 225 20% 8%;
+
+  /* Muted - Rich dark gray */
+  --muted: 220 15% 15%;
+  --muted-foreground: 220 10% 55%;
+
+  /* Accent - Electric Blue for highlights */
+  --accent: 200 95% 50%;
+  --accent-foreground: 0 0% 100%;
+
+  /* Destructive - Bright warning red */
+  --destructive: 0 85% 55%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Form inputs - Clear dark contrast */
+  --input: 220 20% 18%;
+  --ring: 56 100% 50%;
+
+  /* Charts - Vibrant electric palette */
+  --chart-1: 56 100% 50%;
+  --chart-2: 200 95% 50%;
+  --chart-3: 160 85% 45%;
+  --chart-4: 280 80% 60%;
+  --chart-5: 0 85% 55%;
+
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --radius: 1.3rem;
+  --spacing: 0.25rem;
+  --font-mono: Menlo, monospace;
+  --font-sans: Open Sans, sans-serif;
+  --font-serif: Georgia, serif;
+  --tracking-normal: 0em;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  .no-default-hover-elevate {}
+
+  .no-default-active-elevate {}
+
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+
+  /* Electric Charge Animations - Optimized for text visibility */
+  @keyframes electric-pulse {
+    0%, 100% {
+      box-shadow: 0 0 8px rgba(229, 250, 0, 0.15),
+                  0 0 16px rgba(229, 250, 0, 0.08),
+                  0 0 24px rgba(229, 250, 0, 0.04);
+    }
+    50% {
+      box-shadow: 0 0 12px rgba(229, 250, 0, 0.25),
+                  0 0 24px rgba(229, 250, 0, 0.12),
+                  0 0 36px rgba(229, 250, 0, 0.06);
+    }
+  }
+
+  @keyframes electric-spark {
+    0% {
+      box-shadow: 0 0 8px rgba(229, 250, 0, 0.2),
+                  0 0 16px rgba(229, 250, 0, 0.1),
+                  0 0 24px rgba(229, 250, 0, 0.05);
+    }
+    25% {
+      box-shadow: 0 0 16px rgba(229, 250, 0, 0.4),
+                  0 0 32px rgba(229, 250, 0, 0.2),
+                  0 0 48px rgba(229, 250, 0, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(229, 250, 0, 0.5),
+                  0 0 40px rgba(229, 250, 0, 0.25),
+                  0 0 60px rgba(229, 250, 0, 0.12);
+    }
+    75% {
+      box-shadow: 0 0 16px rgba(229, 250, 0, 0.4),
+                  0 0 32px rgba(229, 250, 0, 0.2),
+                  0 0 48px rgba(229, 250, 0, 0.1);
+    }
+    100% {
+      box-shadow: 0 0 8px rgba(229, 250, 0, 0.2),
+                  0 0 16px rgba(229, 250, 0, 0.1),
+                  0 0 24px rgba(229, 250, 0, 0.05);
+    }
+  }
+
+  @keyframes electric-border-glow {
+    0%, 100% {
+      border-color: rgba(229, 250, 0, 0.25);
+    }
+    50% {
+      border-color: rgba(229, 250, 0, 0.45);
+    }
+  }
+
+  /* Electric Charge Classes */
+  .electric-charge {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .electric-charge:hover {
+    animation: electric-pulse 2s ease-in-out infinite;
+    border-color: rgba(229, 250, 0, 0.35);
+  }
+
+  .electric-charge:active,
+  .electric-charge.electric-active {
+    animation: electric-spark 0.6s ease-in-out;
+    transform: scale(0.98);
+  }
+
+  /* Subtle electric border accent - keeps text readable */
+  .electric-charge::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, 
+      transparent 0%, 
+      rgba(229, 250, 0, 0.03) 25%, 
+      rgba(229, 250, 0, 0.06) 50%, 
+      rgba(229, 250, 0, 0.03) 75%, 
+      transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .electric-charge:hover::before {
+    opacity: 1;
+    animation: electric-border-glow 2s ease-in-out infinite;
+  }
+
+  /* Stick Figure Animations */
+  @keyframes stick-walk-legs {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-20deg);
+    }
+    75% {
+      transform: rotate(20deg);
+    }
+  }
+
+  @keyframes stick-walk-arms {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(15deg);
+    }
+  }
+
+  @keyframes stick-jump {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+
+  @keyframes stick-wave {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-45deg);
+    }
+    75% {
+      transform: rotate(45deg);
+    }
+  }
+
+  @keyframes stick-bounce-head {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+
+  .stick-figure.walk .leg-left,
+  .stick-figure.run .leg-left {
+    animation: stick-walk-legs 0.6s ease-in-out infinite;
+    transform-origin: 30px 50px;
+  }
+
+  .stick-figure.walk .leg-right,
+  .stick-figure.run .leg-right {
+    animation: stick-walk-legs 0.6s ease-in-out infinite reverse;
+    transform-origin: 30px 50px;
+  }
+
+  .stick-figure.run .leg-left,
+  .stick-figure.run .leg-right {
+    animation-duration: 0.3s;
+  }
+
+  .stick-figure.walk .arm-left,
+  .stick-figure.run .arm-left {
+    animation: stick-walk-arms 0.6s ease-in-out infinite;
+    transform-origin: 30px 30px;
+  }
+
+  .stick-figure.walk .arm-right,
+  .stick-figure.run .arm-right {
+    animation: stick-walk-arms 0.6s ease-in-out infinite reverse;
+    transform-origin: 30px 30px;
+  }
+
+  .stick-figure.walk .head,
+  .stick-figure.run .head {
+    animation: stick-bounce-head 0.6s ease-in-out infinite;
+  }
+
+  .stick-figure.run .head {
+    animation-duration: 0.3s;
+  }
+
+  .stick-figure.jump {
+    animation: stick-jump 0.8s ease-in-out;
+  }
+
+  .stick-figure.wave .arm-right {
+    animation: stick-wave 0.5s ease-in-out infinite;
+    transform-origin: 30px 30px;
+  }
+
+  .stick-figure {
+    filter: drop-shadow(0 0 3px rgba(229, 250, 0, 0.5));
+  }
+
+  /* Maintenance Man Animations */
+  @keyframes man-walk-legs {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-15deg);
+    }
+    75% {
+      transform: rotate(15deg);
+    }
+  }
+
+  @keyframes man-walk-arms {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(20deg);
+    }
+  }
+
+  @keyframes man-climb {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes man-wave {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-60deg);
+    }
+    50% {
+      transform: rotate(-40deg);
+    }
+    75% {
+      transform: rotate(-60deg);
+    }
+  }
+
+  @keyframes man-scratch {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-90deg);
+    }
+  }
+
+  @keyframes man-celebrate {
+    0%, 100% {
+      transform: rotate(0deg) translateY(0);
+    }
+    25% {
+      transform: rotate(-30deg) translateY(-3px);
+    }
+    50% {
+      transform: rotate(0deg) translateY(-5px);
+    }
+    75% {
+      transform: rotate(30deg) translateY(-3px);
+    }
+  }
+
+  @keyframes man-toolbox {
+    0%, 100% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(110deg);
+    }
+  }
+
+  @keyframes light-pulse {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes hard-hat-bob {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-2px);
+    }
+  }
+
+  /* Walking Animation */
+  .maintenance-man.walk .leg-left {
+    animation: man-walk-legs 0.6s ease-in-out infinite;
+    transform-origin: 30px 57px;
+  }
+
+  .maintenance-man.walk .leg-right {
+    animation: man-walk-legs 0.6s ease-in-out infinite reverse;
+    transform-origin: 40px 57px;
+  }
+
+  .maintenance-man.walk .arm-left {
+    animation: man-walk-arms 0.6s ease-in-out infinite reverse;
+    transform-origin: 25px 37px;
+  }
+
+  .maintenance-man.walk .arm-right {
+    animation: man-walk-arms 0.6s ease-in-out infinite;
+    transform-origin: 45px 37px;
+  }
+
+  .maintenance-man.walk .hard-hat {
+    animation: hard-hat-bob 0.6s ease-in-out infinite;
+  }
+
+  /* Climbing Ladder */
+  .maintenance-man.climb-ladder {
+    animation: man-climb 1s ease-in-out infinite;
+  }
+
+  .maintenance-man.climb-ladder .arm-left,
+  .maintenance-man.climb-ladder .arm-right {
+    animation: man-climb 1s ease-in-out infinite;
+  }
+
+  /* Grappling Hook */
+  .maintenance-man.grappling-hook .arm-right {
+    transform: rotate(-90deg);
+    transform-origin: 45px 37px;
+  }
+
+  /* Waving */
+  .maintenance-man.wave .arm-right {
+    animation: man-wave 0.5s ease-in-out infinite;
+    transform-origin: 45px 37px;
+  }
+
+  /* Scratching Head */
+  .maintenance-man.scratch-head .arm-right {
+    animation: man-scratch 2s ease-in-out;
+    transform-origin: 45px 37px;
+  }
+
+  /* Using Toolbox */
+  .maintenance-man.toolbox .arm-right {
+    animation: man-toolbox 1s ease-in-out infinite;
+    transform-origin: 45px 37px;
+  }
+
+  /* Turning on Bulb */
+  .maintenance-man.turn-on-bulb .arm-right {
+    transform: rotate(-90deg);
+    transform-origin: 45px 37px;
+  }
+
+  /* Celebrating */
+  .maintenance-man.celebrate .arm-left,
+  .maintenance-man.celebrate .arm-right {
+    animation: man-celebrate 0.8s ease-in-out infinite;
+  }
+
+  .maintenance-man.celebrate {
+    animation: man-celebrate 0.8s ease-in-out infinite;
+  }
+
+  /* Glow effect */
+  .maintenance-man {
+    filter: drop-shadow(0 0 4px rgba(229, 250, 0, 0.6));
+  }
+
+  /* Enhanced 3D Text Mesh Effect */
+  .text-mesh-3d {
+    position: relative;
+    text-shadow: 
+      1px 1px 0 rgba(229, 250, 0, 0.8),
+      2px 2px 0 rgba(229, 250, 0, 0.6),
+      3px 3px 0 rgba(229, 250, 0, 0.4),
+      4px 4px 0 rgba(229, 250, 0, 0.2),
+      5px 5px 10px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    animation: text-mesh-float 3s ease-in-out infinite;
+  }
+
+  @keyframes text-mesh-float {
+    0%, 100% {
+      transform: translateZ(0) rotateX(0deg);
+    }
+    50% {
+      transform: translateZ(10px) rotateX(5deg);
+    }
+  }
+
+  /* Sparky Text with Electrical Effect */
+  .sparky-text-electric {
+    background: linear-gradient(90deg, #e5fa00, #ffff66, #e5fa00);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: electric-text-flow 2s linear infinite;
+    filter: drop-shadow(0 0 8px rgba(229, 250, 0, 0.8));
+  }
+
+  @keyframes electric-text-flow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+
+  /* Character reaching for bulb animation */
+  @keyframes reach-for-bulb {
+    0% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(-45deg) translateY(-5px); }
+    50% { transform: rotate(-60deg) translateY(-10px); }
+    75% { transform: rotate(-45deg) translateY(-5px); }
+    100% { transform: rotate(0deg) translateY(0); }
+  }
+
+  .maintenance-man.turn-on-bulb {
+    animation: reach-for-bulb 1.5s ease-in-out;
+  }
+
+  /* Spark effect when turning on bulb */
+  @keyframes spark-burst {
+    0% { 
+      opacity: 1; 
+      transform: scale(0.5);
+    }
+    50% { 
+      opacity: 1; 
+      transform: scale(1.5);
+    }
+    100% { 
+      opacity: 0; 
+      transform: scale(2);
+    }
+  }
+
+  .spark-effect {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ffffff 0%, #e5fa00 40%, transparent 70%);
+    border-radius: 50%;
+    animation: spark-burst 0.5s ease-out forwards;
+    pointer-events: none;
+  }
+
+  /* Enhanced light bulb glow */
+  .light-glow {
+    animation: light-pulse 2s ease-in-out infinite;
+  }
+
+  /* Running animation */
+  @keyframes man-run-legs {
+    0%, 100% {
+      transform: rotate(-30deg);
+    }
+    50% {
+      transform: rotate(30deg);
+    }
+  }
+
+  .maintenance-man.run .leg-left {
+    animation: man-run-legs 0.3s ease-in-out infinite;
+    transform-origin: 30px 57px;
+  }
+
+  .maintenance-man.run .leg-right {
+    animation: man-run-legs 0.3s ease-in-out infinite reverse;
+    transform-origin: 40px 57px;
+  }
+
+  /* Electric wire following character */
+  @keyframes wire-follow {
+    0%, 100% {
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dashoffset: 20;
+    }
+  }
+
+  .electric-wire {
+    stroke: #e5fa00;
+    stroke-width: 2;
+    stroke-dasharray: 10, 5;
+    animation: wire-follow 1s linear infinite;
+    filter: drop-shadow(0 0 3px rgba(229, 250, 0, 0.8));
+  }
+
+  /* Electrical Background Animation */
+  @keyframes electrical-pulse {
+    0%, 100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes rotate-glow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .electrical-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.15;
+  }
+
+  .electrical-background::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle at center,
+      rgba(229, 250, 0, 0.2) 0%,
+      rgba(0, 174, 239, 0.15) 50%,
+      transparent 70%
+    );
+    animation: rotate-glow 30s linear infinite;
+  }
+
+  /* Premium Glass Card Effects */
+  .glass-card {
+    background: linear-gradient(135deg, 
+      rgba(30, 35, 50, 0.9) 0%, 
+      rgba(20, 25, 40, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(229, 250, 0, 0.15);
+    box-shadow: 
+      0 4px 24px -1px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+      0 1px 0 0 rgba(255, 255, 255, 0.05) inset;
+  }
+
+  .glass-card:hover {
+    border-color: rgba(229, 250, 0, 0.3);
+    box-shadow: 
+      0 8px 32px -1px rgba(0, 0, 0, 0.4),
+      0 0 20px rgba(229, 250, 0, 0.1),
+      0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+      0 1px 0 0 rgba(255, 255, 255, 0.08) inset;
+  }
+
+  /* Premium Stat Card with Gradient Border */
+  .stat-card {
+    position: relative;
+    background: linear-gradient(135deg, 
+      rgba(25, 30, 45, 0.95) 0%, 
+      rgba(15, 20, 35, 0.98) 100%);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, 
+      rgba(229, 250, 0, 0.3) 0%, 
+      rgba(229, 250, 0, 0.05) 50%,
+      rgba(56, 189, 248, 0.2) 100%);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .stat-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(229, 250, 0, 0.4) 50%, 
+      transparent 100%);
+    pointer-events: none;
+  }
+
+  /* Glow Icon Circle */
+  .glow-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, 
+      rgba(229, 250, 0, 0.15) 0%, 
+      rgba(229, 250, 0, 0.05) 100%);
+    border: 1px solid rgba(229, 250, 0, 0.2);
+  }
+
+  .glow-icon::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 16px;
+    background: radial-gradient(circle, rgba(229, 250, 0, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .stat-card:hover .glow-icon::after {
+    opacity: 1;
+  }
+
+  /* Premium Header Gradient */
+  .premium-header {
+    background: linear-gradient(135deg, 
+      rgba(15, 20, 35, 0.95) 0%, 
+      rgba(20, 25, 40, 0.9) 100%);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(229, 250, 0, 0.1);
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.2),
+      0 0 40px rgba(229, 250, 0, 0.03) inset;
+  }
+
+  /* Premium Sidebar Styling */
+  .premium-sidebar {
+    background: linear-gradient(180deg, 
+      rgba(15, 20, 35, 0.98) 0%, 
+      rgba(10, 15, 25, 0.99) 100%);
+    border-right: 1px solid rgba(229, 250, 0, 0.08);
+  }
+
+  /* Electric Glow Text */
+  .electric-text {
+    color: hsl(56, 100%, 50%);
+    text-shadow: 
+      0 0 10px rgba(229, 250, 0, 0.5),
+      0 0 20px rgba(229, 250, 0, 0.3),
+      0 0 40px rgba(229, 250, 0, 0.1);
+  }
+
+  /* Gradient Border Button */
+  .gradient-border-btn {
+    position: relative;
+    background: linear-gradient(135deg, 
+      rgba(229, 250, 0, 0.1) 0%, 
+      rgba(229, 250, 0, 0.05) 100%);
+    border: none;
+    overflow: hidden;
+  }
+
+  .gradient-border-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, 
+      rgba(229, 250, 0, 0.5) 0%, 
+      rgba(229, 250, 0, 0.1) 100%);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .gradient-border-btn:hover {
+    background: linear-gradient(135deg, 
+      rgba(229, 250, 0, 0.2) 0%, 
+      rgba(229, 250, 0, 0.1) 100%);
+    box-shadow: 0 0 20px rgba(229, 250, 0, 0.15);
+  }
+
+  /* Premium Quick Action Card */
+  .action-card {
+    position: relative;
+    background: linear-gradient(145deg, 
+      rgba(25, 30, 50, 0.9) 0%, 
+      rgba(15, 20, 40, 0.95) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .action-card:hover {
+    border-color: rgba(229, 250, 0, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 
+      0 12px 40px rgba(0, 0, 0, 0.3),
+      0 0 30px rgba(229, 250, 0, 0.08);
+  }
+
+  .action-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(229, 250, 0, 0.3), 
+      transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .action-card:hover::after {
+    opacity: 1;
+  }
+
+  /* Animated Number Counter */
+  @keyframes number-glow {
+    0%, 100% {
+      text-shadow: 0 0 5px rgba(229, 250, 0, 0.3);
+    }
+    50% {
+      text-shadow: 0 0 15px rgba(229, 250, 0, 0.6);
+    }
+  }
+
+  .stat-number {
+    font-variant-numeric: tabular-nums;
+    animation: number-glow 3s ease-in-out infinite;
+  }
+
+  /* Premium Badge Styles */
+  .electric-badge {
+    background: linear-gradient(135deg, 
+      rgba(229, 250, 0, 0.2) 0%, 
+      rgba(229, 250, 0, 0.1) 100%);
+    border: 1px solid rgba(229, 250, 0, 0.3);
+    color: hsl(56, 100%, 50%);
+    text-shadow: 0 0 10px rgba(229, 250, 0, 0.3);
+  }
+
+  .blue-badge {
+    background: linear-gradient(135deg, 
+      rgba(56, 189, 248, 0.2) 0%, 
+      rgba(56, 189, 248, 0.1) 100%);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: rgb(56, 189, 248);
+  }
+
+  /* Pulse Ring Animation */
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(229, 250, 0, 0.5);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 8px rgba(229, 250, 0, 0);
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(229, 250, 0, 0);
+    }
+  }
+
+  .pulse-ring {
+    animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  }
+}

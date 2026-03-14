@@ -1,0 +1,312 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Zap, Shield, Clock, Users, DollarSign, Sparkles, CheckCircle2, ArrowRight, Phone, Mail, MapPin, Download } from "lucide-react";
+import sparkyLogo from "@assets/19a3d6b3030bf_1763861033350.png";
+import electricalBg from "@assets/19aaffb7c294f_1763888052029.png";
+import { MaintenanceMan } from "@/components/MaintenanceMan";
+import { DownloadAppButton } from "@/components/download-app-button";
+
+export default function Landing() {
+  return (
+    <div className="min-h-screen bg-background relative">
+      {/* Electrical Circuit Background */}
+      <div className="electrical-background">
+        <img 
+          src={electricalBg} 
+          alt="" 
+          className="w-full h-full object-cover"
+          style={{ opacity: 0.15 }}
+        />
+      </div>
+
+      {/* Header */}
+      <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" data-testid="header-main">
+        <div className="container flex h-16 items-center justify-between px-4 mx-auto max-w-7xl">
+          <div className="flex items-center gap-3" data-testid="logo-brand">
+            <div className="flex items-center justify-center w-10 h-10">
+              <img src={sparkyLogo} alt="T.G.E. Logo" className="h-10 w-10 object-contain" data-testid="icon-logo" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold text-foreground" data-testid="text-brand-name">ElectraPro</span>
+              <span className="text-xs text-muted-foreground">by T.G.E. Billing</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <DownloadAppButton variant="outline" size="sm" showOnDesktop={true} />
+            <Button asChild data-testid="button-login">
+              <a href="/auth">Log In</a>
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative overflow-hidden px-4 py-20 md:py-32" data-testid="section-hero">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
+        <div className="container relative z-10 mx-auto max-w-7xl">
+          <div className="text-center max-w-4xl mx-auto">
+            {/* Badge */}
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 border border-primary/20">
+              <Zap className="h-4 w-4 text-primary" />
+              <span className="text-sm font-semibold text-primary">Texas Master Electrician License #750779</span>
+            </div>
+            
+            {/* Main Heading */}
+            <h1 className="mb-6 text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground" data-testid="text-hero-title">
+              We Make Power
+              <span className="block text-primary mt-2" data-testid="text-hero-subtitle">Easy</span>
+            </h1>
+            
+            {/* Subheading */}
+            <p className="mx-auto mb-4 max-w-2xl text-xl md:text-2xl text-foreground/90" data-testid="text-hero-description">
+              Lighting your life in any situation
+            </p>
+            
+            {/* Description */}
+            <p className="mx-auto mb-10 max-w-2xl text-base md:text-lg text-muted-foreground" data-testid="text-hero-tagline">
+              Professional electrical services management platform. We are building a business that will build business.
+            </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row justify-center gap-4" data-testid="group-hero-cta">
+              <Button size="lg" asChild className="bg-accent hover:bg-accent/90 font-semibold text-[#00ff00]" data-testid="button-get-started">
+                <a href="/auth">
+                  Get Started Free
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+              <DownloadAppButton variant="landing" size="lg" showOnDesktop={true} />
+              <Button size="lg" variant="outline" asChild data-testid="button-learn-more">
+                <a href="#features">
+                  Discover Features
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 px-4 bg-muted/20" data-testid="section-features">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="mb-4 text-3xl md:text-4xl font-bold text-foreground" data-testid="text-features-heading">
+              Everything You Need to Run Your Business
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Streamline operations from client contact to payment with our comprehensive platform
+            </p>
+          </div>
+          
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-testid="grid-features">
+            {/* Invoice Management */}
+            <Card className="hover-elevate border-border" data-testid="card-feature-invoice">
+              <CardHeader>
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 mb-4">
+                  <Zap className="h-6 w-6 text-primary" data-testid="icon-feature-invoice" />
+                </div>
+                <CardTitle className="text-foreground" data-testid="text-feature-invoice-title">Fast Invoice Creation</CardTitle>
+                <CardDescription data-testid="text-feature-invoice-description">
+                  Create professional invoices in seconds with our intuitive interface and send via email or SMS
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            {/* Secure Payments */}
+            <Card className="hover-elevate border-border" data-testid="card-feature-payments">
+              <CardHeader>
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 mb-4">
+                  <DollarSign className="h-6 w-6 text-accent" data-testid="icon-feature-payments" />
+                </div>
+                <CardTitle className="text-foreground" data-testid="text-feature-payments-title">Secure Payments</CardTitle>
+                <CardDescription data-testid="text-feature-payments-description">
+                  Accept credit card payments securely with Stripe integration and automatic payment tracking
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            {/* Job Scheduling */}
+            <Card className="hover-elevate border-border" data-testid="card-feature-scheduling">
+              <CardHeader>
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 mb-4">
+                  <Clock className="h-6 w-6 text-primary" data-testid="icon-feature-scheduling" />
+                </div>
+                <CardTitle className="text-foreground" data-testid="text-feature-scheduling-title">Job Scheduling</CardTitle>
+                <CardDescription data-testid="text-feature-scheduling-description">
+                  Manage appointments, assign jobs to your team, and send SMS confirmations automatically
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            {/* Client Management */}
+            <Card className="hover-elevate border-border" data-testid="card-feature-clients">
+              <CardHeader>
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 mb-4">
+                  <Users className="h-6 w-6 text-accent" data-testid="icon-feature-clients" />
+                </div>
+                <CardTitle className="text-foreground" data-testid="text-feature-clients-title">Client Management</CardTitle>
+                <CardDescription data-testid="text-feature-clients-description">
+                  Keep track of all your clients, project history, and service records in one place
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            {/* AI Assistant */}
+            <Card className="hover-elevate border-border" data-testid="card-feature-ai">
+              <CardHeader>
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 mb-4">
+                  <Sparkles className="h-6 w-6 text-primary" data-testid="icon-feature-ai" />
+                </div>
+                <CardTitle className="text-foreground" data-testid="text-feature-ai-title">Sparky AI Business Coach</CardTitle>
+                <CardDescription data-testid="text-feature-ai-description">
+                  Get business advice, marketing ideas, and technical support from your AI assistant
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            {/* Compliance */}
+            <Card className="hover-elevate border-border" data-testid="card-feature-compliance">
+              <CardHeader>
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 mb-4">
+                  <Shield className="h-6 w-6 text-accent" data-testid="icon-feature-compliance" />
+                </div>
+                <CardTitle className="text-foreground" data-testid="text-feature-compliance-title">TDLR & NEC Compliance</CardTitle>
+                <CardDescription data-testid="text-feature-compliance-description">
+                  Stay compliant with Texas regulations and NEC 2023 standards with automated tracking
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 px-4" data-testid="section-benefits">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="mb-6 text-3xl md:text-4xl font-bold text-foreground" data-testid="text-benefits-heading">
+                Built for Electrical Contractors
+              </h2>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">Multi-Channel Notifications</h3>
+                    <p className="text-muted-foreground">Send invoices and appointment reminders via email and SMS with Twilio integration</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">Role-Based Access Control</h3>
+                    <p className="text-muted-foreground">Different permissions for admins, employees, and clients to keep data secure</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">PWA Installation</h3>
+                    <p className="text-muted-foreground">Install on phones and computers for easy access like a native app</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">Social Referrals</h3>
+                    <p className="text-muted-foreground">Grow your business with built-in referral codes and social sharing</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+              <Card className="border-border p-6">
+                <div className="text-3xl font-bold text-primary mb-2">100%</div>
+                <div className="text-sm text-muted-foreground">Texas Compliant</div>
+              </Card>
+              <Card className="border-border p-6">
+                <div className="text-3xl font-bold text-primary mb-2">24/7</div>
+                <div className="text-sm text-muted-foreground">AI Support</div>
+              </Card>
+              <Card className="border-border p-6">
+                <div className="text-3xl font-bold text-primary mb-2">Instant</div>
+                <div className="text-sm text-muted-foreground">Notifications</div>
+              </Card>
+              <Card className="border-border p-6">
+                <div className="text-3xl font-bold text-primary mb-2">Secure</div>
+                <div className="text-sm text-muted-foreground">Payments</div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 bg-muted/20" data-testid="section-cta">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="mb-6 text-3xl md:text-4xl font-bold text-foreground" data-testid="text-cta-heading">
+            Ready to Streamline Your Electrical Business?
+          </h2>
+          <p className="mb-8 text-lg text-muted-foreground" data-testid="text-cta-description">
+            Join electrical contractors who trust our platform to manage their operations
+          </p>
+          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 font-semibold text-[#e5fa00]" data-testid="button-cta-signup">
+            <a href="/auth">
+              Start Free Trial
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+          </Button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-border py-12 px-4" data-testid="footer-main">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center justify-center w-10 h-10">
+                  <img src={sparkyLogo} alt="T.G.E. Logo" className="h-10 w-10 object-contain" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-lg font-bold text-foreground">ElectraPro</span>
+                  <span className="text-xs text-muted-foreground">by T.G.E. Billing</span>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Professional electrical services management platform for Texas Master Electricians
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-foreground mb-4">Contact</h3>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Phone className="h-4 w-4" />
+                  <span>Licensed Electrician #750779</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <MapPin className="h-4 w-4" />
+                  <span>Serving Texas</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 className="font-semibold text-foreground mb-4">Our Commitment</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• We make power easy</li>
+                <li>• Lighting your life in any situation</li>
+                <li>• Building a business that will build business</li>
+              </ul>
+            </div>
+          </div>
+          <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
+            <p data-testid="text-copyright">&copy; 2024 T.G.E. Billing - ElectraPro. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+      
+      {/* Animated Maintenance Man with AI Pathfinding */}
+      <MaintenanceMan enabled={true} />
+    </div>
+  );
+}
