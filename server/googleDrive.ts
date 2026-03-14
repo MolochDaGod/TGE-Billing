@@ -2,9 +2,16 @@ import { google } from "googleapis";
 import * as fs from "fs";
 import * as path from "path";
 
-// Shared folders for invoice PDFs based on status
-const DRAFT_INVOICES_FOLDER_ID = '15eLIImIN3ugrwV5kBscM-pitNpg58TW5';  // TGE FORMS - for drafts
-const SENT_INVOICES_FOLDER_ID = '1GjX-A2GKs-2e98exDkUCjVQQnUkBGufz';    // For sent/paid/overdue invoices
+// Google Drive folder IDs — configurable via env vars so they can be updated
+// without a code change. Falls back to the known TGE folder IDs.
+const DRAFT_INVOICES_FOLDER_ID =
+  process.env.GOOGLE_DRIVE_DRAFT_FOLDER_ID || '15eLIImIN3ugrwV5kBscM-pitNpg58TW5';
+const SENT_INVOICES_FOLDER_ID =
+  process.env.GOOGLE_DRIVE_SENT_FOLDER_ID || '1GjX-A2GKs-2e98exDkUCjVQQnUkBGufz';
+
+// Company email that gets writer access to newly created Drive folders
+export const COMPANY_DRIVE_EMAIL =
+  process.env.GOOGLE_DRIVE_COMPANY_EMAIL || 'tgebilling@gmail.com';
 
 export async function getGoogleDriveClient() {
   // Check for service account credentials from environment variable first

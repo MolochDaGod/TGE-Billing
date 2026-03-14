@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "NODE_ENV=development tsx server/index.ts",
     "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
-    "vercel-build": "vite build",
+    "vercel-build": "vite build && esbuild api/index.ts --bundle --platform=node --format=esm --external:bufferutil --external:utf-8-validate --outfile=api/index.mjs",
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc",
     "db:push": "drizzle-kit push"
@@ -53,7 +53,7 @@
     "@stripe/stripe-js": "^8.2.0",
     "@tanstack/react-query": "^5.60.5",
     "@types/archiver": "^7.0.0",
-    "@types/bcrypt": "^6.0.0",
+    "@types/bcryptjs": "^2.4.6",
     "@types/lodash-es": "^4.17.12",
     "@types/memoizee": "^0.4.12",
     "@types/mime-types": "^3.0.1",
@@ -68,7 +68,7 @@
     "agents": "^0.2.29",
     "ai": "^5.0.106",
     "archiver": "^7.0.1",
-    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",

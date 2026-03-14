@@ -14,3 +14,5 @@ vite.config.ts.*
 *.tar.gz
 
 .vercel
+# Esbuild pre-bundle output (created by vercel-build, not tracked in git)
+api/index.mjs

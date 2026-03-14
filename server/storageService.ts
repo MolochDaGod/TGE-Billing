@@ -5,6 +5,7 @@ import {
   deleteFromGoogleDrive,
   createGoogleDriveFolder,
   shareGoogleDriveFile,
+  COMPANY_DRIVE_EMAIL,
 } from "./googleDrive";
 import { nanoid } from "nanoid";
 import path from "path";
@@ -56,7 +57,7 @@ export class StorageService {
     const folderName = `TGE - ${user.name} (${user.role})`;
     const folder = await createGoogleDriveFolder(folderName);
 
-    await shareGoogleDriveFile(folder.folderId, "tgebilling@gmail.com", "writer");
+    await shareGoogleDriveFile(folder.folderId, COMPANY_DRIVE_EMAIL, "writer");
 
     return {
       folderId: folder.folderId,

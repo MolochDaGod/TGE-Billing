@@ -564,7 +564,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       // Hash password
-      const bcrypt = await import('bcrypt');
+      const { default: bcrypt } = await import('bcryptjs');
       const password_hash = await bcrypt.hash(password, 10);
 
       // Generate username from email

@@ -1,0 +1,17 @@
+# Exclude the TypeScript source for the API handler.
+# Vercel must use the pre-bundled api/index.mjs (created by vercel-build)
+# instead of trying to compile this file with @vercel/node.
+api/index.ts
+
+# Exclude local dev server files — not needed on Vercel
+server/vite.ts
+server/realtimeAI.ts
+server/index.ts
+
+# Exclude test/scripts
+scripts/
+workers/
+
+# Exclude local build artifacts
+attached_assets/
+public/
