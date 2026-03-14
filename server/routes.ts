@@ -3110,6 +3110,118 @@ Return ONLY a valid JSON object with this structure:
     }
   });
 
+  // ========================================
+  // TEAM MESSAGES (In-app group chat)
+  // ========================================
+
+  // Get messages for a channel
+  app.get('/api/team/messages', isAuthenticated, async (req: any, res) => {
+    try {
+      const channel = (req.query.channel as string) || 'general';
+      const limit = Math.min(parseInt(req.query.limit as string) || 60, 200);
+
+      // Restrict admin channel to elevated roles
+      const user = req.user;
+      const adminRoles = ['pirate_king', 'admin', 'partner', 'staff_captain'];
+      if (channel === 'admin' && !adminRoles.includes(user.role)) {
+        return res.status(403).json({ message: 'Access denied to admin channel' });
+      }
+
+      const messages = await storage.getTeamMessages(channel, limit);
+      res.json(messages);
+    } catch (error) {
+      console.error('Error fetching team messages:', error);
+      res.status(500).json({ message: 'Failed to fetch messages' });
+    }
+  });
+
+  // Post a message to a channel
+  app.post('/api/team/messages', isAuthenticated, async (req: any, res) => {
+    try {
+      const user = req.user;
+      const { channel = 'general', content } = req.body;
+
+      if (!content?.trim()) {
+        return res.status(400).json({ message: 'Message content is required' });
+      }
+
+      // Restrict admin channel
+      const adminRoles = ['pirate_king', 'admin', 'partner', 'staff_captain'];
+      if (channel === 'admin' && !adminRoles.includes(user.role)) {
+        return res.status(403).json({ message: 'Access denied to admin channel' });
+      }
+
+      const msg = await storage.createTeamMessage({
+        channel,
+        sender_id: user.id,
+        sender_name: user.name || user.puter_username || 'Unknown',
+        sender_role: user.role,
+        content: content.trim(),
+        is_ai_message: false,
+      });
+
+      res.status(201).json(msg);
+    } catch (error) {
+      console.error('Error creating team message:', error);
+      res.status(500).json({ message: 'Failed to send message' });
+    }
+  });
+
+  // ========================================
+  // USERS API — full role support
+  // ========================================
+
+  // GET /api/users — supports ?role= filter, accessible to admin+ and staff_captain
+  app.get('/api/users', isAuthenticated, async (req: any, res) => {
+    try {
+      const user = req.user;
+      const managingRoles = ['pirate_king', 'admin', 'partner', 'staff_captain'];
+      if (!managingRoles.includes(user.role)) {
+        return res.status(403).json({ message: 'Forbidden' });
+      }
+      const roleFilter = req.query.role as string | undefined;
+      let users;
+      if (roleFilter && roleFilter !== 'all') {
+        users = await storage.getAllUsersByRole(roleFilter);
+      } else {
+        users = await storage.getAllUsers();
+      }
+      // Strip password_hash
+      res.json(users.map(({ password_hash, ...u }) => u));
+    } catch (error) {
+      console.error('Error fetching users:', error);
+      res.status(500).json({ message: 'Failed to fetch users' });
+    }
+  });
+
+  // PATCH /api/users/:id — update role / profile  
+  app.patch('/api/users/:id', isAuthenticated, requireRole('pirate_king', 'admin', 'partner'), async (req: any, res) => {
+    try {
+      const { id } = req.params;
+      const requestingUser = req.user;
+      const { role, name, phone, department } = req.body;
+
+      // Only pirate_king can assign pirate_king
+      if (role === 'pirate_king' && requestingUser.role !== 'pirate_king') {
+        return res.status(403).json({ message: 'Only Pirate King can promote to that rank' });
+      }
+
+      const updates: Record<string, any> = {};
+      if (role) updates.role = role;
+      if (name) updates.name = name;
+      if (phone) updates.phone = phone;
+      if (department) updates.department = department;
+
+      const updated = await storage.updateUser(id, updates);
+      if (!updated) return res.status(404).json({ message: 'User not found' });
+      const { password_hash, ...safe } = updated;
+      res.json(safe);
+    } catch (error) {
+      console.error('Error updating user:', error);
+      res.status(500).json({ message: 'Failed to update user' });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }

@@ -1,6 +1,9 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// ─── Sparky the TGE Electrician ──────────────────────────────────────────────
+// A polished hardhat electrician mascot with glow effects and animations.
+
 type MascotState = 'idle' | 'walking' | 'waving' | 'thinking' | 'celebrating' | 'sleeping' | 'working' | 'looking';
 type Direction = 'left' | 'right';
 
@@ -243,15 +246,17 @@ export function SiteMascot() {
       <motion.div
         className="fixed bottom-4 right-4 cursor-pointer pointer-events-auto"
         style={{ zIndex: 99999 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
+        whileHover={{ scale: 1.15 }}
+        whileTap={{ scale: 0.9 }}
         onClick={() => setIsMinimized(false)}
       >
-        <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-lg border-2 border-primary/50 relative">
-          <span className="text-3xl">⚡</span>
+        <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-xl relative"
+          style={{ background: 'linear-gradient(135deg, #e5fa00, #fbbf24)' }}>
+          <span className="text-2xl">⚡</span>
           <motion.div
-            className="absolute inset-0 rounded-full border-2 border-primary"
-            animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0, 0.5] }}
+            className="absolute inset-0 rounded-full"
+            style={{ border: '2px solid #e5fa00' }}
+            animate={{ scale: [1, 1.4, 1], opacity: [0.6, 0, 0.6] }}
             transition={{ duration: 2, repeat: Infinity }}
           />
         </div>
@@ -308,215 +313,204 @@ export function SiteMascot() {
         )}
       </AnimatePresence>
 
-      {/* Mascot character - Bigger and cuter! */}
-      <motion.div
-        className="relative"
-        animate={getBodyAnimation()}
-      >
-        {/* Glow effect under character */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-20 h-6 bg-primary/20 rounded-full blur-lg" />
-        
-        {/* Pirate Hat */}
-        <motion.div 
-          className="absolute -top-8 left-1/2 -translate-x-1/2 z-20"
-          animate={state === 'celebrating' ? { rotate: [-15, 15, -15], y: [0, -5, 0] } : {}}
-          transition={{ duration: 0.3, repeat: state === 'celebrating' ? Infinity : 0 }}
-        >
-          <svg width="50" height="30" viewBox="0 0 50 30">
-            {/* Hat base */}
-            <ellipse cx="25" cy="26" rx="22" ry="5" fill="#1a1a1a" />
-            {/* Hat top */}
-            <path d="M8 24 L14 5 L36 5 L42 24 Z" fill="#1a1a1a" />
-            {/* Hat band - gold! */}
-            <rect x="12" y="18" width="26" height="4" fill="#e5fa00" />
-            <rect x="12" y="18" width="26" height="4" fill="url(#goldGradient)" />
-            {/* Skull and crossbones */}
-            <circle cx="25" cy="12" r="5" fill="white" />
-            <circle cx="22.5" cy="11" r="1.2" fill="#1a1a1a" />
-            <circle cx="27.5" cy="11" r="1.2" fill="#1a1a1a" />
-            <ellipse cx="25" cy="14.5" rx="2" ry="1.2" fill="#1a1a1a" />
-            {/* Crossbones */}
-            <line x1="17" y1="9" x2="33" y2="17" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-            <line x1="17" y1="17" x2="33" y2="9" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-            {/* Electric yellow feather */}
-            <motion.path 
-              d="M36 5 Q46 -4 50 8 Q42 5 36 5" 
-              fill="#e5fa00"
-              animate={{ rotate: [0, 5, 0, -5, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              style={{ transformOrigin: '36px 5px' }}
-            />
-            <defs>
-              <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#e5fa00" />
-                <stop offset="50%" stopColor="#ffd700" />
-                <stop offset="100%" stopColor="#e5fa00" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </motion.div>
+      {/* ── Sparky — polished TGE electrician ── */}
+      <motion.div className="relative" animate={getBodyAnimation()}>
 
-        {/* Main Body SVG - Bigger and cuter */}
-        <svg width="80" height="100" viewBox="0 0 80 100">
-          {/* Head - rounder, cuter */}
-          <ellipse cx="40" cy="24" r="16" ry="18" fill="#5a5a5a" />
-          <ellipse cx="40" cy="22" r="14" ry="16" fill="#6a6a6a" />
-          
-          {/* Cute rosy cheeks */}
-          <ellipse cx="26" cy="28" rx="4" ry="3" fill="#ff9999" opacity="0.4" />
-          <ellipse cx="54" cy="28" rx="4" ry="3" fill="#ff9999" opacity="0.4" />
-          
-          {/* Eyes - bigger, cuter */}
-          <motion.g animate={isBlinking || state === 'sleeping' ? { scaleY: 0.1 } : { scaleY: 1 }} style={{ transformOrigin: '40px 20px' }}>
+        {/* Ground glow */}
+        <motion.div
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full blur-xl"
+          style={{ width: 80, height: 18, background: 'rgba(229,250,0,0.18)' }}
+          animate={state === 'celebrating' ? { scale: [1, 1.4, 1], opacity: [0.4, 0.8, 0.4] } : { opacity: [0.3, 0.5, 0.3] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
+
+        <svg width="88" height="112" viewBox="0 0 88 112">
+          <defs>
+            {/* Skin gradient */}
+            <radialGradient id="skinGrad" cx="50%" cy="40%" r="55%">
+              <stop offset="0%" stopColor="#fddcb0" />
+              <stop offset="100%" stopColor="#e8b887" />
+            </radialGradient>
+            {/* Hard-hat gradient */}
+            <radialGradient id="hatGrad" cx="50%" cy="30%" r="60%">
+              <stop offset="0%" stopColor="#fff176" />
+              <stop offset="100%" stopColor="#e5c000" />
+            </radialGradient>
+            {/* Vest gradient */}
+            <linearGradient id="vestGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#1c3a5e" />
+              <stop offset="100%" stopColor="#0f2540" />
+            </linearGradient>
+            {/* Electric glow filter */}
+            <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="2" result="blur" />
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          {/* ── Hard Hat ── */}
+          {/* Brim */}
+          <ellipse cx="44" cy="18" rx="22" ry="5" fill="#d4b000" />
+          {/* Cap dome */}
+          <path d="M23 18 Q22 6 44 4 Q66 6 65 18 Z" fill="url(#hatGrad)" />
+          {/* TGE logo on hat */}
+          <rect x="36" y="8" width="16" height="8" rx="2" fill="#1a1a1a" opacity="0.7" />
+          <text x="44" y="14.5" textAnchor="middle" fontSize="5.5" fontWeight="bold" fill="#e5fa00" fontFamily="monospace">TGE</text>
+          {/* Hat vent lines */}
+          <line x1="38" y1="5" x2="37" y2="17" stroke="#c8a700" strokeWidth="0.8" opacity="0.5" />
+          <line x1="50" y1="5" x2="51" y2="17" stroke="#c8a700" strokeWidth="0.8" opacity="0.5" />
+
+          {/* ── Head / Face ── */}
+          <ellipse cx="44" cy="30" rx="13" ry="14" fill="url(#skinGrad)" />
+
+          {/* Eyes */}
+          <motion.g
+            animate={isBlinking || state === 'sleeping' ? { scaleY: 0.08 } : { scaleY: 1 }}
+            style={{ transformOrigin: '44px 28px' }}
+          >
             {/* Eye whites */}
-            <ellipse cx="32" cy="20" rx="5" ry="6" fill="white" />
-            <ellipse cx="48" cy="20" rx="5" ry="6" fill="white" />
-            {/* Pupils - follow direction when looking */}
-            <motion.g
-              animate={state === 'looking' ? { x: [0, 3, -3, 0] } : {}}
-              transition={{ duration: 1.5, repeat: state === 'looking' ? Infinity : 0 }}
+            <ellipse cx="38" cy="28" rx="4.5" ry="5" fill="white" />
+            <ellipse cx="50" cy="28" rx="4.5" ry="5" fill="white" />
+            {/* Pupils */}
+            <motion.g animate={state === 'looking' ? { x: [0, 2, -2, 0] } : {}}
+              transition={{ duration: 1.8, repeat: state === 'looking' ? Infinity : 0 }}
             >
-              <circle cx="33" cy="21" r="3" fill="#1a1a1a" />
-              <circle cx="49" cy="21" r="3" fill="#1a1a1a" />
-              {/* Eye shine */}
-              <circle cx="34" cy="19" r="1" fill="white" />
-              <circle cx="50" cy="19" r="1" fill="white" />
+              <circle cx="39" cy="29" r="2.8" fill="#1a1a1a" />
+              <circle cx="51" cy="29" r="2.8" fill="#1a1a1a" />
+              {/* Iris glow — electric blue */}
+              <circle cx="39" cy="29" r="1.8" fill="#38bdf8" opacity="0.85" />
+              <circle cx="51" cy="29" r="1.8" fill="#38bdf8" opacity="0.85" />
+              <circle cx="39.8" cy="27.5" r="0.8" fill="white" />
+              <circle cx="51.8" cy="27.5" r="0.8" fill="white" />
             </motion.g>
           </motion.g>
-          
-          {/* Cute eyebrows */}
-          <path d="M27 14 Q32 12 37 14" stroke="#4a4a4a" strokeWidth="2" fill="none" strokeLinecap="round" />
-          <path d="M43 14 Q48 12 53 14" stroke="#4a4a4a" strokeWidth="2" fill="none" strokeLinecap="round" />
-          
-          {/* Smile - bigger and happier */}
-          <motion.path 
-            d={state === 'celebrating' ? "M30 30 Q40 40 50 30" : "M30 30 Q40 36 50 30"} 
-            stroke="#1a1a1a" 
-            strokeWidth="2.5" 
-            fill="none" 
-            strokeLinecap="round"
+
+          {/* Eyebrows */}
+          <path d="M34 23 Q38 21.5 42 23" stroke="#7a5a30" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+          <path d="M46 23 Q50 21.5 54 23" stroke="#7a5a30" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+
+          {/* Mouth */}
+          <motion.path
+            d={state === 'celebrating' ? 'M37 36 Q44 43 51 36' : 'M37 36 Q44 40 51 36'}
+            stroke="#c07040" strokeWidth="2" fill="none" strokeLinecap="round"
           />
-          
-          {/* Body/Torso - work uniform */}
-          <rect x="24" y="42" width="32" height="30" rx="5" fill="#2a2a2a" />
-          {/* Yellow safety stripe */}
-          <rect x="24" y="52" width="32" height="4" fill="#e5fa00" />
-          <rect x="24" y="62" width="32" height="4" fill="#e5fa00" />
-          
-          {/* Tool belt */}
-          <rect x="22" y="68" width="36" height="8" rx="2" fill="#8B4513" />
-          <rect x="26" y="69" width="6" height="6" rx="1" fill="#4a4a4a" />
-          <rect x="48" y="69" width="6" height="6" rx="1" fill="#4a4a4a" />
-          {/* Belt buckle - electric bolt! */}
-          <rect x="36" y="69" width="8" height="6" rx="1" fill="#e5fa00" />
-          <text x="40" y="74" textAnchor="middle" fontSize="6" fill="#1a1a1a">⚡</text>
-          
-          {/* Arms */}
+
+          {/* Chin dimple */}
+          <ellipse cx="44" cy="41" rx="2" ry="1" fill="#d4a070" opacity="0.4" />
+
+          {/* Ear */}
+          <ellipse cx="31" cy="30" rx="3" ry="4" fill="#e8b887" />
+          <ellipse cx="57" cy="30" rx="3" ry="4" fill="#e8b887" />
+
+          {/* ── Neck ── */}
+          <rect x="40" y="43" width="8" height="6" rx="2" fill="#e0a870" />
+
+          {/* ── Safety Vest / Torso ── */}
+          <rect x="26" y="47" width="36" height="32" rx="6" fill="url(#vestGrad)" />
+          {/* Reflective stripes */}
+          <rect x="26" y="56" width="36" height="4" rx="1" fill="#e5fa00" opacity="0.9" />
+          <rect x="26" y="67" width="36" height="4" rx="1" fill="#e5fa00" opacity="0.9" />
+          {/* TGE chest badge */}
+          <rect x="38" y="49" width="12" height="6" rx="1.5" fill="white" opacity="0.15" />
+          <text x="44" y="54" textAnchor="middle" fontSize="4" fill="white" fontFamily="monospace" fontWeight="bold">TGE</text>
+          {/* Vest collar */}
+          <path d="M38 47 L44 52 L50 47" fill="none" stroke="#e5fa00" strokeWidth="1" opacity="0.6" />
+
+          {/* ── Tool Belt ── */}
+          <rect x="24" y="76" width="40" height="7" rx="2" fill="#5c3317" />
+          {/* Belt buckle */}
+          <rect x="39" y="77" width="10" height="5" rx="1" fill="#e5fa00" />
+          <text x="44" y="81" textAnchor="middle" fontSize="4.5" fill="#1a1a1a">⚡</text>
+          {/* Tool pouches */}
+          <rect x="27" y="77" width="8" height="5" rx="1" fill="#4a2a10" />
+          <rect x="53" y="77" width="8" height="5" rx="1" fill="#4a2a10" />
+          {/* Wrench silhouette */}
+          <line x1="29" y1="77" x2="33" y2="81" stroke="#888" strokeWidth="1.5" strokeLinecap="round" />
+
+          {/* ── Right Arm (waving side) ── */}
           <motion.g
-            animate={state === 'waving' ? { rotate: [0, -45, 0] } : state === 'working' ? { rotate: [-15, 15, -15] } : {}}
-            transition={{ duration: state === 'waving' ? 0.3 : 0.2, repeat: state === 'waving' || state === 'working' ? Infinity : 0 }}
-            style={{ transformOrigin: '56px 48px' }}
+            animate={state === 'waving' ? { rotate: [0, -50, 10, -50, 0] }
+              : state === 'working' ? { rotate: [-20, 20, -20] } : { rotate: 0 }}
+            transition={{ duration: state === 'waving' ? 0.5 : 0.2, repeat: state === 'waving' || state === 'working' ? Infinity : 0 }}
+            style={{ transformOrigin: '60px 51px' }}
           >
-            <rect x="54" y="44" width="10" height="22" rx="4" fill="#2a2a2a" />
-            <ellipse cx="59" cy="68" rx="5" ry="5" fill="#6a6a6a" />
+            <rect x="58" y="49" width="9" height="20" rx="4" fill="#1c3a5e" />
+            <ellipse cx="62.5" cy="71" rx="5" ry="5" fill="#e8b887" />
           </motion.g>
+
+          {/* ── Left Arm ── */}
           <motion.g
-            animate={state === 'celebrating' ? { rotate: [0, -30, 0] } : {}}
+            animate={state === 'celebrating' ? { rotate: [0, -35, 0] } : { rotate: 0 }}
             transition={{ duration: 0.3, repeat: state === 'celebrating' ? Infinity : 0 }}
-            style={{ transformOrigin: '24px 48px' }}
+            style={{ transformOrigin: '28px 51px' }}
           >
-            <rect x="16" y="44" width="10" height="22" rx="4" fill="#2a2a2a" />
-            <ellipse cx="21" cy="68" rx="5" ry="5" fill="#6a6a6a" />
+            <rect x="21" y="49" width="9" height="20" rx="4" fill="#1c3a5e" />
+            <ellipse cx="25.5" cy="71" rx="5" ry="5" fill="#e8b887" />
           </motion.g>
-          
-          {/* Legs - animated for walking */}
-          <motion.rect 
-            x="28" y="74" width="10" height="22" rx="3" fill="#1a1a1a"
-            animate={{ y: getLeftLegY() }}
-          />
-          <motion.rect 
-            x="42" y="74" width="10" height="22" rx="3" fill="#1a1a1a"
-            animate={{ y: getRightLegY() }}
-          />
-          
-          {/* Boots - safety yellow accents */}
+
+          {/* ── Pants / Legs ── */}
+          <motion.rect x="28" y="84" width="11" height="24" rx="4" fill="#1a1a2e"
+            animate={{ y: getLeftLegY() }} />
+          <motion.rect x="49" y="84" width="11" height="24" rx="4" fill="#1a1a2e"
+            animate={{ y: getRightLegY() }} />
+
+          {/* ── Boots ── */}
           <motion.g animate={{ y: getLeftLegY() }}>
-            <rect x="25" y="93" width="15" height="7" rx="3" fill="#3a3a3a" />
-            <rect x="25" y="96" width="15" height="2" fill="#e5fa00" />
+            <rect x="25" y="104" width="17" height="8" rx="3" fill="#2a2a2a" />
+            <rect x="25" y="108" width="17" height="2.5" fill="#e5fa00" opacity="0.8" />
           </motion.g>
           <motion.g animate={{ y: getRightLegY() }}>
-            <rect x="40" y="93" width="15" height="7" rx="3" fill="#3a3a3a" />
-            <rect x="40" y="96" width="15" height="2" fill="#e5fa00" />
+            <rect x="46" y="104" width="17" height="8" rx="3" fill="#2a2a2a" />
+            <rect x="46" y="108" width="17" height="2.5" fill="#e5fa00" opacity="0.8" />
           </motion.g>
-          
-          {/* Tool in hand when working - with sparks! */}
+
+          {/* ── Working tool (voltage tester) ── */}
           {state === 'working' && (
             <motion.g
-              animate={{ rotate: [-5, 5, -5] }}
+              animate={{ rotate: [-8, 8, -8] }}
               transition={{ duration: 0.15, repeat: Infinity }}
-              style={{ transformOrigin: '59px 68px' }}
+              style={{ transformOrigin: '62px 71px' }}
+              filter="url(#glow)"
             >
-              <line x1="59" y1="68" x2="72" y2="82" stroke="#666" strokeWidth="4" strokeLinecap="round" />
-              <circle cx="72" cy="82" r="5" fill="#e5fa00" />
-              {/* Electric sparks! */}
-              <motion.g
-                animate={{ opacity: [1, 0.3, 1, 0.5, 1] }}
-                transition={{ duration: 0.1, repeat: Infinity }}
-              >
-                <line x1="74" y1="76" x2="80" y2="70" stroke="#e5fa00" strokeWidth="2" />
-                <line x1="78" y1="82" x2="85" y2="82" stroke="#e5fa00" strokeWidth="2" />
-                <line x1="74" y1="88" x2="80" y2="94" stroke="#e5fa00" strokeWidth="2" />
-                <circle cx="76" cy="78" r="1.5" fill="#fff" />
-                <circle cx="82" cy="84" r="1" fill="#fff" />
+              <line x1="62" y1="71" x2="76" y2="86" stroke="#555" strokeWidth="4" strokeLinecap="round" />
+              <circle cx="76" cy="86" r="5" fill="#e5fa00" />
+              <motion.g animate={{ opacity: [1, 0.2, 1, 0.5, 1] }} transition={{ duration: 0.08, repeat: Infinity }}>
+                <line x1="78" y1="80" x2="84" y2="74" stroke="#e5fa00" strokeWidth="2" />
+                <line x1="82" y1="86" x2="88" y2="86" stroke="#e5fa00" strokeWidth="2" />
+                <line x1="78" y1="92" x2="84" y2="98" stroke="#e5fa00" strokeWidth="2" />
+                <circle cx="80" cy="80" r="1.5" fill="white" />
               </motion.g>
             </motion.g>
           )}
-          
-          {/* Thinking bubbles */}
+
+          {/* ── Thinking bubbles ── */}
           {state === 'thinking' && (
             <>
-              <motion.circle
-                cx="62" cy="12" r="3"
-                fill="white"
-                animate={{ opacity: [0.5, 1, 0.5], y: [0, -2, 0] }}
-                transition={{ duration: 1, repeat: Infinity }}
-              />
-              <motion.circle
-                cx="68" cy="6" r="4"
-                fill="white"
-                animate={{ opacity: [0.3, 0.8, 0.3], y: [0, -3, 0] }}
-                transition={{ duration: 1, repeat: Infinity, delay: 0.3 }}
-              />
-              <motion.text
-                x="75" y="4"
-                fill="#e5fa00"
-                fontSize="12"
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 0.8, repeat: Infinity }}
-              >
-                ?
-              </motion.text>
+              <motion.circle cx="66" cy="16" r="2.5" fill="white" opacity="0.7"
+                animate={{ y: [0, -2, 0], opacity: [0.5, 1, 0.5] }} transition={{ duration: 1, repeat: Infinity }} />
+              <motion.circle cx="72" cy="10" r="4" fill="white" opacity="0.7"
+                animate={{ y: [0, -3, 0], opacity: [0.3, 0.9, 0.3] }} transition={{ duration: 1, repeat: Infinity, delay: 0.3 }} />
+              <motion.text x="76" y="8" fill="#e5fa00" fontSize="11" fontWeight="bold"
+                animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 0.8, repeat: Infinity }}>?</motion.text>
             </>
           )}
-          
-          {/* Zzz for sleeping */}
+
+          {/* ── Sleeping Zs ── */}
           {state === 'sleeping' && (
-            <motion.g
-              animate={{ y: [-2, 2, -2], opacity: [0.6, 1, 0.6] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            >
-              <text x="58" y="8" fill="#e5fa00" fontSize="10" fontWeight="bold">Z</text>
-              <text x="65" y="4" fill="#e5fa00" fontSize="12" fontWeight="bold">z</text>
-              <text x="72" y="0" fill="#e5fa00" fontSize="14" fontWeight="bold">Z</text>
+            <motion.g animate={{ y: [-2, 2, -2], opacity: [0.6, 1, 0.6] }} transition={{ duration: 2, repeat: Infinity }}>
+              <text x="60" y="10" fill="#e5fa00" fontSize="9" fontWeight="bold">Z</text>
+              <text x="67" y="5" fill="#e5fa00" fontSize="11" fontWeight="bold">z</text>
+              <text x="74" y="0" fill="#e5fa00" fontSize="13" fontWeight="bold">Z</text>
             </motion.g>
           )}
         </svg>
 
-        {/* Shadow that moves with walking */}
+        {/* Shadow */}
         <motion.div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-3 bg-black/30 rounded-full blur-sm"
-          animate={state === 'celebrating' ? { scale: [1, 0.7, 1] } : state === 'walking' ? { scaleX: [0.9, 1.1, 0.9] } : {}}
-          transition={{ duration: state === 'walking' ? 0.3 : 0.5, repeat: Infinity }}
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full blur-sm"
+          style={{ width: 64, height: 10, background: 'rgba(0,0,0,0.35)' }}
+          animate={state === 'celebrating' ? { scale: [1, 0.65, 1] } : state === 'walking' ? { scaleX: [0.85, 1.15, 0.85] } : {}}
+          transition={{ duration: 0.35, repeat: Infinity }}
         />
       </motion.div>
 

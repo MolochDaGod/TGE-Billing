@@ -1,23 +1,83 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Zap, Shield, Clock, Users, DollarSign, Sparkles, CheckCircle2, ArrowRight, Phone, Mail, MapPin, Download } from "lucide-react";
+import { Zap, Shield, Clock, Users, DollarSign, Sparkles, CheckCircle2, ArrowRight, Phone, MapPin, MessageSquare } from "lucide-react";
 import sparkyLogo from "@assets/19a3d6b3030bf_1763861033350.png";
-import electricalBg from "@assets/19aaffb7c294f_1763888052029.png";
 import { MaintenanceMan } from "@/components/MaintenanceMan";
 import { DownloadAppButton } from "@/components/download-app-button";
+
+/** Animated SVG circuit-board background — pure CSS/SVG, no external library */
+function CircuitBackground() {
+  return (
+    <div className="electrical-background" aria-hidden>
+      <svg
+        viewBox="0 0 1200 600"
+        preserveAspectRatio="xMidYMid slice"
+        className="w-full h-full"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ opacity: 0.12 }}
+      >
+        {/* Horizontal traces */}
+        {[60, 140, 220, 300, 380, 460, 540].map((y, i) => (
+          <line key={`h${i}`} x1="0" y1={y} x2="1200" y2={y}
+            stroke="#e5fa00" strokeWidth="1" strokeDasharray="40 20" />
+        ))}
+        {/* Vertical traces */}
+        {[80, 200, 320, 440, 560, 680, 800, 920, 1040, 1160].map((x, i) => (
+          <line key={`v${i}`} x1={x} y1="0" x2={x} y2="600"
+            stroke="#38bdf8" strokeWidth="1" strokeDasharray="30 25" />
+        ))}
+        {/* Junction dots */}
+        {[[80,60],[200,140],[320,60],[440,220],[560,140],[680,300],[800,60],[920,220],[1040,140],[1160,300],
+          [80,300],[200,380],[440,460],[680,60],[800,380],[320,460],[560,380],[1040,380]].map(([cx,cy], i) => (
+          <circle key={`d${i}`} cx={cx} cy={cy} r="5" fill="#e5fa00" opacity="0.8" />
+        ))}
+        {/* Animated pulse dots */}
+        <circle cx="200" cy="140" r="4" fill="#e5fa00">
+          <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite" />
+          <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="800" cy="380" r="4" fill="#38bdf8">
+          <animate attributeName="opacity" values="0.2;1;0.2" dur="2.8s" repeatCount="indefinite" />
+          <animate attributeName="r" values="4;9;4" dur="2.8s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="560" cy="140" r="4" fill="#e5fa00">
+          <animate attributeName="opacity" values="0.2;1;0.2" dur="1.6s" repeatCount="indefinite" />
+          <animate attributeName="r" values="4;7;4" dur="1.6s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="1040" cy="300" r="4" fill="#38bdf8">
+          <animate attributeName="opacity" values="0.2;1;0.2" dur="3.2s" repeatCount="indefinite" />
+          <animate attributeName="r" values="4;8;4" dur="3.2s" repeatCount="indefinite" />
+        </circle>
+        {/* Moving signal along horizontal trace */}
+        <circle cx="0" cy="300" r="6" fill="#e5fa00" opacity="0.9">
+          <animate attributeName="cx" values="0;1200" dur="4s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0;0.9;0" dur="4s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="0" cy="140" r="5" fill="#38bdf8" opacity="0.9">
+          <animate attributeName="cx" values="1200;0" dur="5s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0;0.8;0" dur="5s" repeatCount="indefinite" />
+        </circle>
+        {/* IC chip outlines */}
+        {[[100,240],[600,320],[950,100]].map(([x,y], i) => (
+          <g key={`ic${i}`}>
+            <rect x={x} y={y} width="60" height="40" rx="4" fill="none" stroke="#e5fa00" strokeWidth="1.5" opacity="0.6" />
+            <line x1={x+10} y1={y} x2={x+10} y2={y-10} stroke="#e5fa00" strokeWidth="1" opacity="0.5" />
+            <line x1={x+30} y1={y} x2={x+30} y2={y-10} stroke="#e5fa00" strokeWidth="1" opacity="0.5" />
+            <line x1={x+50} y1={y} x2={x+50} y2={y-10} stroke="#e5fa00" strokeWidth="1" opacity="0.5" />
+            <line x1={x+10} y1={y+40} x2={x+10} y2={y+50} stroke="#e5fa00" strokeWidth="1" opacity="0.5" />
+            <line x1={x+30} y1={y+40} x2={x+30} y2={y+50} stroke="#e5fa00" strokeWidth="1" opacity="0.5" />
+            <line x1={x+50} y1={y+40} x2={x+50} y2={y+50} stroke="#e5fa00" strokeWidth="1" opacity="0.5" />
+          </g>
+        ))}
+      </svg>
+    </div>
+  );
+}
 
 export default function Landing() {
   return (
     <div className="min-h-screen bg-background relative">
-      {/* Electrical Circuit Background */}
-      <div className="electrical-background">
-        <img 
-          src={electricalBg} 
-          alt="" 
-          className="w-full h-full object-cover"
-          style={{ opacity: 0.15 }}
-        />
-      </div>
+      <CircuitBackground />
 
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" data-testid="header-main">
@@ -170,9 +230,22 @@ export default function Landing() {
                 <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 mb-4">
                   <Shield className="h-6 w-6 text-accent" data-testid="icon-feature-compliance" />
                 </div>
-                <CardTitle className="text-foreground" data-testid="text-feature-compliance-title">TDLR & NEC Compliance</CardTitle>
+                <CardTitle className="text-foreground" data-testid="text-feature-compliance-title">TDLR &amp; NEC Compliance</CardTitle>
                 <CardDescription data-testid="text-feature-compliance-description">
                   Stay compliant with Texas regulations and NEC 2023 standards with automated tracking
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            {/* Team Communications */}
+            <Card className="hover-elevate border-border" data-testid="card-feature-comms">
+              <CardHeader>
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-cyan-500/10 border border-cyan-500/20 mb-4">
+                  <MessageSquare className="h-6 w-6 text-cyan-400" data-testid="icon-feature-comms" />
+                </div>
+                <CardTitle className="text-foreground" data-testid="text-feature-comms-title">Team Communications</CardTitle>
+                <CardDescription data-testid="text-feature-comms-description">
+                  Built-in team chat with role-gated channels, Sparky AI assistant, and real-time messaging
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -200,7 +273,7 @@ export default function Landing() {
                   <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Role-Based Access Control</h3>
-                    <p className="text-muted-foreground">Different permissions for admins, employees, and clients to keep data secure</p>
+                    <p className="text-muted-foreground">9-tier role hierarchy (Pirate King → Client) with channel-gated team communications</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

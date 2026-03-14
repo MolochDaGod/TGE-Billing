@@ -50,6 +50,8 @@ import type {
   InsertAILeadScore,
   AIWorkflowTemplate,
   InsertAIWorkflowTemplate,
+  TeamMessage,
+  InsertTeamMessage,
 } from "@shared/schema";
 
 export interface IStorage {
@@ -202,6 +204,10 @@ export interface IStorage {
   getAIWorkflowTemplate(id: string): Promise<AIWorkflowTemplate | undefined>;
   createAIWorkflowTemplate(template: InsertAIWorkflowTemplate): Promise<AIWorkflowTemplate>;
   updateAIWorkflowTemplate(id: string, updates: Partial<InsertAIWorkflowTemplate>): Promise<AIWorkflowTemplate | undefined>;
+
+  // Team Messages
+  getTeamMessages(channel: string, limit?: number): Promise<TeamMessage[]>;
+  createTeamMessage(msg: InsertTeamMessage): Promise<TeamMessage>;
 }
 
 export class DbStorage implements IStorage {
@@ -906,6 +912,20 @@ export class DbStorage implements IStorage {
       .set({ ...updates, updated_at: sql`now()` })
       .where(eq(schema.ai_workflow_templates.id, id))
       .returning();
+    return result[0];
+  }
+
+  // Team Messages
+  async getTeamMessages(channel: string, limit: number = 60): Promise<TeamMessage[]> {
+    return await db.select().from(schema.team_messages)
+      .where(eq(schema.team_messages.channel, channel))
+      .orderBy(desc(schema.team_messages.created_at))
+      .limit(limit)
+      .then(rows => rows.reverse());
+  }
+
+  async createTeamMessage(msg: InsertTeamMessage): Promise<TeamMessage> {
+    const result = await db.insert(schema.team_messages).values(msg).returning();
     return result[0];
   }
 }

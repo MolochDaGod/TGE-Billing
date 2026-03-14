@@ -1374,6 +1374,30 @@ export const insertAILeadScoreSchema = createInsertSchema(ai_lead_scores).omit({
   qualification_status: z.enum(["unqualified", "mql", "sql", "opportunity"]).default("unqualified"),
 });
 
+// Team Messages — In-app team / group chat
+export const team_messages = pgTable("team_messages", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  channel: text("channel").notNull().default("general"), // general | crew | admin | dm_<userId>
+  sender_id: varchar("sender_id").references(() => users.id).notNull(),
+  sender_name: text("sender_name").notNull(),
+  sender_role: text("sender_role").notNull().default("client"),
+  content: text("content").notNull(),
+  is_ai_message: boolean("is_ai_message").default(false),
+  ai_trigger: text("ai_trigger"), // What prompted the AI response
+  created_at: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const insertTeamMessageSchema = createInsertSchema(team_messages).omit({
+  id: true,
+  created_at: true,
+}).extend({
+  content: z.string().min(1).max(2000),
+  channel: z.string().default("general"),
+});
+
+export type InsertTeamMessage = z.infer<typeof insertTeamMessageSchema>;
+export type TeamMessage = typeof team_messages.$inferSelect;
+
 export const insertAIWorkflowTemplateSchema = createInsertSchema(ai_workflow_templates).omit({
   id: true,
   created_at: true,
