@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { format } from "date-fns";
-import { Calendar as CalendarIcon, Plus, Search, Pencil, Trash2, Eye, DollarSign, X, Send, Download, Zap, ClipboardCheck, Stethoscope, Clock } from "lucide-react";
+import { Calendar as CalendarIcon, Plus, Search, Pencil, Trash2, DollarSign, X, Send, Zap, ClipboardCheck, Stethoscope, Clock } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -459,57 +459,29 @@ export default function Invoices() {
                         ${parseFloat(invoice.total).toFixed(2)}
                       </TableCell>
                       <TableCell className="text-right">
-                        <div className="flex items-center justify-end gap-2" onClick={(e) => e.stopPropagation()}>
-                          <Button
-                            size="icon"
-                            variant="ghost"
-                            onClick={() => handleViewInvoice(invoice)}
-                            data-testid={`button-view-${invoice.id}`}
-                          >
-                            <Eye className="h-4 w-4" />
-                          </Button>
-                          <Button
-                            size="icon"
-                            variant="ghost"
-                            onClick={() => window.open(`/api/invoices/${invoice.id}/pdf`, '_blank')}
-                            data-testid={`button-download-${invoice.id}`}
-                            title="Download PDF"
-                          >
-                            <Download className="h-4 w-4" />
-                          </Button>
+                        <div className="flex items-center justify-end gap-1" onClick={(e) => e.stopPropagation()}>
+                          {canManageInvoices && invoice.status !== 'paid' && (
+                            <Button
+                              size="icon"
+                              variant="ghost"
+                              onClick={() => sendInvoiceMutation.mutate(invoice.id)}
+                              disabled={sendInvoiceMutation.isPending}
+                              data-testid={`button-send-${invoice.id}`}
+                              title="Send"
+                            >
+                              <Send className="h-4 w-4" />
+                            </Button>
+                          )}
                           {canManageInvoices && (
-                            <>
-                              {invoice.status !== 'paid' && (
-                                <Button
-                                  size="icon"
-                                  variant="ghost"
-                                  onClick={() => sendInvoiceMutation.mutate(invoice.id)}
-                                  disabled={sendInvoiceMutation.isPending}
-                                  data-testid={`button-send-${invoice.id}`}
-                                  title="Send via Email & SMS"
-                                >
-                                  <Send className="h-4 w-4" />
-                                </Button>
-                              )}
-                              <Button
-                                size="icon"
-                                variant="ghost"
-                                onClick={() => handleEditInvoice(invoice)}
-                                data-testid={`button-edit-${invoice.id}`}
-                              >
-                                <Pencil className="h-4 w-4" />
-                              </Button>
-                              {user?.role === "admin" && (
-                                <Button
-                                  size="icon"
-                                  variant="ghost"
-                                  onClick={() => handleDeleteInvoice(invoice.id)}
-                                  data-testid={`button-delete-${invoice.id}`}
-                                >
-                                  <Trash2 className="h-4 w-4" />
-                                </Button>
-                              )}
-                            </>
+                            <Button
+                              size="icon"
+                              variant="ghost"
+                              onClick={() => handleEditInvoice(invoice)}
+                              data-testid={`button-edit-${invoice.id}`}
+                              title="Edit"
+                            >
+                              <Pencil className="h-4 w-4" />
+                            </Button>
                           )}
                           {invoice.status !== "paid" && (
                             <Button

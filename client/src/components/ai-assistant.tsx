@@ -405,16 +405,7 @@ Be clear, helpful, and professional. Avoid jargon. Guide users through the platf
   };
 
   if (!isOpen) {
-    return (
-      <Button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-4 right-4 z-50 h-14 w-14 rounded-full shadow-lg bg-gradient-to-r from-primary to-accent hover:scale-110 transition-transform"
-        size="icon"
-        data-testid="button-open-ai-assistant"
-      >
-        <Sparkles className="h-6 w-6" />
-      </Button>
-    );
+    return null;
   }
 
   if (isMinimized) {

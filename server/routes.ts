@@ -3411,6 +3411,239 @@ Return ONLY a valid JSON object with this structure:
     }
   });
 
+  // ========================================
+  // SEED: Real invoice data from PDF documents
+  // ========================================
+  app.post('/api/seed-invoices', isAuthenticated, requireRole('pirate_king', 'admin'), async (req: any, res) => {
+    try {
+      const user = req.user;
+      const results: string[] = [];
+
+      // --- Ensure clients exist ---
+      const allClients = await storage.getAllClients();
+      let wph = allClients.find(c => c.name === 'Wilcrest Park Homes');
+      if (!wph) {
+        wph = await storage.createClient({
+          name: 'Wilcrest Park Homes',
+          address: '8405 Wilcrest Dr',
+          city: 'Houston',
+          state: 'TX',
+          zip: '77072',
+          email: '',
+          phone: '',
+        });
+        results.push('Created client: Wilcrest Park Homes');
+      }
+
+      let be = allClients.find(c => c.name === 'Bill Emmons');
+      if (!be) {
+        be = await storage.createClient({
+          name: 'Bill Emmons',
+          address: '8405 Wilcrest Dr',
+          city: 'Houston',
+          state: 'TX',
+          zip: '77072',
+          email: '',
+          phone: '',
+        });
+        results.push('Created client: Bill Emmons');
+      }
+
+      // --- Invoice definitions ---
+      const invoiceDefs = [
+        {
+          invoice_number: '251102',
+          client_id: wph!.id,
+          status: 'sent',
+          invoice_date: new Date('2025-11-04'),
+          due_date: new Date('2025-11-09'),
+          subtotal: '2372.50', tax_rate: '0', tax_amount: '0', total: '2372.50',
+          notes: 'Partial payment received ($1,975.00). Balance due: $397.50',
+          items: [
+            { description: 'Replaced 4000 Building breaker that was arching and creating a potential fire hazard (parts & labor)', quantity: '1', unit_price: '372.50', amount: '372.50' },
+            { description: 'Parking lot lighting structure closest to the leasing office on the right side - repair raceway and replace (2) flood lighting fixtures w/ new LED fixtures', quantity: '1', unit_price: '525.00', amount: '525.00' },
+            { description: 'Install (1) new 20amp GFCI breaker for hot tub circuit at pool area', quantity: '1', unit_price: '275.00', amount: '275.00' },
+            { description: 'Troubleshoot and repair exterior lighting on the 3000 building', quantity: '1', unit_price: '600.00', amount: '600.00' },
+            { description: 'Troubleshoot and repair exterior lighting on the 7000 building including replacing photocell', quantity: '1', unit_price: '600.00', amount: '600.00' },
+          ],
+        },
+        {
+          invoice_number: 'WPH2',
+          client_id: wph!.id,
+          status: 'paid',
+          invoice_date: new Date('2025-11-10'),
+          due_date: new Date('2025-11-10'),
+          subtotal: '300.00', tax_rate: '0', tax_amount: '0', total: '300.00',
+          notes: 'Paid in full',
+          items: [
+            { description: 'Trouble Shooting Process Unit 1206 - diagnosed rodent damage to wiring in attic, Federal Pacific panel needs replacement. Recommend full rewire.', quantity: '1', unit_price: '300.00', amount: '300.00' },
+          ],
+        },
+        {
+          invoice_number: 'WPH3',
+          client_id: wph!.id,
+          status: 'sent',
+          invoice_date: new Date('2025-11-12'),
+          due_date: new Date('2025-11-12'),
+          subtotal: '1916.95', tax_rate: '0', tax_amount: '0', total: '1916.95',
+          notes: 'Partial payment received ($300.00). Balance due: $1,616.95',
+          items: [
+            { description: 'Replaced Federal Pacific 100 amp panel with a new Siemens main lug panel - Unit 1206 master bedroom closet', quantity: '1', unit_price: '1641.95', amount: '1641.95' },
+            { description: 'Repaired electrical issue in the master bedroom - junction box behind TV mount repaired and secured', quantity: '1', unit_price: '275.00', amount: '275.00' },
+          ],
+        },
+        {
+          invoice_number: 'WPH4',
+          client_id: wph!.id,
+          status: 'overdue',
+          invoice_date: new Date('2025-11-20'),
+          due_date: new Date('2025-11-20'),
+          subtotal: '2219.90', tax_rate: '0', tax_amount: '0', total: '2219.90',
+          notes: 'Unpaid - balance $2,219.90',
+          items: [
+            { description: 'Unit 1206 - Replaced wiring in master bedroom, living room, kitchen and hallway circuit including new devices (receptacles/switches)', quantity: '1', unit_price: '2219.90', amount: '2219.90' },
+          ],
+        },
+        {
+          invoice_number: 'WPH5',
+          client_id: wph!.id,
+          status: 'overdue',
+          invoice_date: new Date('2025-11-17'),
+          due_date: new Date('2025-11-17'),
+          subtotal: '2725.00', tax_rate: '0', tax_amount: '0', total: '2725.00',
+          notes: 'Unpaid - balance $2,725.00',
+          items: [
+            { description: '1200 building parking cover lighting - remove pre-existing fixtures & install 2 LED flat panel fixtures, repair raceway and junction boxes', quantity: '1', unit_price: '525.00', amount: '525.00' },
+            { description: '5000 building exterior lighting - troubleshoot and repair circuit including replacing photocell', quantity: '1', unit_price: '600.00', amount: '600.00' },
+            { description: '5000 building - replaced exterior light fixture on the second story with LED fixture (16+ feet)', quantity: '1', unit_price: '350.00', amount: '350.00' },
+            { description: '12000 building parking cover - removed pre-existing fixtures & installed 2 LED flat panel fixtures, repaired raceway and junction boxes', quantity: '1', unit_price: '525.00', amount: '525.00' },
+            { description: '6000 building exterior lighting - troubleshoot and repair circuit', quantity: '1', unit_price: '350.00', amount: '350.00' },
+            { description: 'Replaced LED lamp in 5000 building barn lighting fixture (16+ feet from ground)', quantity: '1', unit_price: '75.00', amount: '75.00' },
+            { description: 'Troubleshoot and repair exterior lighting circuit on the 12000 building', quantity: '1', unit_price: '300.00', amount: '300.00' },
+          ],
+        },
+        {
+          invoice_number: 'WPH6',
+          client_id: wph!.id,
+          status: 'overdue',
+          invoice_date: new Date('2025-11-21'),
+          due_date: new Date('2025-11-21'),
+          subtotal: '300.00', tax_rate: '0', tax_amount: '0', total: '300.00',
+          notes: 'Replace Main Panel and Rewire Total Unit Recommended',
+          items: [
+            { description: 'Trouble Shooting Process Unit 1206 - Customer complained multiple rooms lacking power. Found rodent damage to wiring in attic, Federal Pacific panel needs service/replacement.', quantity: '1', unit_price: '300.00', amount: '300.00' },
+          ],
+        },
+        {
+          invoice_number: 'WPH7',
+          client_id: wph!.id,
+          status: 'overdue',
+          invoice_date: new Date('2025-11-24'),
+          due_date: new Date('2025-11-24'),
+          subtotal: '2425.00', tax_rate: '0', tax_amount: '0', total: '2425.00',
+          notes: '',
+          items: [
+            { description: '3000 building exterior lighting photocell replaced', quantity: '1', unit_price: '175.00', amount: '175.00' },
+            { description: '10000 building parking cover - removed 2 pre-existing fixtures & installed 2 LED flat panel fixtures, repaired raceway and junction boxes', quantity: '1', unit_price: '525.00', amount: '525.00' },
+            { description: '11000 building parking cover - removed 2 pre-existing fixtures & installed 2 LED flat panel fixtures, repaired raceway and junction boxes', quantity: '1', unit_price: '525.00', amount: '525.00' },
+            { description: '4000 building exterior lighting raceway damaged - removed and replaced with new EMT conduit and new LED fixture', quantity: '1', unit_price: '1125.00', amount: '1125.00' },
+            { description: '4000 building LED corn cob lamp installed in barn lighting fixture (16+ feet)', quantity: '1', unit_price: '75.00', amount: '75.00' },
+          ],
+        },
+        {
+          invoice_number: 'WPH8',
+          client_id: wph!.id,
+          status: 'overdue',
+          invoice_date: new Date('2025-12-08'),
+          due_date: new Date('2025-12-08'),
+          subtotal: '2775.00', tax_rate: '0', tax_amount: '0', total: '2775.00',
+          notes: 'Replace Main Panel and Rewire Total Unit Recommended',
+          items: [
+            { description: '10000 building parking structure - 2 bad fixtures replaced with new LED flat panel fixtures to NEC standards', quantity: '1', unit_price: '525.00', amount: '525.00' },
+            { description: '1700 building - large lighting fixture above second story replaced with Large LED flat panel fixture', quantity: '1', unit_price: '350.00', amount: '350.00' },
+            { description: '2800 building - replaced LED lamp at end closest to 2700 building (above 16 feet)', quantity: '1', unit_price: '75.00', amount: '75.00' },
+            { description: '1800/1900/2000 units parking structure - troubleshoot and repair exterior lighting circuit staying on 24/7, replaced photocell', quantity: '1', unit_price: '450.00', amount: '450.00' },
+            { description: '1900 building - troubleshoot and repair lighting circuit controlling fixtures between 1900/1800/2000 buildings including ground fault repair and rerouting raceway', quantity: '1', unit_price: '1375.00', amount: '1375.00' },
+          ],
+        },
+        {
+          invoice_number: 'WPH9',
+          client_id: be!.id,
+          status: 'overdue',
+          invoice_date: new Date('2025-12-15'),
+          due_date: new Date('2025-12-15'),
+          subtotal: '3600.00', tax_rate: '0', tax_amount: '0', total: '3600.00',
+          notes: '',
+          items: [
+            { description: '16000 building - new circuit breaker and raceway for multiple lighting fixtures including new photocell. Removed out-of-code romex installed by tenant.', quantity: '1', unit_price: '2500.00', amount: '2500.00' },
+            { description: 'Repair illegally installed extension cord to exterior lighting fixture box on parking structure outside unit 12010', quantity: '1', unit_price: '125.00', amount: '125.00' },
+            { description: 'Repair illegally installed lighting fixture outside of unit', quantity: '1', unit_price: '125.00', amount: '125.00' },
+            { description: '1200 building exterior lighting - lost feeding circuit source, new exterior lighting source installed', quantity: '1', unit_price: '850.00', amount: '850.00' },
+          ],
+        },
+        {
+          invoice_number: 'BE1',
+          client_id: be!.id,
+          status: 'overdue',
+          invoice_date: new Date('2025-12-08'),
+          due_date: new Date('2025-12-08'),
+          subtotal: '450.00', tax_rate: '0', tax_amount: '0', total: '450.00',
+          notes: '',
+          items: [
+            { description: 'Installed multi-functional lighting fixture in unit 15 D, replaced 1 single electrical receptacle cover, installed security bolted hand rail in master bathroom shower', quantity: '1', unit_price: '450.00', amount: '450.00' },
+          ],
+        },
+        {
+          invoice_number: 'BE2',
+          client_id: be!.id,
+          status: 'overdue',
+          invoice_date: new Date('2025-12-12'),
+          due_date: new Date('2025-12-12'),
+          subtotal: '750.00', tax_rate: '0', tax_amount: '0', total: '750.00',
+          notes: '',
+          items: [
+            { description: 'Installation of custom door hinges on metal door frame - cutting notches and redrilling holes to match frame', quantity: '1', unit_price: '450.00', amount: '450.00' },
+            { description: 'Installation of tripod bed assist device - assembled from box and mounted to customer bed for stability', quantity: '1', unit_price: '300.00', amount: '300.00' },
+          ],
+        },
+      ];
+
+      // Insert invoices (skip existing)
+      for (const def of invoiceDefs) {
+        const existing = await storage.getInvoiceByNumber(def.invoice_number);
+        if (existing) {
+          results.push(`Skipped (exists): ${def.invoice_number}`);
+          continue;
+        }
+
+        const { items, ...invoiceData } = def;
+        const invoice = await storage.createInvoice({
+          ...invoiceData,
+          created_by: user.id,
+          created_at: def.invoice_date,
+        } as any);
+
+        for (let i = 0; i < items.length; i++) {
+          await storage.createInvoiceItem({
+            invoice_id: invoice.id,
+            description: items[i].description,
+            quantity: items[i].quantity,
+            unit_price: items[i].unit_price,
+            amount: items[i].amount,
+            order_index: i,
+          });
+        }
+
+        results.push(`Created: ${def.invoice_number} — $${def.total}`);
+      }
+
+      res.json({ success: true, results });
+    } catch (error) {
+      console.error('Error seeding invoices:', error);
+      res.status(500).json({ message: 'Failed to seed invoices', error: String(error) });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }

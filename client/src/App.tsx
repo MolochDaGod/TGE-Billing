@@ -183,14 +183,8 @@ function AppContent() {
     <RoleSwitchProvider user={user}>
       <SidebarProvider style={style as React.CSSProperties}>
         <AppSidebar />
-        <div className="relative flex flex-col flex-1 overflow-hidden">
-            {/* Subtle gradient background */}
-            <div 
-              className="absolute inset-0 z-0"
-              style={{ background: 'linear-gradient(145deg, hsl(222 47% 8%) 0%, hsl(220 30% 12%) 50%, hsl(225 40% 10%) 100%)' }}
-            />
-            
-            <header className="premium-header relative z-10 flex h-16 items-center justify-between gap-4 px-6">
+        <div className="flex flex-col flex-1 overflow-hidden bg-background">
+            <header className="premium-header flex h-16 items-center justify-between gap-4 px-6">
               <div className="flex items-center gap-3">
                 <SidebarTrigger data-testid="button-sidebar-toggle" className="text-foreground/80 hover:text-primary transition-colors" />
                 <div className="h-6 w-px bg-border/50" />
@@ -207,7 +201,7 @@ function AppContent() {
                 <span className="absolute -top-1 -right-1 h-3 w-3 bg-primary rounded-full pulse-ring" />
               </Button>
             </header>
-            <main className="relative z-10 flex-1 overflow-auto p-6">
+            <main className="flex-1 overflow-auto p-6">
               <div className="mx-auto max-w-7xl">
                 <Router />
               </div>
