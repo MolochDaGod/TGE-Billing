@@ -9,7 +9,11 @@ import path from "path";
 import helmet from "helmet";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
-import { registerRoutes } from "./routes";
+// NOTE: registerRoutes is imported dynamically inside initApp() so that
+// heavy dependencies (db, stripe, bcrypt, twilio …) are only loaded on
+// first invocation, not at module-parse time.  This prevents cold-start
+// module-level throws from crashing the serverless function before we can
+// return a useful error response.
 
 // ESM-safe __dirname (works Node 18+)
 const __filename = fileURLToPath(import.meta.url);
@@ -120,12 +124,15 @@ app.use((req, res, next) => {
   next();
 });
 
-// Routes + error handler registered lazily
+// Routes + error handler registered lazily via dynamic import
 let _routesReady: Promise<void> | null = null;
 
 export function initApp(): Promise<void> {
   if (!_routesReady) {
     _routesReady = (async () => {
+      // Dynamic import ensures all heavy deps (db, stripe, twilio …) are
+      // loaded asynchronously and any failure is catchable.
+      const { registerRoutes } = await import("./routes");
       await registerRoutes(app);
 
       // Error handler MUST come after routes
