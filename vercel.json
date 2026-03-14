@@ -4,12 +4,12 @@
   "outputDirectory": "dist/public",
   "framework": null,
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api" },
-    { "source": "/attached_assets/(.*)", "destination": "/api" }
+    { "source": "/api/:path*", "destination": "/api" },
+    { "source": "/attached_assets/:path*", "destination": "/api" },
+    { "source": "/:path*", "destination": "/index.html" }
   ],
   "functions": {
     "api/index.ts": {
-      "runtime": "nodejs20.x",
       "maxDuration": 30,
       "memory": 1024
     }

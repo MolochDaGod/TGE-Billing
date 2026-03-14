@@ -88,6 +88,7 @@ export function usePuterAuth() {
         isLoading: false,
         error: err.message || "Sign in failed",
       }));
+      throw err; // Re-throw so callers (e.g. auth page) can show error toasts
     }
   }, []);
 
