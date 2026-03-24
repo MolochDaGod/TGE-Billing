@@ -11,6 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon, Plus, Search, Pencil, Trash2, DollarSign, X, Send, Zap, ClipboardCheck, Stethoscope, Clock } from "lucide-react";
+import { InvoicePrintView } from "@/components/invoice-print-view";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -972,78 +973,20 @@ function InvoiceForm({
 }
 
 function InvoiceDetailView({ invoice }: { invoice: InvoiceWithClient }) {
+  // Build a minimal client object for the print view
+  const clientForPrint = invoice.client || {
+    id: '', name: 'Unknown', email: null, phone: null, address: null,
+    city: null, state: null, zip: null, notes: null, created_at: new Date(),
+    updated_at: new Date(), user_id: null, vendor_id: null, status: 'active',
+    tags: null, last_contact: null, next_follow_up: null, lifetime_value: '0',
+    preferred_contact_method: null, source: null,
+  };
+
   return (
-    <div className="space-y-6">
-      <div className="grid gap-4 md:grid-cols-2">
-        <div>
-          <p className="text-sm text-muted-foreground">Client</p>
-          <p className="font-medium">{invoice.client?.name || "Unknown"}</p>
-        </div>
-        <div>
-          <p className="text-sm text-muted-foreground">Status</p>
-          <Badge variant={getStatusColor(invoice.status)}>{invoice.status}</Badge>
-        </div>
-        <div>
-          <p className="text-sm text-muted-foreground">Created Date</p>
-          <p className="font-medium">{format(new Date(invoice.created_at), "PPP")}</p>
-        </div>
-        <div>
-          <p className="text-sm text-muted-foreground">Due Date</p>
-          <p className="font-medium">
-            {invoice.due_date ? format(new Date(invoice.due_date), "PPP") : "—"}
-          </p>
-        </div>
-      </div>
-
-      {invoice.items && invoice.items.length > 0 && (
-        <div>
-          <h3 className="font-medium mb-4">Line Items</h3>
-          <div className="border rounded-md">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Description</TableHead>
-                  <TableHead className="text-right">Quantity</TableHead>
-                  <TableHead className="text-right">Unit Price</TableHead>
-                  <TableHead className="text-right">Amount</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {invoice.items.map((item, index) => (
-                  <TableRow key={item.id || index}>
-                    <TableCell>{item.description}</TableCell>
-                    <TableCell className="text-right">{parseFloat(item.quantity).toFixed(2)}</TableCell>
-                    <TableCell className="text-right">${parseFloat(item.unit_price).toFixed(2)}</TableCell>
-                    <TableCell className="text-right font-medium">${parseFloat(item.amount).toFixed(2)}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
-        </div>
-      )}
-
-      <div className="border-t pt-4 space-y-2">
-        <div className="flex justify-between">
-          <span className="text-muted-foreground">Subtotal:</span>
-          <span className="font-medium">${parseFloat(invoice.subtotal || "0").toFixed(2)}</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-muted-foreground">Tax ({parseFloat(invoice.tax_rate || "0").toFixed(2)}%):</span>
-          <span className="font-medium">${parseFloat(invoice.tax_amount || "0").toFixed(2)}</span>
-        </div>
-        <div className="flex justify-between text-lg font-bold border-t pt-2">
-          <span>Total:</span>
-          <span>${parseFloat(invoice.total || "0").toFixed(2)}</span>
-        </div>
-      </div>
-
-      {invoice.notes && (
-        <div>
-          <p className="text-sm text-muted-foreground mb-2">Notes</p>
-          <p className="text-sm border p-3 rounded-md bg-muted/50">{invoice.notes}</p>
-        </div>
-      )}
-    </div>
+    <InvoicePrintView
+      invoice={invoice}
+      items={invoice.items || []}
+      client={clientForPrint}
+    />
   );
 }

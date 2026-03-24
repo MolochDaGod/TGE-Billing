@@ -1,4 +1,6 @@
 import PDFDocument from 'pdfkit';
+import path from 'path';
+import fs from 'fs';
 import type { Invoice, InvoiceItem, Client } from '@shared/schema';
 
 interface InvoiceWithDetails {
@@ -136,216 +138,190 @@ export function generateMemoPDF(data: MemoData): PDFKit.PDFDocument {
 }
 
 export function generateInvoicePDF(data: InvoiceWithDetails): PDFKit.PDFDocument {
-  const doc = new PDFDocument({ margin: 50 });
+  const doc = new PDFDocument({ margin: 50, size: 'LETTER' });
   const { invoice, items, client } = data;
 
-  // Header with company branding
-  doc.fontSize(28)
-     .fillColor('#3b82f6')
-     .text('T.G.E. Billing', 50, 50);
-  
-  doc.fontSize(10)
-     .fillColor('#6b7280')
-     .text('Texas Master Electrician License #750779', 50, 85);
-  
-  // Invoice title and number
-  doc.fontSize(20)
-     .fillColor('#1f2937')
-     .text('INVOICE', 400, 50, { align: 'right' });
-  
-  doc.fontSize(12)
-     .fillColor('#6b7280')
-     .text(invoice.invoice_number, 400, 75, { align: 'right' });
+  const blue = '#3b82f6';
+  const gold = '#C8A415';
+  const darkText = '#1f2937';
+  const grayText = '#6b7280';
+  const lightGray = '#9ca3af';
+  const lightBg = '#f9fafb';
+  const borderColor = '#e5e7eb';
 
-  // Client information
-  doc.fontSize(10)
-     .fillColor('#6b7280')
-     .text('BILL TO:', 50, 150);
-  
-  doc.fontSize(12)
-     .fillColor('#1f2937')
-     .text(client.name, 50, 170);
-  
-  if (client.email) {
-    doc.fontSize(10)
-       .fillColor('#6b7280')
-       .text(client.email, 50, 190);
+  // ═══════════════════════════════════════════
+  // TOP ACCENT STRIPE — gold brand bar
+  // ═══════════════════════════════════════════
+  doc.rect(0, 0, 620, 6).fill(gold);
+
+  // ═══════════════════════════════════════════
+  // HEADER — Logo + Company info | Invoice #
+  // ═══════════════════════════════════════════
+  let logoUsed = false;
+  try {
+    const logoPath = path.resolve(process.cwd(), 'public', 'tge-logo.png');
+    if (fs.existsSync(logoPath)) {
+      doc.image(logoPath, 50, 18, { width: 60 });
+      logoUsed = true;
+    }
+  } catch {
+    // logo not found — fall through to text-only header
   }
-  
-  if (client.phone) {
-    doc.fontSize(10)
-       .fillColor('#6b7280')
-       .text(client.phone, 50, 205);
-  }
-  
+
+  const headerTextX = logoUsed ? 120 : 50;
+  doc.fontSize(22).fillColor(gold).text('T.G.E. PROS', headerTextX, 22);
+  doc.fontSize(9).fillColor(grayText).text('Professional Electrical & Contractor Services', headerTextX, 48);
+  doc.fontSize(8).fillColor(lightGray).text('Texas Master Electrician License #750779', headerTextX, 62);
+  doc.fontSize(8).fillColor(lightGray).text('Houston, TX  •  tgebilling@gmail.com  •  (832) 000-0000', headerTextX, 74);
+
+  // INVOICE label (right side)
+  doc.fontSize(28).fillColor(blue).text('INVOICE', 370, 22, { align: 'right', width: 190 });
+  doc.fontSize(11).fillColor(darkText).text(invoice.invoice_number, 370, 55, { align: 'right', width: 190 });
+
+  // Status badge
+  const statusColors: Record<string, string> = {
+    paid: '#16a34a', sent: '#2563eb', draft: '#6b7280', overdue: '#dc2626', cancelled: '#9ca3af',
+  };
+  const statusColor = statusColors[invoice.status] || grayText;
+  const statusText = invoice.status.toUpperCase();
+  doc.roundedRect(488, 70, 72, 18, 4).fillAndStroke(statusColor, statusColor);
+  doc.fontSize(8).fillColor('#ffffff').text(statusText, 488, 75, { width: 72, align: 'center' });
+
+  // Divider
+  doc.moveTo(50, 95).lineTo(560, 95).strokeColor(borderColor).stroke();
+
+  // ═══════════════════════════════════════════
+  // BILL TO / INVOICE DETAILS
+  // ═══════════════════════════════════════════
+  let y = 108;
+
+  // Bill To
+  doc.fontSize(8).fillColor(gold).text('BILL TO', 50, y);
+  y += 14;
+  doc.fontSize(12).fillColor(darkText).text(client.name, 50, y);
+  y += 18;
+  if (client.email) { doc.fontSize(9).fillColor(grayText).text(client.email, 50, y); y += 14; }
+  if (client.phone) { doc.fontSize(9).fillColor(grayText).text(client.phone, 50, y); y += 14; }
   if (client.address) {
-    doc.fontSize(10)
-       .fillColor('#6b7280')
-       .text(client.address, 50, 220, { width: 200 });
+    doc.fontSize(9).fillColor(grayText).text(client.address, 50, y, { width: 200 });
+    y = (doc as any).y + 4;
+  }
+  if (client.city || client.state || client.zip) {
+    const cityLine = [client.city, client.state].filter(Boolean).join(', ') + (client.zip ? ` ${client.zip}` : '');
+    doc.fontSize(9).fillColor(grayText).text(cityLine, 50, y, { width: 200 });
   }
 
-  // Invoice details (right side)
-  const detailsX = 350;
-  let detailsY = 150;
-  
-  doc.fontSize(10)
-     .fillColor('#6b7280')
-     .text('Work Date:', detailsX, detailsY);
-  doc.fillColor('#1f2937')
-     .text(new Date(invoice.invoice_date || invoice.created_at).toLocaleDateString('en-US'), detailsX + 100, detailsY);
-  
-  detailsY += 20;
-  
-  if (invoice.due_date) {
-    doc.fillColor('#6b7280')
-       .text('Due Date:', detailsX, detailsY);
-    doc.fillColor('#1f2937')
-       .text(new Date(invoice.due_date).toLocaleDateString('en-US'), detailsX + 100, detailsY);
-    detailsY += 20;
-  }
-  
-  doc.fillColor('#6b7280')
-     .text('Status:', detailsX, detailsY);
-  doc.fillColor('#1f2937')
-     .text(invoice.status.toUpperCase(), detailsX + 100, detailsY);
+  // Invoice details (right column)
+  const detX = 370;
+  let detY = 108;
+  doc.fontSize(8).fillColor(gold).text('INVOICE DETAILS', detX, detY);
+  detY += 16;
 
-  // Line items table
-  const tableTop = 280;
-  const tableHeaders = ['Description', 'Qty', 'Unit Price', 'Amount'];
-  const columnWidths = [250, 60, 100, 100];
-  const columnX = [50, 300, 360, 460];
+  const addDetail = (label: string, value: string) => {
+    doc.fontSize(9).fillColor(grayText).text(label, detX, detY);
+    doc.fontSize(9).fillColor(darkText).text(value, detX + 90, detY, { width: 100, align: 'right' });
+    detY += 16;
+  };
+
+  addDetail('Invoice Date:', new Date(invoice.invoice_date || invoice.created_at).toLocaleDateString('en-US'));
+  if (invoice.due_date) addDetail('Due Date:', new Date(invoice.due_date).toLocaleDateString('en-US'));
+  addDetail('Terms:', invoice.due_date ? 'Net 30' : 'Due on Receipt');
+
+  // ═══════════════════════════════════════════
+  // LINE ITEMS TABLE
+  // ═══════════════════════════════════════════
+  const tableTop = Math.max(y, detY) + 20;
 
   // Table header
-  doc.fontSize(10)
-     .fillColor('#ffffff')
-     .rect(50, tableTop, 510, 25)
-     .fillAndStroke('#3b82f6', '#3b82f6');
-  
-  tableHeaders.forEach((header, i) => {
-    doc.fillColor('#ffffff')
-       .text(header, columnX[i], tableTop + 8, {
-         width: columnWidths[i],
-         align: i === 0 ? 'left' : 'right'
-       });
+  doc.rect(50, tableTop, 510, 24).fill(gold);
+  const colX = [58, 340, 400, 475];
+  const colW = [275, 55, 70, 80];
+  const headers = ['Description', 'Qty', 'Unit Price', 'Amount'];
+  headers.forEach((h, i) => {
+    doc.fontSize(9).fillColor('#ffffff').text(h, colX[i], tableTop + 7, {
+      width: colW[i], align: i === 0 ? 'left' : 'right',
+    });
   });
 
   // Table rows
-  let currentY = tableTop + 30;
-  items.forEach((item, index) => {
-    const rowColor = index % 2 === 0 ? '#f9fafb' : '#ffffff';
-    doc.rect(50, currentY - 5, 510, 25)
-       .fill(rowColor);
-    
-    doc.fontSize(10)
-       .fillColor('#1f2937')
-       .text(item.description, columnX[0], currentY, { width: columnWidths[0] });
-    
-    doc.text(parseFloat(item.quantity).toFixed(2), columnX[1], currentY, {
-      width: columnWidths[1],
-      align: 'right'
-    });
-    
-    doc.text(`$${parseFloat(item.unit_price).toFixed(2)}`, columnX[2], currentY, {
-      width: columnWidths[2],
-      align: 'right'
-    });
-    
-    doc.text(`$${parseFloat(item.amount).toFixed(2)}`, columnX[3], currentY, {
-      width: columnWidths[3],
-      align: 'right'
-    });
-    
-    currentY += 25;
+  let rowY = tableTop + 28;
+  items.forEach((item, idx) => {
+    if (rowY > 680) { doc.addPage(); rowY = 50; doc.rect(0, 0, 620, 4).fill(gold); }
+    const bg = idx % 2 === 0 ? lightBg : '#ffffff';
+    doc.rect(50, rowY - 3, 510, 24).fill(bg);
+    doc.fontSize(9).fillColor(darkText)
+       .text(item.description, colX[0], rowY + 2, { width: colW[0] })
+       .text(parseFloat(item.quantity).toString(), colX[1], rowY + 2, { width: colW[1], align: 'right' })
+       .text(`$${parseFloat(item.unit_price).toFixed(2)}`, colX[2], rowY + 2, { width: colW[2], align: 'right' })
+       .text(`$${parseFloat(item.amount).toFixed(2)}`, colX[3], rowY + 2, { width: colW[3], align: 'right' });
+    rowY += 24;
   });
 
-  // Totals section
-  currentY += 20;
-  const totalsX = 360;
-  
-  doc.fontSize(10)
-     .fillColor('#6b7280')
-     .text('Subtotal:', totalsX, currentY);
-  doc.fillColor('#1f2937')
-     .text(`$${parseFloat(invoice.subtotal).toFixed(2)}`, totalsX + 100, currentY, { align: 'right' });
-  
-  currentY += 20;
-  
+  // Bottom border of table
+  doc.moveTo(50, rowY).lineTo(560, rowY).strokeColor(borderColor).stroke();
+
+  // ═══════════════════════════════════════════
+  // TOTALS
+  // ═══════════════════════════════════════════
+  rowY += 12;
+  const totX = 390;
+  const totValX = 480;
+
+  doc.fontSize(10).fillColor(grayText).text('Subtotal:', totX, rowY);
+  doc.fillColor(darkText).text(`$${parseFloat(invoice.subtotal).toFixed(2)}`, totValX, rowY, { width: 75, align: 'right' });
+  rowY += 18;
+
   if (parseFloat(invoice.tax_amount || '0') > 0) {
-    doc.fillColor('#6b7280')
-       .text(`Tax (${parseFloat(invoice.tax_rate || '0').toFixed(2)}%):`, totalsX, currentY);
-    doc.fillColor('#1f2937')
-       .text(`$${parseFloat(invoice.tax_amount || '0').toFixed(2)}`, totalsX + 100, currentY, { align: 'right' });
-    currentY += 20;
+    doc.fillColor(grayText).text(`Tax (${parseFloat(invoice.tax_rate || '0').toFixed(2)}%):`, totX, rowY);
+    doc.fillColor(darkText).text(`$${parseFloat(invoice.tax_amount || '0').toFixed(2)}`, totValX, rowY, { width: 75, align: 'right' });
+    rowY += 18;
   }
-  
-  // Total with highlight
-  doc.rect(totalsX - 10, currentY - 5, 200, 30)
-     .fillAndStroke('#eff6ff', '#3b82f6');
-  
-  doc.fontSize(14)
-     .fillColor('#1f2937')
-     .text('TOTAL:', totalsX, currentY + 5);
-  doc.fontSize(16)
-     .fillColor('#3b82f6')
-     .text(`$${parseFloat(invoice.total).toFixed(2)}`, totalsX + 100, currentY + 5, { align: 'right' });
 
-  // Notes section
+  // Grand total bar
+  rowY += 4;
+  doc.rect(totX - 10, rowY - 4, 175, 30).fillAndStroke(gold, gold);
+  doc.fontSize(12).fillColor('#ffffff').text('TOTAL DUE:', totX, rowY + 4);
+  doc.fontSize(14).fillColor('#ffffff').text(`$${parseFloat(invoice.total).toFixed(2)}`, totValX - 10, rowY + 2, { width: 85, align: 'right' });
+
+  // ═══════════════════════════════════════════
+  // NOTES
+  // ═══════════════════════════════════════════
   if (invoice.notes) {
-    currentY += 60;
-    doc.fontSize(10)
-       .fillColor('#6b7280')
-       .text('Notes:', 50, currentY);
-    doc.fontSize(9)
-       .fillColor('#1f2937')
-       .text(invoice.notes, 50, currentY + 15, { width: 500 });
+    rowY += 50;
+    if (rowY > 640) { doc.addPage(); rowY = 50; doc.rect(0, 0, 620, 4).fill(gold); }
+    doc.fontSize(9).fillColor(gold).text('NOTES', 50, rowY);
+    rowY += 14;
+    doc.fontSize(9).fillColor(darkText).text(invoice.notes, 50, rowY, { width: 500, lineGap: 3 });
+    rowY = (doc as any).y + 10;
   }
 
-  // Payment instructions section
-  currentY += (invoice.notes ? 80 : 60);
-  
-  // Payment instructions box
-  doc.rect(50, currentY, 510, 100)
-     .fillAndStroke('#f9fafb', '#e5e7eb');
-  
-  doc.fontSize(12)
-     .fillColor('#1f2937')
-     .text('Payment Instructions', 60, currentY + 10);
-  
-  doc.fontSize(9)
-     .fillColor('#6b7280')
-     .text('Please make checks payable to:', 60, currentY + 35);
-  
-  doc.fontSize(11)
-     .fillColor('#1f2937')
-     .text('T.G.E.', 60, currentY + 50);
-  
-  // PayPal information
-  doc.fontSize(9)
-     .fillColor('#6b7280')
-     .text('PayPal payments accepted at:', 300, currentY + 35);
-  
-  doc.fontSize(10)
-     .fillColor('#3b82f6')
-     .text('tgebilling@gmail.com', 300, currentY + 50);
-  
-  // Online payment option
-  doc.fontSize(9)
-     .fillColor('#6b7280')
-     .text('Pay online with credit card or bank account at:', 60, currentY + 75);
-  
-  doc.fontSize(9)
-     .fillColor('#3b82f6')
-     .text('https://electrapro.app', 320, currentY + 75);
+  // ═══════════════════════════════════════════
+  // PAYMENT INSTRUCTIONS
+  // ═══════════════════════════════════════════
+  rowY += 20;
+  if (rowY > 600) { doc.addPage(); rowY = 50; doc.rect(0, 0, 620, 4).fill(gold); }
 
-  // Footer
-  const footerY = 720;
-  doc.fontSize(9)
-     .fillColor('#6b7280')
-     .text('Thank you for your business!', 50, footerY, { align: 'center', width: 500 });
-  
-  doc.fontSize(8)
-     .fillColor('#9ca3af')
-     .text('For questions, contact us at info@tgebilling.pro', 50, footerY + 15, { align: 'center', width: 500 });
+  doc.rect(50, rowY, 510, 85).fillAndStroke(lightBg, borderColor);
+  doc.fontSize(10).fillColor(darkText).text('Payment Instructions', 60, rowY + 8);
+  doc.moveTo(60, rowY + 22).lineTo(550, rowY + 22).strokeColor(borderColor).stroke();
+
+  doc.fontSize(9).fillColor(grayText).text('Make checks payable to:', 60, rowY + 30);
+  doc.fontSize(10).fillColor(darkText).text('T.G.E.', 60, rowY + 44);
+
+  doc.fontSize(9).fillColor(grayText).text('PayPal / Zelle:', 280, rowY + 30);
+  doc.fontSize(10).fillColor(blue).text('tgebilling@gmail.com', 280, rowY + 44);
+
+  doc.fontSize(9).fillColor(grayText).text('Pay online:', 60, rowY + 65);
+  doc.fillColor(blue).text('https://electrapro.app', 130, rowY + 65);
+
+  // ═══════════════════════════════════════════
+  // FOOTER
+  // ═══════════════════════════════════════════
+  const footerY = 725;
+  doc.moveTo(50, footerY - 8).lineTo(560, footerY - 8).strokeColor(gold).lineWidth(0.5).stroke();
+  doc.fontSize(9).fillColor(gold).text('T.G.E. PROS', 50, footerY, { align: 'center', width: 510 });
+  doc.fontSize(7).fillColor(lightGray).text('Professional Electrical & Contractor Services  •  Houston, TX  •  tgebilling@gmail.com', 50, footerY + 13, { align: 'center', width: 510 });
+  doc.fontSize(7).fillColor(lightGray).text('Thank you for your business!', 50, footerY + 24, { align: 'center', width: 510 });
 
   return doc;
 }
