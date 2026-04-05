@@ -108,9 +108,9 @@ function Router() {
         <Route path="/vendor/register" component={VendorRegister} />
         <Route path="/contractor/:slug" component={VendorSite} />
         <Route path="/tge-electrical" component={TGEElectrical} />
-      {/* Sykes & Sons Logistics standalone portal */ }
-      < Route path = "/sykes" component = { SykesLogin } />
-        <Route path="/sykes-portal" component = { SykesPortal } />
+        {/* Sykes & Sons Logistics standalone portal */}
+        <Route path="/sykes" component={SykesLogin} />
+        <Route path="/sykes-portal" component={SykesPortal} />
         <Route component={NotFound} />
       </Switch>
     );

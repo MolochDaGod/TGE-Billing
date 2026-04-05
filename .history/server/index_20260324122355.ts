@@ -12,7 +12,6 @@ import { setupRealtimeAI } from "./realtimeAI";
 import { seedAIAgents } from "./services/ai-agents-seed";
 import { seedDefaultAutomations } from "./services/ai-automation";
 import { seedWorkflowTemplates } from "./services/ai-workflow-templates";
-import { seedSykesPortal } from "./services/sykes-seed";
 
 export { app, initApp };
 
@@ -40,11 +39,6 @@ export { app, initApp };
       log("[AI Systems] All AI agents, automations, and workflows seeded successfully");
     } catch (error) {
       console.error("[AI Systems] Error seeding AI systems:", error);
-    }
-    try {
-      await seedSykesPortal();
-    } catch (error) {
-      console.error("[SykesSeed] Error seeding Sykes portal:", error);
     }
   });
 })()

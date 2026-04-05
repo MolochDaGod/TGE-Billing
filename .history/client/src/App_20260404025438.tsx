@@ -174,18 +174,14 @@ function Router() {
 function AppContent() {
   const { isAuthenticated, isLoading, user } = useAuth();
   const [isSparkyOpen, setIsSparkyOpen] = useState(false);
-  const [location] = useLocation();
-
-  // Sykes portal routes always render standalone (no TGE sidebar), regardless of auth state
-  const isSykesRoute = location === "/sykes" || location.startsWith("/sykes-portal");
-
+  
   const style = {
     "--sidebar-width": "16rem",
     "--sidebar-width-icon": "3rem",
   };
 
-  // Public pages (landing, auth) and Sykes portal render without sidebar
-  if (isLoading || !isAuthenticated || isSykesRoute) {
+  // Public pages (landing, auth) render without sidebar
+  if (isLoading || !isAuthenticated) {
     return <Router />;
   }
 

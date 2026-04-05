@@ -10,7 +10,6 @@ import helmet from "helmet";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
 import { registerRoutes } from "./routes";
-import { seedSykesPortal } from "./services/sykes-seed";
 
 // ESM-safe __dirname (works Node 18+)
 const __filename = fileURLToPath(import.meta.url);
@@ -128,8 +127,6 @@ export function initApp(): Promise<void> {
   if (!_routesReady) {
     _routesReady = (async () => {
       await registerRoutes(app);
-      // Seed vendor portals (idempotent)
-      seedSykesPortal().catch((e) => console.error("[SykesSeed] startup error:", e));
 
       // Error handler MUST come after routes
       app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
