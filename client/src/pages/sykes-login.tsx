@@ -53,7 +53,7 @@ export default function SykesLogin() {
           </h1>
           <div className="flex items-center gap-1 mt-2" style={{ color: "#94a3b8", fontSize: 14 }}>
             <MapPin size={14} />
-            <span>Texas City, TX 77372</span>
+  < span > Texas City, TX 77671 • Hwy 4 </span>
           </div>
           <p style={{ color: "#f97316", fontSize: 13, marginTop: 6, fontWeight: 500, letterSpacing: 2, textTransform: "uppercase" }}>
             Vendor Portal

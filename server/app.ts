@@ -11,6 +11,7 @@ import cors from "cors";
 import rateLimit from "express-rate-limit";
 import { registerRoutes } from "./routes";
 import { seedSykesPortal } from "./services/sykes-seed";
+import { seedTGEVendor } from "./services/tge-vendor-seed";
 
 // ESM-safe __dirname (works Node 18+)
 const __filename = fileURLToPath(import.meta.url);
@@ -130,6 +131,7 @@ export function initApp(): Promise<void> {
       await registerRoutes(app);
       // Seed vendor portals (idempotent)
       seedSykesPortal().catch((e) => console.error("[SykesSeed] startup error:", e));
+      seedTGEVendor().catch((e) => console.error("[TGESeed] startup error:", e));
 
       // Error handler MUST come after routes
       app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
