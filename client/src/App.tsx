@@ -67,6 +67,10 @@ import TGEElectrical from "@/pages/tge-electrical";
 import SykesLogin from "@/pages/sykes-login";
 import SykesPortal from "@/pages/sykes-portal";
 
+// T.G.E. Electrical Vendor Portal
+import TGELogin from "@/pages/tge-login";
+import TGEPortal from "@/pages/tge-portal";
+
 // Loading Components
 import { FullPageLoader } from "@/components/video-loader";
 
@@ -108,10 +112,11 @@ function Router() {
         <Route path="/vendor/register" component={VendorRegister} />
         <Route path="/contractor/:slug" component={VendorSite} />
         <Route path="/tge-electrical" component={TGEElectrical} />
-      {/* Sykes & Sons Logistics standalone portal */ }
-      < Route path = "/sykes" component = { SykesLogin } />
-        <Route path="/sykes-portal" component = { SykesPortal } />
-        <Route component={NotFound} />
+      <Route path="/sykes" component={SykesLogin} />
+      <Route path="/sykes-portal" component={SykesPortal} />
+      <Route path="/tge" component={TGELogin} />
+      <Route path="/tge-portal" component={TGEPortal} />
+      <Route component={NotFound} />
       </Switch>
     );
   }
@@ -162,9 +167,10 @@ function Router() {
       <Route path="/contractor/:slug" component={VendorSite} />
       <Route path="/tge-electrical" component={TGEElectrical} />
 
-    {/* Sykes & Sons Logistics standalone portal (also accessible when authenticated) */ }
-    < Route path = "/sykes" component = { SykesLogin } />
-      <Route path="/sykes-portal" component = { SykesPortal } />
+      <Route path="/sykes" component={SykesLogin} />
+      <Route path="/sykes-portal" component={SykesPortal} />
+      <Route path="/tge" component={TGELogin} />
+      <Route path="/tge-portal" component={TGEPortal} />
 
       <Route component={NotFound} />
     </Switch>
@@ -176,16 +182,17 @@ function AppContent() {
   const [isSparkyOpen, setIsSparkyOpen] = useState(false);
   const [location] = useLocation();
 
-  // Sykes portal routes always render standalone (no TGE sidebar), regardless of auth state
+  // Vendor portal routes render standalone (no TGE sidebar), regardless of auth state
   const isSykesRoute = location === "/sykes" || location.startsWith("/sykes-portal");
+  const isTGEPortalRoute = location === "/tge" || location.startsWith("/tge-portal");
 
   const style = {
     "--sidebar-width": "16rem",
     "--sidebar-width-icon": "3rem",
   };
 
-  // Public pages (landing, auth) and Sykes portal render without sidebar
-  if (isLoading || !isAuthenticated || isSykesRoute) {
+  // Public pages and vendor portals render without TGE sidebar
+  if (isLoading || !isAuthenticated || isSykesRoute || isTGEPortalRoute) {
     return <Router />;
   }
 

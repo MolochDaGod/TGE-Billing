@@ -17,6 +17,7 @@ export const ROLES = {
   PIRATE_KING: "pirate_king",
   ADMIN: "admin",
   PARTNER: "partner",
+  CAPITAL_MEMBER: "capital_member",
   STAFF_CAPTAIN: "staff_captain",
   STAFF: "staff",
   VENDOR: "vendor",
@@ -34,6 +35,7 @@ const ROLE_HIERARCHY: Record<Role, number> = {
   [ROLES.PIRATE_KING]: 9,
   [ROLES.ADMIN]: 8,
   [ROLES.PARTNER]: 7,
+  [ROLES.CAPITAL_MEMBER]: 7,
   [ROLES.STAFF_CAPTAIN]: 6,
   [ROLES.STAFF]: 5,
   [ROLES.VENDOR]: 4,
@@ -75,6 +77,7 @@ export const ROLE_DISPLAY_NAMES: Record<Role, string> = {
   [ROLES.PIRATE_KING]: "Owner",
   [ROLES.ADMIN]: "Administrator",
   [ROLES.PARTNER]: "Partner",
+  [ROLES.CAPITAL_MEMBER]: "Capital Member",
   [ROLES.STAFF_CAPTAIN]: "Team Lead",
   [ROLES.STAFF]: "Staff",
   [ROLES.VENDOR]: "Vendor",
@@ -90,6 +93,7 @@ export const ROLE_DESCRIPTIONS: Record<Role, string> = {
   [ROLES.PIRATE_KING]: "Business owner with full system control",
   [ROLES.ADMIN]: "System administrator with full management access",
   [ROLES.PARTNER]: "Company partner who can manage operations and create invoices",
+  [ROLES.CAPITAL_MEMBER]: "Capital investor/member with partner-level access to operations and billing",
   [ROLES.STAFF_CAPTAIN]: "Team lead who oversees staff and operations",
   [ROLES.STAFF]: "Team member working under a team lead",
   [ROLES.VENDOR]: "Contractor who can manage their own invoices and jobs",
@@ -166,6 +170,7 @@ export function getRolePermissions(role: Role) {
       };
 
     case ROLES.PARTNER:
+    case ROLES.CAPITAL_MEMBER:
       return {
         ...basePermissions,
         canViewClients: true,
@@ -175,9 +180,9 @@ export function getRolePermissions(role: Role) {
         canManageInvoices: true,
         canViewJobs: true,
         canManageJobs: true,
-        canViewSettings: true, // Can view their company settings
+        canViewSettings: true,
         canViewReports: true,
-        canManageStaff: true, // Can manage staff in their company
+        canManageStaff: true,
         canAccessAI: true,
       };
 

@@ -62,6 +62,41 @@ Push to `main` — Vercel auto-deploys.
 
 WebSocket (realtime AI voice) is not supported on Vercel serverless. AI chat works via HTTP through the Express API routes and the Puter worker.
 
+## PostgreSQL Runbook (Production)
+
+### Apply required migrations
+
+Run migrations before switching traffic to a new release:
+
+```bash
+npx drizzle-kit push
+```
+
+If you are manually applying SQL in Neon/PostgreSQL, run:
+
+- `migrations/add_companies_and_roles.sql`
+- `migrations/20260417_sykes_vendor_admin_setup.sql`
+
+### What the Sykes migration does
+
+- Ensures `tgebilling@gmail.com` is `admin`
+- Creates/updates Sykes company profile (`Texas City, TX 77671, Highway 4`)
+- Creates/updates Sykes vendor login (`sykes`) and capital-member/captain login (`sykes-captain`)
+- Keeps vendor branding/invoice prefix (`SYS`) and portal profile in sync
+
+## Deployment Best Practices
+
+1. Use separate environments (`dev`, `preview`, `prod`) with isolated databases.
+2. Run schema migrations before deploying app code that depends on new columns/tables.
+3. Use strong secrets (`SESSION_SECRET`, API keys) and rotate them quarterly.
+4. Enable Postgres PITR/backups and test restore quarterly.
+5. Add health checks for `/api/user` and `/api/invoices` after each deploy.
+6. Keep seed scripts idempotent and never rely on one-time manual SQL in production.
+7. Monitor error rates and p95 latency in the first 30 minutes post-deploy.
+8. Roll forward with a hotfix commit instead of editing prod data ad hoc unless emergency.
+9. Restrict admin roles to named accounts and audit role changes monthly.
+10. Store deployment and migration logs with release tags for traceability.
+
 ## Deploy Puter AI Worker
 
 ### Prerequisites
